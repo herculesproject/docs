@@ -1,0 +1,76 @@
+# IU-CSP-0201-004 - Crear convocatoria - Enlaces
+
+|  |  |
+| --- | --- |
+| Cod. IU | ********IU-CSP-0201-004 - Crear convocatoria - Enlaces******** |
+| Ver. objetivo |  |
+| Ver. IU | 1.0.0 |
+| Estado | LIBERADO\_ |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Actores | ACT-CSP-004-Administrador, ACT-CSP-003-Gestor |
+| Frecuencia | Media |
+
+## Formulario Crear convocatoria - Enlaces
+
+La información de una convocatoria estará distribuida en los siguientes apartados:
+
+* Datos generales
+* Entidades convocantes
+* Entidades financiadoras
+* **Enlaces**
+* Fases
+* Periodos justificación
+* Seguimiento científico
+* Hitos
+* Documentos
+* Requisitos IP
+* Requisitos Equipo
+* Elegibilidad
+* Configuración de solicitudes
+
+### Enlaces
+
+Para crear una convocatoria no será obligatorio incluir ningún enlace en la misma, así como tampoco será necesario vincularlos a un tipo de enlace si no se desea.
+
+|  |  |  |
+| --- | --- | --- |
+|  | | |
+| Nombre | Tipo | Características / Notas |
+| Listado de enlaces de la convocatoria | | |
+| URL | Texto | Dirección url del enlace |
+| Descripción | Texto largo | Descripción del enlace |
+| Tipo de enlace | Texto corto | Tipo de enlace |
+| Modificar | Icono de acción | Acción modificar |
+| Eliminar | Icono de acción | Acción eliminar |
+
+| Acciones | Descripción | Enlace CU. | Permisos |
+| --- | --- | --- | --- |
+| Modificar | Muestra la pantalla de modificación de la url seleccionada del listado de enlaces de la convocatoria | Muestra la pantalla [IU-CSP-0204-004 - Modificar convocatoria - Enlaces](../iu-csp-0204-modificar-convocatoria/iu-csp-0204-004-modificar-convocatoria-enlaces.md) | CSP-CON-C  CSP-CON-C\_UO |
+| Eliminar | Elimina el enlace | Elimina el registro de la tabla de Enlaces de la convocatoria | CSP-CON-C  CSP-CON-C\_UO |
+| Paginación | Componente estándar de paginación sobre la tabla de lista de resultados. |  |  |
+| Añadir nuevo enlace | Muestra la pantalla de Nuevo enlace | Muestra la pantalla [IU-CSP-202-005 - Añadir enlace](../iu-csp-202-005-anadir-enlace.md) | CSP-CON-C  CSP-CON-C\_UO |
+
+### Botones generales a la pantalla
+
+| Acciones | Descripción | Enlace CU. | Permisos |
+| --- | --- | --- | --- |
+| Guardar | Crea la Convocatoria con la información introducida en el formulario.  Al guardar una convocatoria se guardar la información de todas las pestañas de la pantalla. |  | CSP-CON-C  CSP-CON-C\_UO |
+| Cancelar | Retorna al listado de Convocatorias sin salvar los posibles cambios.  Al cancelar una convocatoria se cancela la información de todas las pestañas de la pantalla, sin salvar los posibles cambios. |  |  |
+
+### Permisos de acceso a la pantalla
+
+#### Por actor
+
+|  |  |
+| --- | --- |
+| ACT-CSP-004-Administrador | CSP-CON-C, CSP-CON-C\_UO |
+| ACT-CSP-003-Gestor | CSP-CON-C, CSP-CON-C\_UO |
+
+#### Todos los permisos de acceso
+
+|  |  |
+| --- | --- |
+| Permisos | CSP-CON-C, CSP-CON-C\_UO |
+
+Se aplican las mismas restricciones para todos los elementos del árbol de navegación bajo este path.

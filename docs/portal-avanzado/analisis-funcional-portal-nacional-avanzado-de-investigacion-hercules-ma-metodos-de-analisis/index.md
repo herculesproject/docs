@@ -1,0 +1,20 @@
+# Análisis funcional. Portal Nacional Avanzado de Investigación. Hércules MA - Métodos de análisis
+
+* [Búsqueda de investigadores - Módulo Research Synergy Finder](busqueda-de-investigadores-modulo-research-synergy-finder/index.md)
+  + [MA. Grupos de Investigación. UX](busqueda-de-investigadores-modulo-research-synergy-finder/analisis-preliminar-modulo-research-synergy-finder/ma-grupos-de-investigacion-ux.md)
+  + [MA. Grupos de Investigación. Definición](busqueda-de-investigadores-modulo-research-synergy-finder/analisis-preliminar-modulo-research-synergy-finder/ma-grupos-de-investigacion-definicion.md)
+  + [MA. Investigadores. UX](busqueda-de-investigadores-modulo-research-synergy-finder/analisis-preliminar-modulo-research-synergy-finder/ma-investigadores-ux.md)
+  + [MA. Investigadores. Definición](busqueda-de-investigadores-modulo-research-synergy-finder/analisis-preliminar-modulo-research-synergy-finder/ma-investigadores-definicion.md)
+  + [MA. Publicaciones. UX](busqueda-de-investigadores-modulo-research-synergy-finder/analisis-preliminar-modulo-research-synergy-finder/ma-publicaciones-ux.md)
+  + [MA. Publicaciones. Definición](busqueda-de-investigadores-modulo-research-synergy-finder/analisis-preliminar-modulo-research-synergy-finder/ma-publicaciones-definicion.md)
+  + [MA. ROs. UX](busqueda-de-investigadores-modulo-research-synergy-finder/analisis-preliminar-modulo-research-synergy-finder/ma-ros-ux.md)
+  + [MA. ROs. Definición](busqueda-de-investigadores-modulo-research-synergy-finder/analisis-preliminar-modulo-research-synergy-finder/ma-ros-definicion.md)
+  + [MA. Metabuscador](busqueda-de-investigadores-modulo-research-synergy-finder/ma-metabuscador.md)
+  + [Asistente para la creación de cluster (equipo de proyecto)](busqueda-de-investigadores-modulo-research-synergy-finder/analisis-preliminar-modulo-research-synergy-finder/asistente-para-la-creacion-de-cluster-equipo-de-proyecto.md)
+  + [Ofertas Tecnológicas](busqueda-de-investigadores-modulo-research-synergy-finder/ma-ofertas-tecnologicas/index.md)
+* [Análisis de proyectos de investigación - Módulo de Gestión y Análisis de Proyectos](analisis-de-proyectos-de-investigacion-modulo-de-gestion-y-analisis-de-proyectos/index.md)  
+  + MA. Projects. UX
+  + [MA. Projects. Definición funcional](analisis-de-proyectos-de-investigacion-modulo-de-gestion-y-analisis-de-proyectos/analisis-inicial-modulo-de-gestion-y-analisis-de-proyectos/ma-projects-definicion-funcional.md)
+* [Análisis de indicadores de investigación - Módulo de Catálogo de indicadores](analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/index.md)
+  + [Especificación de Indicadores. Snowball Metrics](analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/especificacion-de-indicadores/index.md)
+  + [Métricas de Hércules](analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/metricas-de-hercules/index.md)

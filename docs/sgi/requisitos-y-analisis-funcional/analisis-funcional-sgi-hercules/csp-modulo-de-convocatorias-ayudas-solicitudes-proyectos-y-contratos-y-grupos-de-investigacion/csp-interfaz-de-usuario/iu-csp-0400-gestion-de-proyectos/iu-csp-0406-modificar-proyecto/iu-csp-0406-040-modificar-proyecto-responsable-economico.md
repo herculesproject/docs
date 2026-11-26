@@ -1,0 +1,63 @@
+# IU-CSP-0406-040 - Modificar proyecto - Responsable económico
+
+|  |  |
+| --- | --- |
+| Cod. IU | ********IU-CSP-0406-040 - Modificar proyecto - Responsable económico******** |
+| Ver. objetivo | 0.4.0 |
+| Ver. IU | 1.0.0 |
+| Estado | IN PROGRESS |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Actores | ACT-CSP-001-Investigador, ACT-CSP-003-Gestor, ACT-CSP-004-Administrador, ACT-CSP-005-Visor |
+| Frecuencia | Media |
+
+## Formulario Modificar proyecto - Responsable económico
+
+Formulario de modificación de un proyecto, apartado de Responsable económico, que muestra el listado de las distintas personas que han sido o es el responsable económico del proyecto. Los usuarios ACT-CSP-003-Gestor y ACT-CSP-004-Administrador podrán añadir nuevos responsables económicos al proyecto.
+
+|  |  |  |
+| --- | --- | --- |
+|  | | |
+| Nombre | Tipo | Características / Notas |
+| Listado de responsables económicos (tabla "proyecto responsable económico") | | |
+| Email | Texto corto | Listado de mails de la persona, recuperado a través de [REQ-INT-0020-SGP-0030 - Consultar datos generales de persona](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas/req-int-0020-sgp-0030-consultar-datos-generales-de-persona.md) diferentes emails se separarán por el carácter "," y en caso de no poder mostrarse de forma completa se mostrará la cadena final "..." y el contenido completo se mostrará sobre tooltip. |
+| Nombre | Texto corto | Nombre  del responsable económico de proyecto, recuperado a través de [REQ-INT-0020-SGP-0030 - Consultar datos generales de persona](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas/req-int-0020-sgp-0030-consultar-datos-generales-de-persona.md) |
+| Apellidos | Texto corto | Apellidos del responsable económico de proyecto, recuperado a través de [REQ-INT-0020-SGP-0030 - Consultar datos generales de persona](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas/req-int-0020-sgp-0030-consultar-datos-generales-de-persona.md) |
+| Fecha inicio | Fecha | Fecha de inicio del responsable económico |
+| Fecha fin | Fecha | Fecha de fin responsable económico |
+| Modificar | Icono de acción | Acción "Modificar" |
+| Eliminar | Icono de acción | Acción "Eliminar" |
+| Añadir responsable económico | Icono de acción | Acción "Añadir responsable económico" |
+
+| Acciones | Descripción | Enlace CU. | Permisos |
+| --- | --- | --- | --- |
+| Modificar | Muestra la pantalla de modificación del responsable económico seleccionado del listado de responsables económicos del proyecto | Se resuelve con la pantalla [IU-CSP-0402-030 - Añadir-modificar responsable económico](../iu-csp-0402-030-anadir-modificar-responsable-economico.md)  Ver documentación de restricciones en [CU-CSP-1200-002 - Modificar proyecto - Unidad de gestión](../../../csp-casos-de-uso/cu-csp-1200-gestion-de-proyectos/cu-csp-1200-002-modificar-proyecto-unidad-de-gestion.md) . | CSP-PRO-E  CSP-PRO-E\_UO |
+| Eliminar | Elimina el responsable económico del proyecto | Ver documentación de restricciones en [CU-CSP-1200-002 - Modificar proyecto - Unidad de gestión](../../../csp-casos-de-uso/cu-csp-1200-gestion-de-proyectos/cu-csp-1200-002-modificar-proyecto-unidad-de-gestion.md) . | CSP-PRO-E  CSP-PRO-E\_UO |
+| Paginación | Componente estándar de paginación sobre la tabla de lista de resultados. |  |  |
+| Añadir miembro | Muestra la pantalla de Nuevo responsable económico del proyecto | Muestra la pantalla [IU-CSP-0402-030 - Añadir-modificar responsable económico](../iu-csp-0402-030-anadir-modificar-responsable-economico.md)  Ver documentación de restricciones en [CU-CSP-1200-002 - Modificar proyecto - Unidad de gestión](../../../csp-casos-de-uso/cu-csp-1200-gestion-de-proyectos/cu-csp-1200-002-modificar-proyecto-unidad-de-gestion.md) .. | CSP-PRO-E  CSP-PRO-E\_UO |
+
+### Botones generales a la pantalla
+
+| Acciones | Descripción | Enlace CU. | Permisos |
+| --- | --- | --- | --- |
+| Guardar | Modifica el Proyecto con la información introducida en el formulario.  Al guardar un proyecto se guardar la información de todos los apartados de definición del proyecto. | Ver documentación de restricciones en [CU-CSP-1200-002 - Modificar proyecto - Unidad de gestión](../../../csp-casos-de-uso/cu-csp-1200-gestion-de-proyectos/cu-csp-1200-002-modificar-proyecto-unidad-de-gestion.md). | CSP-PRO-E  CSP-PRO-E\_UO |
+| Cancelar | Retorna al listado de Proyectos sin salvar los posibles cambios.  Al cancelar un proyecto se cancela la información de todas las pestañas de la pantalla, sin salvar los posibles cambios. |  |  |
+
+### Permisos de acceso a la pantalla
+
+#### Por actor
+
+|  |  |  |
+| --- | --- | --- |
+| ACT-CSP-001-Investigador | CSP-PRO-INV-VR | Ver detalle en documentación asociada en [CU-CSP-1200-004 - Ver proyecto - Visor e Investigador](../../../csp-casos-de-uso/cu-csp-1200-gestion-de-proyectos/cu-csp-1200-004-ver-proyecto-visor-e-investigador.md) y en [CU-CSP-1200-003 - Ver proyecto - Investigador (rol principal/responsable económico)](../../../csp-casos-de-uso/cu-csp-1200-gestion-de-proyectos/cu-csp-1200-003-ver-proyecto-investigador-rol-principalresponsable-economico.md) |
+| ACT-CSP-003-Gestor | CSP-PRO-E, CSP-PRO-E\_UO |  |
+| ACT-CSP-004-Administrador | CSP-PRO-E, CSP-PRO-E\_UO |  |
+| ACT-CSP-005-Visor | CSP-PRO-V, CSP-PRO-V\_UO | Ver detalle en documentación asociada en [CU-CSP-1200-004 - Ver proyecto - Visor e Investigador](../../../csp-casos-de-uso/cu-csp-1200-gestion-de-proyectos/cu-csp-1200-004-ver-proyecto-visor-e-investigador.md) (sería el caso del Visor) |
+
+#### Todos los permisos de acceso
+
+|  |  |
+| --- | --- |
+| Permisos | CSP-PRO-V, CSP-PRO-V\_UO, CSP-PRO-E, CSP-PRO-E\_UO, CSP-PRO-INV-VR |
+
+Se aplican las mismas restricciones para todos los elementos del árbol de navegación bajo este path.

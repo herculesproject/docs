@@ -1,0 +1,33 @@
+# REP-CSP-0079 - Exportación Facturas y justificantes - Viajes y dietas - Formato csv
+
+|  |  |
+| --- | --- |
+| Cod. REP | ********REP-CSP-0079 - Exportación Facturas y justificantes - Viajes y dietas - Formato csv******** |
+| Ver. Objetivo |  |
+| Ver. REP | 1.0.0 |
+| Estado |  |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Frecuencia |  |
+
+### Diseño Informe
+
+Se debe de generar un informe en formato CSV.
+
+Los datos a mostrar deberán obtenerse a partir de integración con el SGE, incluyendo todas las columnas devueltas por el servicio de integración [REQ-INT-0010-SGE-0135 - Buscar justificantes y facturas - Viajes y dietas](../../req-int-0010-sge-integracion-con-sistema-de-gestion-economica/req-int-0010-sge-0135-buscar-justificantes-y-facturas-viajes-y-dietas.md). Los parámetros de entrada al servicio se corresponderán con los recogidos en el formulario desde el que se invoca a este informe. Cada fila del CSV será un registro devuelto por el servicio y cada columna un campo de cada registro.
+
+### Permisos
+
+|  |  |
+| --- | --- |
+| ACT-CSP-003-Gestor | CSP-EJEC-E, CSP-EJEC-E\_UO |
+| ACT-CSP-004-Administrador | CSP-EJEC-E, CSP-EJEC-E\_UO |
+| ACT-CSP-005-Visor | CSP-EJEC-V, CSP-EJEC-V\_UO |
+
+### Interfaces de usuario relacionados
+
+*(elemento de Confluence no migrado)*
+
+### Casos de uso relacionados
+
+*(elemento de Confluence no migrado)*

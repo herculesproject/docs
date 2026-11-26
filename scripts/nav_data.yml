@@ -1,0 +1,2155 @@
+# Datos curados para la generación automática de nav en mkdocs.yml
+# (ver scripts/generate_nav.py). Este fichero SÍ se edita a mano cuando
+# se añade contenido nuevo: el orden de las páginas dentro de cada
+# carpeta no es derivable automáticamente (sigue un orden funcional/de
+# ciclo de vida heredado de Confluence, no alfabético), así que se
+# registra aquí explícitamente. Las páginas nuevas que no aparezcan en
+# "order" se añaden al final de su grupo por orden alfabético.
+
+# Estructura de nivel superior del sitio. "roots" son las carpetas de
+# docs/hercules que se promocionan a pestaña de navegación de primer
+# nivel. "umbrella" es la pestaña de portada: solo contiene index.md
+# (ya no enlaza también a cada root — esos enlaces eran duplicados de
+# las pestañas que ya están al lado, y se quitaron).
+top_level:
+  umbrella_label_override: "Visión general"   # antes: null (usaba el H1 "Hércules")
+  umbrella_extra_pages: []
+  roots:
+    - dir: sgi
+      label_override: "SGI"
+    - dir: arquitectura
+      label_override: "Arquitectura"
+    - dir: apis
+      label_override: null
+    - dir: portal-avanzado
+      label_override: "Portal Avanzado Investigación"
+    - dir: herramienta-cv
+      label_override: "Herramienta CV"
+    - dir: rpa
+      label_override: null
+
+# Etiquetas del menú distintas del título de la página (ruta relativa a
+# docs/: un fichero .md o una carpeta, que usa su index.md). Solo para
+# títulos que repiten el nombre de su pestaña y resultan demasiado largos
+# como cabecera de sección del menú lateral.
+labels:
+  arquitectura/arquitectura-de-la-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos.md: "Herramienta de CV (Hércules ED)"
+  arquitectura/arquitectura-del-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis.md: "Portal Avanzado de Investigación (Hércules MA)"
+  arquitectura/arquitectura-de-hercules-rpa.md: "Hércules RPA"
+  sgi/mdu-manual-de-usuario: "Manual de usuario"
+  portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis: "Análisis funcional"
+  portal-avanzado/ma-manual-de-usuario: "Manual de usuario"
+  herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos: "Análisis funcional"
+  herramienta-cv/ed-manual-de-usuario: "Manual de usuario"
+
+# Orden curado de los hijos de cada carpeta (ruta relativa a docs/).
+# Extraído del nav.yml original para preservar el orden funcional
+# existente. index.md de cada carpeta se excluye (siempre va primero).
+order:
+  apis:
+  - sgi-servicios-propios-que-expone
+  - sgi-servicios-de-terceros-que-expone
+  - sgi-servicios-de-terceros-que-consume
+  - ed-y-ma-integraciones.md
+  - rpa-servicios-de-terceros-que-consume
+  - servicios-en-los-que-el-sgi-hace-de-proxy.md
+  - solicitud-intico.md
+  - rpa-servicios-propios-que-expone
+  apis/rpa-servicios-de-terceros-que-consume:
+  - ed-y-ma.md
+  - sgi.md
+  apis/rpa-servicios-propios-que-expone:
+  - generacion-informe-acreditacion.md
+  - generacion-informe-sexenios.md
+  - notificacion-a-edma-de-informe-generado.md
+  apis/sgi-servicios-de-terceros-que-consume:
+  - caso-de-uso-servicios-implementados-por-la-universidad-de-murcia
+  ? apis/sgi-servicios-de-terceros-que-consume/caso-de-uso-servicios-implementados-por-la-universidad-de-murcia
+  : - sistema-de-gestion-de-personasrrhh-um-sgi-esb-sgp
+    - sistema-de-gestion-de-empresasum-sgi-esb-sgemp
+    - sistema-gestion-de-organizacionesum-sgi-esb-sgo
+    - sistema-de-gestion-economicoum-sgi-esb-sge
+    - sistema-de-gestion-de-patentesum-sgi-esb-sgepii.md
+  ? apis/sgi-servicios-de-terceros-que-consume/caso-de-uso-servicios-implementados-por-la-universidad-de-murcia/sistema-de-gestion-de-empresasum-sgi-esb-sgemp
+  : - sgemp-adaptaciones-integracion.md
+  ? apis/sgi-servicios-de-terceros-que-consume/caso-de-uso-servicios-implementados-por-la-universidad-de-murcia/sistema-de-gestion-de-personasrrhh-um-sgi-esb-sgp
+  : - sgp-adaptaciones-integracion.md
+  ? apis/sgi-servicios-de-terceros-que-consume/caso-de-uso-servicios-implementados-por-la-universidad-de-murcia/sistema-de-gestion-economicoum-sgi-esb-sge
+  : - proyecto-sge-y-presupuesto-um-sgi-esb-sge.md
+    - ejecucion-economica-um-sgi-esb-sge.md
+    - calendario-facturacion-um-sgi-esb-sge.md
+    - amortizacion-fondos-um-sgi-esb-sge.md
+  ? apis/sgi-servicios-de-terceros-que-consume/caso-de-uso-servicios-implementados-por-la-universidad-de-murcia/sistema-gestion-de-organizacionesum-sgi-esb-sgo
+  : - adaptaciones-integracion-um-sgi-esb-sgo.md
+  apis/sgi-servicios-de-terceros-que-expone:
+  - sistema-de-gestion-economica
+  - sistema-de-gestion-economica-de-proteccion-industrial-e-intelectual.md
+  - sistema-de-gestion-de-personas.md
+  - sistema-de-gestion-de-empresas.md
+  - sistema-de-la-gestion-de-la-estructura-organica.md
+  apis/sgi-servicios-de-terceros-que-expone/sistema-de-gestion-economica:
+  - amortizacion-fondos.md
+  - calendario-facturacion.md
+  - ejecucion-economica.md
+  - proyecto-sge-y-presupuesto.md
+  apis/sgi-servicios-propios-que-expone:
+  - autorizaciones-y-notificaciones-de-proyectos-externos.md
+  - sgi-grupos-de-investigacion.md
+  - produccion-cientifica
+  - convocatorias.md
+  - solicitudes.md
+  - gestion-proyectos.md
+  - proteccion-industrial-e-intelectual-patentes.md
+  apis/sgi-servicios-propios-que-expone/produccion-cientifica:
+  - adaptaciones-integracion.md
+  arquitectura:
+  - arquitectura-de-la-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos.md
+  - arquitectura-del-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis.md
+  - arquitectura-de-hercules-rpa.md
+  herramienta-cv:
+  - analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos
+  - ed-manual-de-usuario
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos
+  : - servicios-centrales-core-services
+    - gestion-de-fair-research-objects-fair-ro
+    - ro-enrichment
+    - editor-de-cv-perfil-del-investigador-researcher-dashboard
+    - documentacion-de-trabajo-en-elaboracion
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/documentacion-de-trabajo-en-elaboracion
+  : - analisis-para-la-extraccion-de-descriptores-tematicos.md
+    - carga-inicial-de-datos.md
+    - enriquecimiento-casos-de-uso-eliminar.md
+    - recopilacion-de-dudas-y-cuestiones-funcionales-planteadas.md
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/editor-de-cv-perfil-del-investigador-researcher-dashboard
+  : - ed-gestion-de-ros.md
+    - edicion-cv-cvn
+    - tratamiento-de-datos
+    - listado-de-notificaciones-del-researcher-dashboard.md
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/editor-de-cv-perfil-del-investigador-researcher-dashboard/edicion-cv-cvn
+  : - ux.md
+    - comportamiento-del-editor-de-cv-cvn
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/editor-de-cv-perfil-del-investigador-researcher-dashboard/edicion-cv-cvn/comportamiento-del-editor-de-cv-cvn
+  : - ejemplo-de-importacion-y-exportacion.md
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/editor-de-cv-perfil-del-investigador-researcher-dashboard/tratamiento-de-datos
+  : - datos-sincronizables-desde-sistemas-de-la-umu-y-sgi.md
+    - indice-h.md
+    - resumen-de-la-conexion-con-sgi-y-otros-sistemas-de-la-universidad.md
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/gestion-de-fair-research-objects-fair-ro
+  : - ef2-23-modelos-de-metadatos-para-la-descripcion-y-anotacion-de-fair-ro-v22
+    - fuentes-de-publicaciones-cientificas
+    - actualizaciones-de-ros.md
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/gestion-de-fair-research-objects-fair-ro/ef2-23-modelos-de-metadatos-para-la-descripcion-y-anotacion-de-fair-ro-v22
+  : - introduccion.md
+    - proceso-seguido-en-la-especificacion-de-los-metadatos-necesarios-para-cada-tipo-de-ro.md
+    - proceso-seguido-en-la-especificacion-de-los-metadatos-necesarios-para-cada-tipo-de-ro-version-2.md
+    - metadatos.md
+    - entidades-introducidas.md
+    - propiedades.md
+    - conclusion.md
+    - bibliografia.md
+    - anexo.md
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/gestion-de-fair-research-objects-fair-ro/fuentes-de-publicaciones-cientificas
+  : - fuentes-externas-de-publicaciones-cientificas.md
+    - de-duplicacion-de-datos-de-fuentes-externas.md
+    - anexo-items-recuperables-desde-fuentes-externas-y-relacion-con-cvn-y-edma.md
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/ro-enrichment
+  : - analisis-de-taxonomias.md
+    - taxonomia-unificada-de-descriptores-tematicos-para-hercules.md
+    - extraccion-de-descriptores-y-similitud
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/ro-enrichment/extraccion-de-descriptores-y-similitud
+  : - flujo-e-interfaces-del-enriquecimiento-descriptores-y-matching
+    - similitud
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/ro-enrichment/extraccion-de-descriptores-y-similitud/flujo-e-interfaces-del-enriquecimiento-descriptores-y-matching
+  : - enriquecimiento-descriptores-analisis-y-trabajos-preliminares
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/ro-enrichment/extraccion-de-descriptores-y-similitud/flujo-e-interfaces-del-enriquecimiento-descriptores-y-matching/enriquecimiento-descriptores-analisis-y-trabajos-preliminares
+  : - enfoques-para-extraccion-de-descriptores-tematicos-de-ros.md
+    - extraccion-de-descriptores-analisis-y-trabajos-iniciales
+    - extraccion-de-descriptores-experimentos-y-resultados.md
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/ro-enrichment/extraccion-de-descriptores-y-similitud/flujo-e-interfaces-del-enriquecimiento-descriptores-y-matching/enriquecimiento-descriptores-analisis-y-trabajos-preliminares/extraccion-de-descriptores-analisis-y-trabajos-iniciales
+  : - 1-descripcion-del-modulo-de-extraccion-de-descriptores.md
+    - 2-enriquecimiento-prototipo-y-experimentacion-realizada-en-el-marco-del-challenge.md
+    - 3-enriquecimiento-analisis-para-la-extraccion-de-descriptores-tematicos.md
+    - 4-conclusiones-de-primeros-experimentos-participacion-en-el-challenge-analisis-de-extraccion-de-descriptores-tematicos-y-proximos-trabajos.md
+    - 5-planificacion-de-proximos-trabajos.md
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/ro-enrichment/extraccion-de-descriptores-y-similitud/similitud
+  : - enriquecimiento-identificacion-de-ros-similares
+    - api-de-similitud.md
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/ro-enrichment/extraccion-de-descriptores-y-similitud/similitud/enriquecimiento-identificacion-de-ros-similares
+  : - enriquecimiento-identificacion-de-ros-similares-planteamiento-inicial.md
+  ? herramienta-cv/analisis-funcional-herramienta-de-cv-hercules-ed-enriquecimiento-de-datos/servicios-centrales-core-services
+  : - single-sign-on-sso.md
+    - single-login-entry-point-slep.md
+    - proceso-de-carga-inicial-de-datos-para-la-umu.md
+    - proceso-de-carga-y-actualizacion-de-revistas.md
+  herramienta-cv/ed-manual-de-usuario:
+  - home-de-ed.md
+  - alertas.md
+  - anotaciones.md
+  - fuentes-externas-de-informacion.md
+  - gestion-de-ros-ed.md
+  - herramienta-de-cv
+  herramienta-cv/ed-manual-de-usuario/herramienta-de-cv:
+  - editor-de-cv.md
+  - exportacion-de-cv.md
+  - importacion-de-cv.md
+  portal-avanzado:
+  - analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis
+  - ma-manual-de-usuario
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis
+  : - busqueda-de-investigadores-modulo-research-synergy-finder
+    - analisis-de-proyectos-de-investigacion-modulo-de-gestion-y-analisis-de-proyectos
+    - analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores
+  : - analisis-funcional-de-los-indicadores.md
+    - especificacion-de-indicadores
+    - metricas-de-hercules
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/especificacion-de-indicadores
+  : - metodologia-de-incorporacion-de-indicadores-snowball-metrics
+    - users-and-privacy.md
+    - hercules-metrics-snowball-metrics-recipe
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/especificacion-de-indicadores/hercules-metrics-snowball-metrics-recipe
+  : - denominators.md
+    - input-metrics
+    - process-metrics
+    - output-and-outcome-metrics
+    - additional-information
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/especificacion-de-indicadores/hercules-metrics-snowball-metrics-recipe/additional-information
+  : - alternative-metrics-altmetrics.md
+    - hercules-sgi-indicators.md
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/especificacion-de-indicadores/hercules-metrics-snowball-metrics-recipe/input-metrics
+  : - research-metrics-for-input.md
+    - enterprise-activities-economic-development-metrics.md
+    - post-graduate-research-metrics.md
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/especificacion-de-indicadores/hercules-metrics-snowball-metrics-recipe/output-and-outcome-metrics
+  : - research-metrics-for-output-and-outcome.md
+    - enterprise-activities-for-output-and-outcome.md
+    - post-graduate-research-metrics-for-output-and-outcome.md
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/especificacion-de-indicadores/hercules-metrics-snowball-metrics-recipe/process-metrics
+  : - research-metrics-for-process.md
+    - enterprise-activities-for-process.md
+    - post-graduate-research-metrics-for-process.md
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/especificacion-de-indicadores/metodologia-de-incorporacion-de-indicadores-snowball-metrics
+  : - elsevier-guia-de-incorporacion-de-metricas-snowball.md
+    - dashboard-y-comparativas-visibilidad-de-los-indicadores.md
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/metricas-de-hercules
+  : - indicadores-para-el-cuadro-de-mando-de-investigacion
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-indicadores-de-investigacion-modulo-de-catalogo-de-indicadores/metricas-de-hercules/indicadores-para-el-cuadro-de-mando-de-investigacion
+  : - analisis-de-procedencia-y-privacidad-de-los-indicadores.md
+    - sexenios.md
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-proyectos-de-investigacion-modulo-de-gestion-y-analisis-de-proyectos
+  : - ma-proyectos.md
+    - analisis-inicial-modulo-de-gestion-y-analisis-de-proyectos
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/analisis-de-proyectos-de-investigacion-modulo-de-gestion-y-analisis-de-proyectos/analisis-inicial-modulo-de-gestion-y-analisis-de-proyectos
+  : - ma-projects-definicion-funcional.md
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/busqueda-de-investigadores-modulo-research-synergy-finder
+  : - ma-home.md
+    - ma-metabuscador.md
+    - ma-publicaciones.md
+    - ma-personal-investigador.md
+    - ma-grupos-de-investigacion.md
+    - ma-research-objects.md
+    - ma-ros-vinculados.md
+    - ma-anotaciones-sobre-los-ros.md
+    - ma-ofertas-tecnologicas
+    - ma-clusters
+    - analisis-preliminar-modulo-research-synergy-finder
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/busqueda-de-investigadores-modulo-research-synergy-finder/analisis-preliminar-modulo-research-synergy-finder
+  : - ma-home-ux.md
+    - ma-grupos-de-investigacion-ux.md
+    - ma-grupos-de-investigacion-definicion.md
+    - ma-investigadores-ux.md
+    - ma-investigadores-definicion.md
+    - ma-publicaciones-ux.md
+    - ma-publicaciones-definicion.md
+    - ma-ros-ux.md
+    - ma-ros-definicion.md
+    - ofertas-tecnologicas-analisis-preliminar
+    - asistente-para-la-creacion-de-cluster-equipo-de-proyecto.md
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/busqueda-de-investigadores-modulo-research-synergy-finder/analisis-preliminar-modulo-research-synergy-finder/ofertas-tecnologicas-analisis-preliminar
+  : - analisis-inicial-de-la-gestion-de-ofertas-tecnologicas.md
+    - ofertas-tecnologicas-ux.md
+    - landing-o-presentacion-inicial-de-ofertas-tecnologicas.md
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/busqueda-de-investigadores-modulo-research-synergy-finder/ma-clusters
+  : - ma-creacion-y-edicion-del-cluster.md
+    - ma-ficha-del-cluster.md
+    - ma-listado-de-mis-clusters.md
+  ? portal-avanzado/analisis-funcional-portal-nacional-avanzado-de-investigacion-hercules-ma-metodos-de-analisis/busqueda-de-investigadores-modulo-research-synergy-finder/ma-ofertas-tecnologicas
+  : - ma-creacion-de-la-oferta.md
+    - ma-listado-de-las-ofertas-tecnologicas.md
+    - ma-ficha-de-la-oferta-tecnologica.md
+  portal-avanzado/ma-manual-de-usuario:
+  - filtrosfacetas.md
+  - indicadoresmetricas.md
+  - metabuscador.md
+  - paginas-de-busqueda
+  - gestion-de-clusters-equipos-de-proyecto.md
+  - gestion-de-ofertas-tecnologicas.md
+  ? portal-avanzado/ma-manual-de-usuario/paginas-de-busqueda
+  : - busqueda-de-grupos-de-investigacion.md
+    - busqueda-de-personal-investigador.md
+    - busqueda-de-proyectos.md
+    - busqueda-de-publicaciones.md
+  rpa:
+  - arquitectura.md
+  - aspectos-generales-de-la-solucion-rgpd-y-ens.md
+  - modulo-de-automatizacion-y-gestion
+  - modulo-de-tecnologias-cognitivas
+  - impacto-de-los-procesos
+  - informes-de-pruebas
+  - manual-de-usuario
+  rpa/impacto-de-los-procesos:
+  - impacto-proceso-1-segmentacion-y-generacion-automatica-de-boletines-informativos.md
+  - impacto-proceso-2-generacion-de-informes-de-sexenios-y-acreditaciones
+  - impacto-proceso-3-automatizacion-de-procesos-de-gestiones-documentales-parametrizables
+  - impacto-proceso-4-sistemas-inteligentes-de-encaje-entre-convocatorias-e-investigadores.md
+  rpa/impacto-de-los-procesos/impacto-proceso-2-generacion-de-informes-de-sexenios-y-acreditaciones:
+  - impacto-de-la-generacion-del-informe-de-acreditaciones.md
+  - impacto-de-la-generacion-del-informe-de-solicitud-de-sexenio.md
+  ? rpa/impacto-de-los-procesos/impacto-proceso-3-automatizacion-de-procesos-de-gestiones-documentales-parametrizables
+  : - impacto-de-extraccion-de-bases-reguladoras.md
+    - impacto-de-extraccion-de-concesiones.md
+    - impacto-de-la-extraccion-de-convocatorias.md
+  rpa/informes-de-pruebas:
+  - pruebas-unitarias.md
+  - pruebas-de-carga.md
+  rpa/manual-de-usuario:
+  - ejecucion-de-los-procesos
+  rpa/manual-de-usuario/ejecucion-de-los-procesos:
+  - formulario-de-generacion-de-informe-de-transferencia.md
+  - formulario-de-generacion-de-solicitud-de-sexenio.md
+  - formulario-de-generacion-informe-de-acreditacion.md
+  - formulario-de-recordatorio-de-perfil-de-investigacion.md
+  - formulario-de-sistema-de-recomendacion.md
+  - formulario-extraccion-bases-reguladoras.md
+  - formulario-extraccion-concesiones.md
+  - formulario-extraccion-de-convocatorias.md
+  rpa/modulo-de-automatizacion-y-gestion:
+  - analisis-y-procesos
+  - cuadro-de-mandos.md
+  rpa/modulo-de-automatizacion-y-gestion/analisis-y-procesos:
+  - proceso-1-segmentacion-y-generacion-automatica-de-boletines-informativos
+  - proceso-2-sexenios-y-acreditaciones
+  - proceso-3-automatizacion-de-procesos-de-gestiones-documentales-parametrizables
+  - proceso-4-sistemas-inteligentes-de-encaje-entre-convocatorias-e-investigadores
+  - sistema-de-orquestacion
+  ? rpa/modulo-de-automatizacion-y-gestion/analisis-y-procesos/proceso-1-segmentacion-y-generacion-automatica-de-boletines-informativos
+  : - diseno-base-de-datos-para-proceso-1.md
+  rpa/modulo-de-automatizacion-y-gestion/analisis-y-procesos/proceso-2-sexenios-y-acreditaciones:
+  - generacion-de-informe-de-autoevaluacion
+  ? rpa/modulo-de-automatizacion-y-gestion/analisis-y-procesos/proceso-2-sexenios-y-acreditaciones/generacion-de-informe-de-autoevaluacion
+  : - informe-enfocado-a-la-solicitud-de-una-acreditacion-de-la-aneca
+    - informe-enfocado-a-la-solicitud-de-un-sexenio
+  ? rpa/modulo-de-automatizacion-y-gestion/analisis-y-procesos/proceso-2-sexenios-y-acreditaciones/generacion-de-informe-de-autoevaluacion/informe-enfocado-a-la-solicitud-de-un-sexenio
+  : - requisitos-sexenios.md
+  ? rpa/modulo-de-automatizacion-y-gestion/analisis-y-procesos/proceso-2-sexenios-y-acreditaciones/generacion-de-informe-de-autoevaluacion/informe-enfocado-a-la-solicitud-de-una-acreditacion-de-la-aneca
+  : - requisitos-acreditaciones.md
+  ? rpa/modulo-de-automatizacion-y-gestion/analisis-y-procesos/proceso-3-automatizacion-de-procesos-de-gestiones-documentales-parametrizables
+  : - diseno-de-base-de-datos-para-proceso-3.md
+    - extraccion-de-bases-reguladoras.md
+    - extraccion-de-convocatorias.md
+    - extraccion-e-identificacion-de-concesiones.md
+    - requisitos.md
+  ? rpa/modulo-de-automatizacion-y-gestion/analisis-y-procesos/proceso-4-sistemas-inteligentes-de-encaje-entre-convocatorias-e-investigadores
+  : - diseno-de-base-de-datos-para-proceso-4.md
+  rpa/modulo-de-automatizacion-y-gestion/analisis-y-procesos/sistema-de-orquestacion:
+  - orquestador.md
+  - robot.md
+  - proceso.md
+  - comunicacion-amqp-orquestador-robot-robot-orquestador.md
+  - api
+  - base-de-datos.md
+  - cdn.md
+  - data-lake-base-de-datos-no-relacional-para-explotacion-de-datos.md
+  rpa/modulo-de-automatizacion-y-gestion/analisis-y-procesos/sistema-de-orquestacion/api:
+  - diagrama-de-clases-del-dominiopreliminar.md
+  rpa/modulo-de-tecnologias-cognitivas:
+  - extraccion-de-tablas-en-archivos-pdf.md
+  - mineria-de-datos.md
+  - reconocimiento-de-caracteres-ocr.md
+  - extraccion-de-informacion-utilizando-recorrido-de-documentos-xml.md
+  - sistema-de-web-scraping-para-convocatorias
+  - api-rest.md
+  rpa/modulo-de-tecnologias-cognitivas/sistema-de-web-scraping-para-convocatorias:
+  - extraccion-de-datos-de-la-bdns.md
+  - extraccion-de-la-informacion-para-convocatorias-de-fundacion-la-caixa.md
+  sgi:
+  - requisitos-y-analisis-funcional
+  - diseno
+  - desarrollo-y-configuracion
+  - pruebas
+  - mdu-manual-de-usuario
+  - integraciones
+  - guia-de-implantacion-checklist
+  - formacion
+  - tecnologias.md
+  - gobernanza-evolutivos.md
+  sgi/desarrollo-y-configuracion:
+  - estandares-de-desarrollo
+  - configuraciones.md
+  - versiones.md
+  sgi/desarrollo-y-configuracion/estandares-de-desarrollo:
+  - consultas-filtradas-y-paginadas.md
+  - formatos-de-datos-api.md
+  - gestion-de-errores-en-el-api-rest
+  - estandares-internos
+  sgi/desarrollo-y-configuracion/estandares-de-desarrollo/estandares-internos:
+  - enumerados.md
+  ? sgi/desarrollo-y-configuracion/estandares-de-desarrollo/gestion-de-errores-en-el-api-rest
+  : - urnproblem-typeaccess-denied.md
+    - urnproblem-typeauthentication.md
+    - urnproblem-typebad-request.md
+    - urnproblem-typedata-access.md
+    - urnproblem-typeillegal-argument.md
+    - urnproblem-typemethod-not-allowed.md
+    - urnproblem-typemissing-main-researcher.md
+    - urnproblem-typemissing-path-variable.md
+    - urnproblem-typemissing-request-parameter.md
+    - urnproblem-typeno-related-entities.md
+    - urnproblem-typenot-acceptable.md
+    - urnproblem-typenot-found.md
+    - urnproblem-typepercentage-iva-zero.md
+    - urnproblem-typeteam-member-overlap.md
+    - urnproblem-typetype-mismatch.md
+    - urnproblem-typeunique.md
+    - urnproblem-typeunknown.md
+    - urnproblem-typevalidation.md
+  sgi/diseno:
+  - componentes
+  - bases-de-datos.md
+  - version-multiidioma
+  sgi/diseno/componentes:
+  - sgi-csp
+  - sgi-rel
+  - sgi-esb
+  - sgi-eti
+  - sgi-pii
+  - sgi-prc
+  - sgi-com
+  - sgi-eer
+  - sgi-cnf
+  - sgi-tp
+  - sgi-interface-integracion
+  sgi/diseno/componentes/sgi-cnf:
+  - cnf-modelo-logico.md
+  - cnf-servicios-api.md
+  sgi/diseno/componentes/sgi-com:
+  - com-modelo-logico.md
+  - com-servicios-api.md
+  - com-variables-en-textos-y-traducciones-al-modelo-fisico.md
+  - com-diagramas-de-comunicacion.md
+  sgi/diseno/componentes/sgi-csp:
+  - csp-permisos-actores
+  - csp-me-modelo-de-ejecucion
+  - csp-con-convocatorias
+  - csp-sol-solicitudes
+  - csp-pro-proyectos
+  - csp-ppex-participacion-proyectos-externos
+  - csp-ejec-ejecucion-economica
+  - csp-gin-grupos-de-investigacion
+  sgi/diseno/componentes/sgi-csp/csp-con-convocatorias:
+  - csp-con-modelo-logico-diagrama.md
+  - csp-con-modelo-logico-documentacion.md
+  - csp-con-servicios-api.md
+  sgi/diseno/componentes/sgi-csp/csp-ejec-ejecucion-economica:
+  - csp-ejec-modelo-logico.md
+  - csp-ejec-servicios-api.md
+  sgi/diseno/componentes/sgi-csp/csp-gin-grupos-de-investigacion:
+  - csp-gin-diseno-logico-diagrama.md
+  - csp-gin-modelo-logico-documentacion.md
+  - csp-gin-servicios-api.md
+  sgi/diseno/componentes/sgi-csp/csp-me-modelo-de-ejecucion:
+  - csp-me-modelo-logico-diagrama.md
+  - csp-me-modelo-logico-documentacion.md
+  - csp-me-servicios-api.md
+  sgi/diseno/componentes/sgi-csp/csp-permisos-actores:
+  - csp-catalogo-de-permisos.md
+  - csp-actores-y-permisos-por-actor
+  ? sgi/diseno/componentes/sgi-csp/csp-permisos-actores/csp-actores-y-permisos-por-actor
+  : - act-csp-001-investigador.md
+    - act-csp-002-investigadorexterno.md
+    - act-csp-003-gestor.md
+    - act-csp-004-administrador.md
+    - act-csp-005-visor.md
+  sgi/diseno/componentes/sgi-csp/csp-ppex-participacion-proyectos-externos:
+  - csp-ppex-modelo-logico-diagrama.md
+  - csp-ppex-modelo-logico-documentacion.md
+  - csp-ppex-servicios-api.md
+  sgi/diseno/componentes/sgi-csp/csp-pro-proyectos:
+  - csp-pro-modelo-logico-diagrama.md
+  - csp-pro-modelo-logico-documentacion.md
+  - csp-pro-servicios-api.md
+  sgi/diseno/componentes/sgi-csp/csp-sol-solicitudes:
+  - csp-sol-modelo-logico-diagrama.md
+  - csp-sol-modelo-logico-documentacion.md
+  - csp-sol-servicios-api.md
+  sgi/diseno/componentes/sgi-eer:
+  - eer-permisos-actores
+  - eer-modelo-logico-diagrama.md
+  - eer-modelo-logico-documentacion.md
+  - eer-servicios-api.md
+  sgi/diseno/componentes/sgi-eer/eer-permisos-actores:
+  - eer-catalogo-de-permisos.md
+  - eer-actores-y-permisos-por-actor
+  ? sgi/diseno/componentes/sgi-eer/eer-permisos-actores/eer-actores-y-permisos-por-actor
+  : - act-eer-001-gestor.md
+  sgi/diseno/componentes/sgi-esb:
+  - seguridad-esb.md
+  - sgi-esb-sgdoc
+  - sgi-esb-sge
+  - sgi-esb-sgepii
+  - sgi-esb-sgp
+  - sgi-esb-sgemp
+  - sgi-esb-sgo
+  - esb-sgi
+  sgi/diseno/componentes/sgi-esb/esb-sgi:
+  - esb-sgi-autorizaciones-y-notificaciones-proyectos-externos
+  - esb-sgi-grupos-de-investigacion
+  - esb-sgi-produccion-cientifica
+  - esb-sgi-convocatorias.md
+  - esb-sgi-solicitudes.md
+  - esb-sgi-proyectos.md
+  - esb-sgi-proteccion-industrial-e-intelectual
+  - esb-sgi-empresas-de-explotacion-de-resultados
+  - esb-sgi-usuarios
+  ? sgi/diseno/componentes/sgi-esb/esb-sgi/esb-sgi-autorizaciones-y-notificaciones-proyectos-externos
+  : - esb-sgi-autorizaciones-consultar-autorizaciones-modificadas.md
+    - esb-sgi-autorizaciones-consultar-detalle.md
+    - esb-sgi-notificaciones-proyectos-externos-dar-de-alta.md
+  ? sgi/diseno/componentes/sgi-esb/esb-sgi/esb-sgi-empresas-de-explotacion-de-resultados
+  : - esb-sgi-empresas-de-explotacion-de-resultados-consultar-empresas-de-explotacion-de-resultados-modificadas.md
+    - esb-sgi-empresas-de-explotacion-de-resultados-buscar.md
+    - esb-sgi-empresas-de-explotacion-de-resultados-consultar-detalle.md
+    - esb-sgi-empresas-de-explotacion-de-resultados-consultar-miembros-equipo-emprendedor.md
+    - esb-sgi-empresas-de-explotacion-de-resultados-consultar-composicion-de-la-sociedad.md
+    - esb-sgi-empresas-de-explotacion-de-resultados-consultar-administracion-sociedad.md
+  sgi/diseno/componentes/sgi-esb/esb-sgi/esb-sgi-grupos-de-investigacion:
+  - esb-sgi-grupos-de-investigacion-consultar-grupos-de-investigacion-modificados.md
+  - esb-sgi-grupos-de-investigacion-consultar-detalle.md
+  - esb-sgi-grupos-de-investigacion-consultar-miembros-equipo.md
+  - esb-sgi-grupos-de-investigacion-listar-palabras-clave.md
+  - esb-sgi-grupos-de-investigacion-listar-lineas-de-investigacion.md
+  - esb-sgi-grupos-de-investigacion-lineas-de-investigacion-consultar-detalle.md
+  - esb-sgi-grupos-de-investigacion-lineas-de-investigacion-listar-clasificaciones.md
+  sgi/diseno/componentes/sgi-esb/esb-sgi/esb-sgi-produccion-cientifica:
+  - esb-sgi-produccion-cientifica-listar-epigrafes.md
+  - esb-sgi-produccion-cientifica-dar-de-alta.md
+  - esb-sgi-produccion-cientifica-modificar.md
+  - esb-sgi-produccion-cientifica-eliminar.md
+  - esb-sgi-produccion-cientifica-buscar.md
+  ? sgi/diseno/componentes/sgi-esb/esb-sgi/esb-sgi-proteccion-industrial-e-intelectual
+  : - esb-sgi-invenciones-consultar-invenciones-modificadas.md
+    - esb-sgi-invenciones-buscar.md
+    - esb-sgi-invenciones-consultar-detalle.md
+    - esb-sgi-invenciones-listar-sectores-de-aplicacion.md
+    - esb-sgi-invenciones-listar-areas-de-conocimiento.md
+    - esb-sgi-invenciones-listar-palabras-clave.md
+    - esb-sgi-invenciones-listar-inventores.md
+    - esb-sgi-invenciones-listar-periodos-titularidad.md
+    - esb-sgi-invenciones-listar-solicitudes-de-proteccion.md
+    - esb-sgi-invenciones-periodo-titularidad-listar-titulares.md
+    - esb-sgi-invenciones-tipos-de-proteccion-listar.md
+    - esb-sgi-invenciones-vias-de-proteccion-listar.md
+    - esb-sgi-invenciones-sectores-de-aplicacion-listar.md
+    - esb-sgi-invenciones-consultar-invenciones-eliminadas.md
+  sgi/diseno/componentes/sgi-esb/esb-sgi/esb-sgi-usuarios:
+  - esb-sgi-usuarios-unidades-buscar.md
+  - esb-sgi-usuarios-unidades-consultar-detalle.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sgdoc:
+  - esb-sgi-documentos-dar-de-alta.md
+  - esb-sgi-documentos-buscar.md
+  - esb-sgi-documentos-consultar-detalle.md
+  - esb-sgi-documentos-eliminar.md
+  - esb-sgi-documentos-descargar-fichero.md
+  - esb-sgi-documentos-listar-por-identificador.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sge:
+  - sgi-esb-sge-proyecto-sge-y-presupuesto
+  - sgi-esb-sge-ejecucion-economica
+  - sgi-esb-sge-calendario-facturacion
+  - sgi-esb-sge-amortizacion-fondos
+  - sgi-esb-sge-seguimiento-justificacion
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sge/sgi-esb-sge-amortizacion-fondos:
+  - sgi-esb-sge-amortizacion-fondos-periodo-amortizacion-crear.md
+  - sgi-esb-sge-amortizacion-fondos-periodo-amortizacion-modificar.md
+  - sgi-esb-sge-amortizacion-fondos-periodo-amortizacion-eliminar.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sge/sgi-esb-sge-calendario-facturacion:
+  - sgi-esb-sge-calendario-facturacion-facturas-emitidas-buscar-columnas.md
+  - sgi-esb-sge-calendario-facturacion-facturas-emitidas-buscar.md
+  - sgi-esb-sge-calendario-facturacion-facturas-emitidas-consultar-detalle.md
+  - sgi-esb-sge-calendario-facturacion-facturas-previstas-emitidas-buscar.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sge/sgi-esb-sge-ejecucion-economica:
+  - sgi-esb-sge-ejecucion-economica-buscar-columnas-de-datos-economicos.md
+  - sgi-esb-sge-ejecucion-economica-buscar-datos-economicos.md
+  - sgi-esb-sge-ejecucion-economica-consultar-detalle-de-dato-economico.md
+  - sgi-esb-sge-ejecucion-economica-buscar-columnas-de-gastos.md
+  - sgi-esb-sge-ejecucion-economica-buscar-gastos.md
+  - sgi-esb-sge-ejecucion-economica-consultar-detalle-de-gasto.md
+  - sgi-esb-sge-ejecucion-economica-validar-gasto.md
+  - sgi-esb-sge-ejecucion-economica-rechazar-gasto.md
+  - sgi-esb-sge-ejecucion-economica-consultar-detalle-de-documento.md
+  - sgi-esb-sge-ejecucion-economica-descargar-documento.md
+  ? sgi/diseno/componentes/sgi-esb/sgi-esb-sge/sgi-esb-sge-proyecto-sge-y-presupuesto
+  : - sgi-esb-sge-proyecto-sge-y-presupuesto-servicios-basicos
+    - sgi-esb-sge-proyecto-sge-y-presupuesto-servicios-formly
+    - sgi-esb-sge-proyecto-sge-y-presupuesto-servicios-notificacion-sge
+  ? sgi/diseno/componentes/sgi-esb/sgi-esb-sge/sgi-esb-sge-proyecto-sge-y-presupuesto/sgi-esb-sge-proyecto-sge-y-presupuesto-servicios-basicos
+  : - sgi-esb-sge-proyecto-sge-y-presupuesto-buscar-proyectos.md
+    - sgi-esb-sge-proyecto-sge-y-presupuesto-consultar-detalle-de-proyecto.md
+    - sgi-esb-sge-proyecto-sge-y-presupuesto-listar-codigos-economicos-de-gastos.md
+    - sgi-esb-sge-proyecto-sge-y-presupuesto-consultar-detalle-de-codigo-economico-de-gasto.md
+    - sgi-esb-sge-proyecto-sge-y-presupuesto-listar-codigos-economicos-de-ingresos.md
+    - sgi-esb-sge-proyecto-sge-y-presupuesto-consultar-detalle-de-codigo-economico-de-ingreso.md
+  ? sgi/diseno/componentes/sgi-esb/sgi-esb-sge/sgi-esb-sge-proyecto-sge-y-presupuesto/sgi-esb-sge-proyecto-sge-y-presupuesto-servicios-formly
+  : - sgi-esb-sge-proyecto-sge-y-presupuesto-obtener-campos-dar-de-alta-proyecto.md
+    - sgi-esb-sge-proyecto-sge-y-presupuesto-dar-de-alta-proyecto.md
+    - sgi-esb-sge-proyecto-sge-y-presupuesto-obtener-campos-relacionar-proyecto.md
+    - sgi-esb-sge-proyecto-sge-y-presupuesto-relacionar-proyecto.md
+  ? sgi/diseno/componentes/sgi-esb/sgi-esb-sge/sgi-esb-sge-proyecto-sge-y-presupuesto/sgi-esb-sge-proyecto-sge-y-presupuesto-servicios-notificacion-sge
+  : - sgi-esb-sge-proyecto-sge-y-presupuesto-enviar-partidas-presupuestarias.md
+  ? sgi/diseno/componentes/sgi-esb/sgi-esb-sge/sgi-esb-sge-seguimiento-justificacion
+  : - sgi-esb-sge-seguimiento-justificacion-buscar-columnas-gastos-justificados.md
+    - sgi-esb-sge-seguimiento-justificacion-buscar-gastos-justificados.md
+    - sgi-esb-sge-seguimiento-justificacion-consultar-detalle-gasto-justificado.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sgemp:
+  - sgi-esb-sgemp-servicios-basicos
+  - sgi-esb-sgemp-servicios-formly
+  - sgi-esb-sgemp-servicios-pasarela
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sgemp/sgi-esb-sgemp-servicios-basicos:
+  - sgi-esb-sgemp-empresas-buscar.md
+  - sgi-esb-sgemp-empresas-consultar-detalle-datos-generales.md
+  - sgi-esb-sgemp-empresas-consultar-datos-contacto.md
+  - sgi-esb-sgemp-empresas-listar-tipos-de-identificador.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sgemp/sgi-esb-sgemp-servicios-formly:
+  - sgi-esb-sgemp-empresas-consultar-campos-alta.md
+  - sgi-esb-sgemp-empresas-dar-de-alta.md
+  - sgi-esb-sgemp-empresas-consultar-campos-modificacion.md
+  - sgi-esb-sgemp-empresas-modificar.md
+  - sgi-esb-sgemp-empresas-consultar-campos-ver-detalle.md
+  - sgi-esb-sgemp-empresas-consultar-detalle.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sgemp/sgi-esb-sgemp-servicios-pasarela:
+  - sgi-esb-sgemp-empresas-consultar-empresas-modificadas.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sgepii:
+  - sgi-esb-sgepii-buscar-columnas-gastos.md
+  - sgi-esb-sgepii-buscar-gastos.md
+  - sgi-esb-sgepii-consultar-detalle-de-gasto.md
+  - sgi-esb-sgepii-buscar-columnas-de-ingresos.md
+  - sgi-esb-sgepii-buscar-ingresos.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sgo:
+  - sgi-esb-sgo-areas-de-conocimiento-buscar.md
+  - sgi-esb-sgo-areas-de-conocimiento-consultar-detalle.md
+  - sgi-esb-sgo-departamentos-listar.md
+  - sgi-esb-sgo-paises-listar.md
+  - sgi-esb-sgo-paises-consultar-detalle.md
+  - sgi-esb-sgo-comunidades-autonomas-buscar.md
+  - sgi-esb-sgo-comunidades-autonomas-consultar-detalle.md
+  - sgi-esb-sgo-provincias-buscar.md
+  - sgi-esb-sgo-provincias-consultar-detalle.md
+  - sgi-esb-sgo-clasificaciones-buscar.md
+  - sgi-esb-sgo-clasificaciones-consultar-detalle.md
+  - sgi-esb-sgo-palabras-clave-crear.md
+  - sgi-esb-sgo-palabras-clave-buscar.md
+  - sgi-esb-sgo-centros-listar.md
+  - sgi-esb-sgo-centros-consultar-detalle.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sgp:
+  - sgi-esb-sgp-servicios-basicos
+  - sgi-esb-sgp-servicios-formly
+  - sgi-esb-sgp-servicios-pasarela
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sgp/sgi-esb-sgp-servicios-basicos:
+  - sgi-esb-sgp-personas-buscar-busqueda-rapida.md
+  - sgi-esb-sgp-personas-buscar.md
+  - sgi-esb-sgp-personas-consultar-detalle-datos-generales.md
+  - sgi-esb-sgp-personas-consultar-datos-personales.md
+  - sgi-esb-sgp-personas-consultar-datos-contacto.md
+  - sgi-esb-sgp-personas-consultar-vinculaciones.md
+  - sgi-esb-sgp-personas-consultar-datos-de-vinculacion-categoria.md
+  - sgi-esb-sgp-personas-consultar-datos-academicos.md
+  - sgi-esb-sgp-colectivos-listar.md
+  - sgi-esb-sgp-tipos-de-documento-listar.md
+  - sgi-esb-sgp-sexos-listar.md
+  - sgi-esb-sgp-categorias-profesionales-listar.md
+  - sgi-esb-sgp-personas-consultar-detalle-de-categoria-profesional.md
+  - sgi-esb-sgp-niveles-academicos-listar.md
+  - sgi-esb-sgp-niveles-academicos-consultar-detalle.md
+  - sgi-esb-sgp-personas-consultar-detalle-de-fotografia.md
+  - sgi-esb-sgp-sexenios-buscar.md
+  - sgi-esb-sgp-direccion-de-tesis-buscar.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sgp/sgi-esb-sgp-servicios-formly:
+  - sgi-esb-sgp-personas-consultar-campos-alta.md
+  - sgi-esb-sgp-personas-dar-de-alta.md
+  - sgi-esb-sgp-personas-consultar-campos-modificacion.md
+  - sgi-esb-sgp-personas-modificar.md
+  - sgi-esb-sgp-personas-consultar-campos-ver-detalle.md
+  - sgi-esb-sgp-personas-consultar-detalle.md
+  sgi/diseno/componentes/sgi-esb/sgi-esb-sgp/sgi-esb-sgp-servicios-pasarela:
+  - sgi-esb-sgp-personas-consultar-numero-de-sexenios.md
+  - sgi-esb-sgp-personas-consultar-personas-modificadas.md
+  - sgi-esb-sgp-personas-consultar-personas-con-modificaciones-en-formacion.md
+  - sgi-esb-sgp-personas-formacion-consultar-detalle.md
+  - sgi-esb-sgp-personas-consultar-personas-con-modificaciones-en-actividad-docente.md
+  - sgi-esb-sgp-personas-actividad-docente-consultar-detalle.md
+  sgi/diseno/componentes/sgi-eti:
+  - eti-permisos-actores
+  - eti-modelo-logico.md
+  sgi/diseno/componentes/sgi-eti/eti-permisos-actores:
+  - eti-catalogo-de-permisos.md
+  - eti-actores-y-permisos-por-actor
+  ? sgi/diseno/componentes/sgi-eti/eti-permisos-actores/eti-actores-y-permisos-por-actor
+  : - act-eti-001-gestor.md
+    - act-eti-002-investigador.md
+    - act-eti-003-solicitante.md
+    - act-eti-004-evaluador.md
+    - act-eti-005-tecnico.md
+    - act-eti-006-responsable-memoria.md
+    - act-eti-007-administrador.md
+  sgi/diseno/componentes/sgi-interface-integracion:
+  - sgi-consultas-integracion.md
+  - sgi-vistas
+  sgi/diseno/componentes/sgi-interface-integracion/sgi-vistas:
+  - sgi-vistas-timesheet.md
+  - sgi-vistas-estadisticas.md
+  sgi/diseno/componentes/sgi-pii:
+  - pii-permisos-actores
+  - pii-modelo-logico-diagrama.md
+  - pii-modelo-logico-documentacion.md
+  - pii-servicios-api.md
+  sgi/diseno/componentes/sgi-pii/pii-permisos-actores:
+  - pii-catalogo-de-permisos.md
+  - pii-actores-y-permisos-por-actor
+  ? sgi/diseno/componentes/sgi-pii/pii-permisos-actores/pii-actores-y-permisos-por-actor
+  : - act-pii-001-gestor.md
+    - act-pii-002-administrador.md
+  sgi/diseno/componentes/sgi-prc:
+  - prc-permisos-actores
+  - prc-diseno-tablas-validacion-items.md
+  - prc-diseno-logico.md
+  - prc-servicios-api.md
+  - prc-baremacion-diseno-algoritmo.md
+  sgi/diseno/componentes/sgi-prc/prc-permisos-actores:
+  - prc-catalogo-de-permisos.md
+  - prc-actores-y-permisos-por-actor
+  ? sgi/diseno/componentes/sgi-prc/prc-permisos-actores/prc-actores-y-permisos-por-actor
+  : - act-prc-001-investigador.md
+    - act-prc-003-gestor.md
+    - act-prc-004-visor.md
+  sgi/diseno/componentes/sgi-rel:
+  - sgi-rel-modelo-logico.md
+  sgi/diseno/componentes/sgi-tp:
+  - tp-modelo-logico.md
+  - tp-servicios-api.md
+  sgi/diseno/version-multiidioma:
+  - planteamiento-general-internacionalizacion-del-sgi
+  - modelos-logicos
+  sgi/diseno/version-multiidioma/modelos-logicos:
+  - sgi-eti
+  - sgi-csp
+  - sgi-rel
+  - sgi-pii
+  - sgi-eer
+  sgi/diseno/version-multiidioma/modelos-logicos/sgi-csp:
+  - csp-modelo-de-ejecucion
+  - csp-convocatoria
+  - csp-solicitud
+  - csp-proyecto
+  - csp-grupo-de-investigacion
+  - csp-participacion-en-proyectos-externos
+  - csp-eec-ejecucion-economica
+  sgi/diseno/version-multiidioma/modelos-logicos/sgi-csp/csp-convocatoria:
+  - csp-convocatoria-modelo-logico-multiidioma-diagrama.md
+  - csp-convocatoria-modelo-logico-multiidioma-documentacion.md
+  ? sgi/diseno/version-multiidioma/modelos-logicos/sgi-csp/csp-eec-ejecucion-economica
+  : - csp-eec-modelo-logico-multiidioma-diagrama.md
+    - csp-eec-modelo-logico-multiidioma-documentacion.md
+    - csp-eec-seguimiento-justificacion-modelo-logico-multiidioma-diagrama.md
+    - csp-eec-seguimiento-justificacion-modelo-logico-multiidioma-documentacion.md
+  ? sgi/diseno/version-multiidioma/modelos-logicos/sgi-csp/csp-grupo-de-investigacion
+  : - csp-grupo-modelo-logico-multiidioma-diagrama.md
+    - csp-grupo-modelo-logico-multiidioma-documentacion.md
+  ? sgi/diseno/version-multiidioma/modelos-logicos/sgi-csp/csp-modelo-de-ejecucion
+  : - csp-modelo-de-ejecucion-modelo-logico-multiidioma-diagrama.md
+    - csp-modelo-de-ejecucion-modelo-logico-multiidioma-documentacion.md
+  ? sgi/diseno/version-multiidioma/modelos-logicos/sgi-csp/csp-participacion-en-proyectos-externos
+  : - csp-ppex-modelo-logico-multiidioma-diagrama.md
+    - csp-ppex-modelo-logico-multiidioma-documentacion.md
+  sgi/diseno/version-multiidioma/modelos-logicos/sgi-csp/csp-proyecto:
+  - csp-proyecto-modelo-logico-multiidioma-diagrama.md
+  - csp-proyecto-modelo-logico-multiidioma-documentacion.md
+  sgi/diseno/version-multiidioma/modelos-logicos/sgi-csp/csp-solicitud:
+  - csp-solicitud-modelo-logico-multiidioma-diagrama.md
+  - csp-solicitud-modelo-logico-multiidioma-documentacion.md
+  sgi/diseno/version-multiidioma/modelos-logicos/sgi-eer:
+  - eer-modelo-logico-diagrama-multiidioma.md
+  - eer-modelo-logico-documentacion-multiidioma.md
+  sgi/diseno/version-multiidioma/modelos-logicos/sgi-eti:
+  - eti-modelo-logico-diagrama-multiidioma.md
+  - eti-modelo-logico-documentacion-multiidioma.md
+  sgi/diseno/version-multiidioma/modelos-logicos/sgi-pii:
+  - pii-modelo-logico-diagrama-multiidioma.md
+  - pii-modelo-logico-documentacion-multiidioma.md
+  sgi/diseno/version-multiidioma/modelos-logicos/sgi-rel:
+  - rel-modelo-logico-multiidioma.md
+  ? sgi/diseno/version-multiidioma/planteamiento-general-internacionalizacion-del-sgi
+  : - multiidioma-a-nivel-de-contenido-identificacion-de-campos.md
+    - multiidioma-a-nivel-de-contenido-ejemplo-entidad.md
+  sgi/formacion:
+  - etica-05092022.md
+  - invenciones-06092022.md
+  - empresas-07092022.md
+  - etica-07092022.md
+  - prc-19092022.md
+  sgi/guia-de-implantacion-checklist:
+  - um-universidad-de-murcia
+  - universidad-de-lerida.md
+  - particularidades-de-distintas-bases-de-datos.md
+  - universidad-de-cordoba.md
+  - universidad-catolica-de-valencia.md
+  sgi/guia-de-implantacion-checklist/um-universidad-de-murcia:
+  - caracteristicas-solicitadas-entornos-um.md
+  - diagrama-despliegue-umu.md
+  - etica-enlaces-de-los-formularios.md
+  - adaptacion-a-identidad-corporativa.md
+  - identidad-visual-de-um.md
+  - instalacion-con-borrado-de-datos.md
+  - sistema-de-gestion-de-investigacion-apis-integracion
+  - um-formularios-especificos
+  - um-valores-de-configuracion.md
+  - um-crear-unidad-de-gestion.md
+  - etica-desactivacion-formularios-m20-y-m30.md
+  - anadir-acceso-a-salasumes-a-una-nueva-unidad-de-gestion.md
+  ? sgi/guia-de-implantacion-checklist/um-universidad-de-murcia/sistema-de-gestion-de-investigacion-apis-integracion
+  : - sistema-de-gestion-de-personas-rrhh-um-sgi-esb-sgp
+    - sistema-de-gestion-de-empresas-um-sgi-esb-sgemp.md
+    - sistema-gestion-de-organizaciones-um-sgi-esb-sgo.md
+    - sistema-de-gestion-economico-um-sgi-esb-sge
+    - sistema-de-gestion-de-patentes-um-sgi-esb-sgepii.md
+    - blockchain.md
+  ? sgi/guia-de-implantacion-checklist/um-universidad-de-murcia/sistema-de-gestion-de-investigacion-apis-integracion/sistema-de-gestion-de-personas-rrhh-um-sgi-esb-sgp
+  : - um-sgi-esb-sgp-adaptaciones-integracion.md
+  ? sgi/guia-de-implantacion-checklist/um-universidad-de-murcia/sistema-de-gestion-de-investigacion-apis-integracion/sistema-de-gestion-economico-um-sgi-esb-sge
+  : - um-sgi-esb-sge-proyecto-sge-y-presupuesto.md
+    - um-sgi-esb-sge-ejecucion-economica.md
+    - um-sgi-esb-sge-calendario-facturacion.md
+    - um-sgi-esb-sge-amortizacion-fondos.md
+    - um-sgi-esb-sge-seguimiento-justificacion.md
+  ? sgi/guia-de-implantacion-checklist/um-universidad-de-murcia/um-formularios-especificos
+  : - um-formularios-de-gestion-de-personas-sgper
+    - um-formularios-de-gestion-de-empresas-sgemp
+    - um-formularios-de-gestion-economica-sge
+  ? sgi/guia-de-implantacion-checklist/um-universidad-de-murcia/um-formularios-especificos/um-formularios-de-gestion-de-empresas-sgemp
+  : - iu-gen-0081-um-formulario-solicitar-alta-de-empresa.md
+    - iu-gen-0082-um-formulario-ver-detalle-solicitar-modificacion-de-empresa.md
+  ? sgi/guia-de-implantacion-checklist/um-universidad-de-murcia/um-formularios-especificos/um-formularios-de-gestion-de-personas-sgper
+  : - iu-gen-0061-um-formulario-solicitar-alta-de-persona.md
+    - iu-gen-0062-um-formulario-ver-detalle-solicitar-modificacion-de-persona.md
+  ? sgi/guia-de-implantacion-checklist/um-universidad-de-murcia/um-formularios-especificos/um-formularios-de-gestion-economica-sge
+  : - iu-csp-0406-021-002-solicitar-alta-de-proyecto-economico-desde-proyecto-sgi.md
+    - iu-csp-0406-021-003-solicitar-alta-de-proyecto-economico-desde-grupo-de-investigacion-sgi.md
+    - iu-csp-0406-021-004-solicitar-relacion-proyecto-economico-desde-proyecto-sgi.md
+  sgi/integraciones:
+  - integracion-ed-ma.md
+  - integracion-rpa.md
+  - integracion-sgi-dialnet.md
+  - integracion-um.md
+  sgi/mdu-manual-de-usuario:
+  - mdu-perfil-de-investigacion
+  - mdu-perfil-unidad-de-gestion
+  - mdu-perfil-de-administracion-del-sistema.md
+  sgi/mdu-manual-de-usuario/mdu-perfil-de-investigacion:
+  - mdu-perfil-de-investigacion-modulo-eti.md
+  - mdu-perfil-de-investigacion-modulo-csp.md
+  - mdu-perfil-de-investigacion-modulo-prc.md
+  sgi/mdu-manual-de-usuario/mdu-perfil-unidad-de-gestion:
+  - mdu-perfil-unidad-de-gestion-modulo-csp
+  - mdu-perfil-unidad-de-gestion-modulo-eti
+  - mdu-perfil-unidad-de-gestion-modulo-pii
+  - mdu-perfil-unidad-de-gestion-modulo-prc
+  - mdu-perfil-unidad-de-gestion-modulo-eer
+  ? sgi/mdu-manual-de-usuario/mdu-perfil-unidad-de-gestion/mdu-perfil-unidad-de-gestion-modulo-csp
+  : - csp-configuracion.md
+    - csp-convocatorias.md
+    - csp-solicitudes.md
+    - csp-proyectos
+    - csp-grupos-de-investigacion.md
+    - csp-ejecucion-economica.md
+    - csp-participacion-proyectos-externos.md
+    - csp-notificacion-de-presupuestos-al-sge.md
+    - csp-listados.md
+  ? sgi/mdu-manual-de-usuario/mdu-perfil-unidad-de-gestion/mdu-perfil-unidad-de-gestion-modulo-csp/csp-proyectos
+  : - csp-proyectos-configuracion-economica.md
+    - csp-proyectos-comunicados.md
+  ? sgi/mdu-manual-de-usuario/mdu-perfil-unidad-de-gestion/mdu-perfil-unidad-de-gestion-modulo-eer
+  : - eer-empresas.md
+  ? sgi/mdu-manual-de-usuario/mdu-perfil-unidad-de-gestion/mdu-perfil-unidad-de-gestion-modulo-eti
+  : - eti-solicitudes-de-evaluacion-y-memorias.md
+    - eti-gestion-de-convocatorias-de-reunion-y-actas.md
+    - eti-dictamen-evaluaciones-y-seguimientos.md
+    - eti-gestion-de-evaluadores.md
+    - eti-evaluaciones-y-seguimientos-evaluador-ficha-equipo-evaluador-perfil-tecnicoa-etica.md
+    - eti-actas-evaluador.md
+    - eti-configuracion.md
+  ? sgi/mdu-manual-de-usuario/mdu-perfil-unidad-de-gestion/mdu-perfil-unidad-de-gestion-modulo-pii
+  : - pii-configuracion.md
+    - pii-invenciones.md
+  ? sgi/mdu-manual-de-usuario/mdu-perfil-unidad-de-gestion/mdu-perfil-unidad-de-gestion-modulo-prc
+  : - prc-validacion-produccion-cientifica.md
+    - prc-informes.md
+    - prc-convocatorias.md
+  sgi/pruebas:
+  - pruebas-de-usuario.md
+  sgi/requisitos-y-analisis-funcional:
+  - estudio-de-requisitos
+  - analisis-funcional-sgi-hercules
+  sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules:
+  - gen-aspectos-generales
+  - pre-analisis-predictivo.md
+  - csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion
+  - prc-modulo-de-produccion-cientifica
+  - pii-modulo-de-propiedad-industrial-e-intelectual
+  - eti-modulo-de-etica
+  - eer-modulo-de-empresas-de-explotacion-de-resultados-ebts-eicnts-spin-offs
+  - aes-areas-de-especializacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion
+  : - csp-actores.md
+    - csp-modelo-de-ejecucion.md
+    - csp-convocatorias.md
+    - csp-solicitudes
+    - csp-proyectos-contratos-becas-y-ayudas.md
+    - csp-participacion-proyectos-externos
+    - csp-grupos-de-investigacion
+    - csp-notificacion-presupuesto-sge.md
+    - csp-ejecucion-economica
+    - csp-timesheet
+    - csp-casos-de-uso
+    - csp-interfaz-de-usuario
+    - csp-comunicados
+    - csp-glosario-de-terminos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso
+  : - cu-csp-0005-gestion-de-tipos-de-fase
+    - cu-csp-0007-gestion-de-tipos-de-enlace
+    - cu-csp-0008-gestion-de-tipos-de-finalidad
+    - cu-csp-0011-gestion-de-tipos-de-hito
+    - cu-csp-0020-gestion-de-modelos-de-ejecucion
+    - cu-csp-0050-gestion-de-planes-de-investigacion
+    - cu-csp-0060-gestion-de-areas-tematicas
+    - cu-csp-0070-gestion-de-fuentes-de-financiacion
+    - cu-csp-0080-gestion-de-tipos-de-financiacion
+    - cu-csp-0090-gestion-de-conceptos-de-gasto
+    - cu-csp-1000-gestion-de-convocatorias
+    - cu-csp-1100-gestion-de-solicitudes
+    - cu-csp-1200-gestion-de-proyectos
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-0005-gestion-de-tipos-de-fase
+  : - cu-csp-0005-001-buscar-y-listar-tipos-de-fase.md
+    - cu-csp-0005-002-crear-tipo-de-fase.md
+    - cu-csp-0005-003-modificar-tipo-de-fase.md
+    - cu-csp-0005-004-eliminar-tipo-de-fase.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-0007-gestion-de-tipos-de-enlace
+  : - cu-csp-0007-001-buscar-y-listar-tipos-de-enlaces.md
+    - cu-csp-0007-002-crear-tipo-de-enlace.md
+    - cu-csp-0007-003-modificar-tipo-de-enlace.md
+    - cu-csp-0007-004-eliminar-tipo-de-enlace.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-0008-gestion-de-tipos-de-finalidad
+  : - cu-csp-0008-001-buscar-y-listar-de-tipos-de-finalidad.md
+    - cu-csp-0008-002-crear-tipo-de-finalidad.md
+    - cu-csp-0008-003-modificar-tipo-de-finalidad.md
+    - cu-csp-0008-004-eliminar-tipo-de-finalidad.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-0011-gestion-de-tipos-de-hito
+  : - cu-csp-0011-001-buscar-y-listar-de-tipos-de-hito.md
+    - cu-csp-0011-002-crear-tipo-de-hito.md
+    - cu-csp-0011-003-modificar-tipo-de-hito.md
+    - cu-csp-0011-004-eliminar-tipo-de-hito.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-0020-gestion-de-modelos-de-ejecucion
+  : - cu-csp-0020-001-buscar-y-listar-modelos-de-ejecucion.md
+    - cu-csp-0020-002-crear-modelo-de-ejecucion
+    - cu-csp-0020-003-modificar-modelo-de-ejecucion.md
+    - cu-csp-0020-004-eliminar-modelo-de-ejecucion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-0020-gestion-de-modelos-de-ejecucion/cu-csp-0020-002-crear-modelo-de-ejecucion
+  : - cu-usr-0020-002-crear-unidad-de-gestion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-0050-gestion-de-planes-de-investigacion
+  : - cu-csp-0050-001-buscar-y-listar-planes-de-investigacion.md
+    - cu-csp-0050-002-crear-plan-de-investigacion.md
+    - cu-csp-0050-003-anadir-programa-al-plan-de-investigacion.md
+    - cu-csp-0050-004-modificar-plan-de-investigacion.md
+    - cu-csp-0050-005-modificar-programa-al-plan-de-investigacion.md
+    - cu-csp-0050-006-eliminar-plan-de-investigacion.md
+    - cu-csp-0050-007-eliminar-programa-de-investigacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-0060-gestion-de-areas-tematicas
+  : - cu-csp-0060-001-buscar-y-listar-listados-de-areas-tematicas.md
+    - cu-csp-0060-002-crear-listado-de-areas-tematicas.md
+    - cu-csp-0060-003-anadir-area-tematica-a-un-listado-de-areas.md
+    - cu-csp-0060-004-modificar-listado-de-areas-tematicas.md
+    - cu-csp-0060-005-modificar-area-tematica.md
+    - cu-csp-0060-006-eliminar-listado-de-areas-tematica.md
+    - cu-csp-0060-007-eliminar-area-tematica.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-0070-gestion-de-fuentes-de-financiacion
+  : - cu-csp-0070-001-buscar-y-listar-fuentes-de-financiacion.md
+    - cu-csp-0070-002-crear-fuente-de-financiacion.md
+    - cu-csp-0070-003-modificar-fuente-de-financiacion.md
+    - cu-csp-0070-004-eliminar-fuente-de-financiacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-0080-gestion-de-tipos-de-financiacion
+  : - cu-csp-0080-001-buscar-y-listar-tipos-de-financiacion.md
+    - cu-csp-0080-002-crear-tipo-de-financiacion.md
+    - cu-csp-0080-003-modificar-tipo-de-financiacion.md
+    - cu-csp-0080-004-eliminar-tipo-de-financiacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-0090-gestion-de-conceptos-de-gasto
+  : - cu-csp-0090-001-buscar-y-listar-conceptos-de-gasto.md
+    - cu-csp-0090-002-crear-concepto-de-gasto.md
+    - cu-csp-0090-003-modificar-concepto-de-gasto.md
+    - cu-csp-0090-004-eliminar-concepto-de-gasto.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-1000-gestion-de-convocatorias
+  : - cu-csp-1000-001-modificar-convocatoria.md
+    - cu-csp-1000-002-modificar-convocatoria-registrar.md
+    - cu-csp-1000-003-ver-convocatoria.md
+    - cu-csp-1000-004-clonar-convocatoria.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-1100-gestion-de-solicitudes
+  : - cu-csp-1100-001-modificar-solicitud-guardar.md
+    - cu-csp-1100-002-modificar-solicitud-cambio-de-estado.md
+    - cu-csp-1100-003-comprobacion-requisitos-ip.md
+    - cu-csp-1100-004-comprobacion-requisitos-equipo.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-casos-de-uso/cu-csp-1200-gestion-de-proyectos
+  : - cu-csp-1200-001-crear-proyecto-unidad-de-gestion.md
+    - cu-csp-1200-002-modificar-proyecto-unidad-de-gestion.md
+    - cu-csp-1200-003-ver-proyecto-investigador-rol-principalresponsable-economico.md
+    - cu-csp-1200-004-ver-proyecto-visor-e-investigador.md
+    - cu-csp-1200-005-crear-proyecto-desde-solicitud-concedida.md
+    - cu-csp-1200-006-modificar-proyecto-cambiar-estado.md
+    - cu-csp-1200-007-ver-ejecucion-economica-investigador-rol-principal.md
+    - cu-csp-1200-008-ver-ejecucion-economica-investigador-rol-responsable-economico.md
+    - cu-csp-1200-009-calcular-rango-de-fechas-asociado-a-periodo.md
+    - cu-csp-1200-010-comprobacion-requisitos-ip.md
+    - cu-csp-1200-011-comprobacion-requisitos-equipo.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-comunicados
+  : - csp-comunicados-comunicados-personalizables-por-el-usuario-con-iu.md
+    - csp-comunicados-comunicados-no-personalizables-por-el-usuario-automaticos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-ejecucion-economica
+  : - csp-ejecucion-economica-seguimiento-justificacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-grupos-de-investigacion
+  : - csp-gin-navegacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario
+  : - iu-csp-0010-gestion-de-tipos-de-enlace
+    - iu-csp-0020-gestion-de-tipos-de-finalidad
+    - iu-csp-0030-gestion-de-tipos-de-fases
+    - iu-csp-0040-gestion-de-tipos-de-documento
+    - iu-csp-0044-gestion-de-tipos-de-hito
+    - iu-csp-0050-gestion-de-modelos-de-ejecucion
+    - iu-csp-0060-gestion-de-plan-de-investigacion
+    - iu-csp-0070-gestion-de-fuentes-de-financiacion
+    - iu-csp-0080-gestion-de-tipos-de-financiacion
+    - iu-csp-0090-gestion-de-conceptos-de-gasto
+    - iu-csp-0095-gestion-de-areas-tematicas
+    - iu-csp-0200-gestion-de-convocatorias
+    - iu-csp-0300-gestion-de-solicitudes
+    - iu-csp-0400-gestion-de-proyectos
+    - iu-csp-0450-participacion-proyectos-externos
+    - iu-csp-0500-ejecucion-economica
+    - iu-csp-0600-timesheet
+    - iu-csp-0900-notificacion-presupuestos-sge
+    - iu-csp-0950-grupos-de-investigacion
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0010-gestion-de-tipos-de-enlace
+  : - iu-csp-0010-001-crear-tipo-de-enlace.md
+    - iu-csp-0010-002-buscar-y-listar-tipos-de-enlace.md
+    - iu-csp-0010-003-modificar-tipo-de-enlace.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0020-gestion-de-tipos-de-finalidad
+  : - iu-csp-0020-001-crear-tipo-de-finalidad.md
+    - iu-csp-0020-002-buscar-y-listar-tipo-de-finalidad.md
+    - iu-csp-0020-003-modificar-tipo-de-finalidad.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0030-gestion-de-tipos-de-fases
+  : - iu-csp-0030-001-crear-tipo-de-fase.md
+    - iu-csp-0030-002-buscar-y-listar-tipos-de-fase.md
+    - iu-csp-0030-003-modificar-tipo-de-fase.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0040-gestion-de-tipos-de-documento
+  : - iu-csp-0040-001-crear-tipo-de-documento.md
+    - iu-csp-0040-002-buscar-y-listar-tipos-de-documento.md
+    - iu-csp-0040-003-modificar-tipo-de-documento.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0044-gestion-de-tipos-de-hito
+  : - iu-csp-0044-001-crear-tipo-de-hito.md
+    - iu-csp-0044-002-buscar-y-listar-tipo-de-hito.md
+    - iu-csp-0044-003-modificar-tipo-de-hito.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0050-gestion-de-modelos-de-ejecucion
+  : - iu-csp-0050-001-crear-modelo-de-ejecucion.md
+    - iu-csp-0050-002-buscar-y-listar-modelos-de-ejecucion.md
+    - iu-csp-0050-003-modificar-modelo-de-ejecucion.md
+    - iu-csp-0050-004-anadir-tipo-de-fase-al-modelo-de-ejecucion.md
+    - iu-csp-0050-005-anadir-tipo-de-documento-al-modelo-de-ejecucion.md
+    - iu-csp-0050-006-anadir-tipo-de-enlace-al-modelo-de-ejecucion.md
+    - iu-csp-0050-007-anadir-tipo-de-finalidad-al-modelo-de-ejecucion.md
+    - iu-csp-0050-008-anadir-tipo-de-hito-al-modelo-de-ejecucion.md
+    - iu-csp-0050-011-anadir-unidad-de-gestion-al-modelo-de-ejecucion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0060-gestion-de-plan-de-investigacion
+  : - iu-csp-0060-001-crear-plan-de-investigacion.md
+    - iu-csp-0060-002-buscar-y-listar-planes-de-investigacion.md
+    - iu-csp-0060-003-anadir-programa-al-plan-de-investigacion.md
+    - iu-csp-0060-004-modificar-plan-de-investigacion.md
+    - iu-csp-0060-005-modificar-programa-de-investigacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0070-gestion-de-fuentes-de-financiacion
+  : - iu-csp-0070-001-crear-fuente-de-financiacion.md
+    - iu-csp-0070-002-buscar-y-listar-fuentes-de-financiacion.md
+    - iu-csp-0070-003-modificar-fuente-de-financiacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0080-gestion-de-tipos-de-financiacion
+  : - iu-csp-0080-001-crear-tipo-de-financiacion.md
+    - iu-csp-0080-002-buscar-y-listar-tipos-de-financiacion.md
+    - iu-csp-0080-003-modificar-tipo-de-financiacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0090-gestion-de-conceptos-de-gasto
+  : - iu-csp-0090-001-crear-concepto-de-gasto.md
+    - iu-csp-0090-002-buscar-y-listar-conceptos-de-gasto.md
+    - iu-csp-0090-003-modificar-concepto-de-gasto.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0095-gestion-de-areas-tematicas
+  : - iu-csp-0095-001-crear-listado-de-areas-tematicas-datos-generales.md
+    - iu-csp-0095-002-crear-listado-de-areas-tematicas-arbol-de-areas.md
+    - iu-csp-0095-003-buscar-y-listar-listados-de-areas-tematicas.md
+    - iu-csp-0095-004-anadir-area-al-listado-de-areas-tematicas.md
+    - iu-csp-0095-005-modificar-listado-de-areas-tematicas-datos-generales.md
+    - iu-csp-0095-006-modificar-listado-de-areas-tematicas-arbol-de-areas.md
+    - iu-csp-0095-007-modificar-area-tematica.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0200-gestion-de-convocatorias
+  : - iu-csp-0201-crear-convocatoria
+    - iu-csp-202-001-anadir-area-tematica.md
+    - iu-csp-202-003-anadir-entidad-convocante.md
+    - iu-csp-202-004-anadir-entidad-financiadora.md
+    - iu-csp-202-005-anadir-enlace.md
+    - iu-csp-202-006-anadir-fase-a-convocatoria.md
+    - iu-csp-202-007-anadir-periodo-de-justificacion.md
+    - iu-csp-202-008-anadir-periodo-de-seguimiento-cientifico.md
+    - iu-csp-202-009-anadir-hito-a-convocatoria.md
+    - iu-csp-202-010-anadir-documento.md
+    - iu-csp-202-011-anadir-concepto-de-gasto-permitido.md
+    - iu-csp-202-012-anadir-concepto-de-gasto-no-permitido.md
+    - iu-csp-202-013-anadir-correspondencia-de-concepto-de-gasto-permitido-y-codigo-economico-del-sge.md
+    - iu-csp-202-015-anadir-correspondencia-de-concepto-de-gasto-no-permitido-y-codigo-economico-del-sge.md
+    - iu-csp-202-016-anadir-modificar-partida-presupuestaria.md
+    - iu-csp-202-017-anadir-nivel-academico-permitido-a-requisitos-ip.md
+    - iu-csp-202-018-anadir-categoria-profesional-permitida-a-requisitos-ip.md
+    - iu-csp-202-019-anadir-nivel-academico-permitido-a-requisitos-equipo.md
+    - iu-csp-202-020-anadir-categoria-profesional-permitida-a-requisitos-equipo.md
+    - iu-csp-0202-014-anadir-documento-requerido.md
+    - iu-csp-0203-busqueda-y-listado-de-convocatorias
+    - iu-csp-0204-modificar-convocatoria
+    - iu-csp-0205-ver-convocatoria
+    - iu-csp-0206-001-ver-entidad-convocante.md
+    - iu-csp-0206-002-ver-entidad-financiadora.md
+    - iu-csp-0206-003-ver-enlace.md
+    - iu-csp-0206-004-ver-fase.md
+    - iu-csp-0206-005-ver-periodo-de-justificacion.md
+    - iu-csp-0206-006-ver-seguimiento-cientifico.md
+    - iu-csp-0206-007-ver-hito.md
+    - iu-csp-0206-008-ver-documento.md
+    - iu-csp-0206-009-ver-concepto-de-gasto-permitido.md
+    - iu-csp-0206-010-ver-concepto-de-gasto-no-permitido.md
+    - iu-csp-0206-011-ver-codigo-economico.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0200-gestion-de-convocatorias/iu-csp-0201-crear-convocatoria
+  : - iu-csp-0201-001-crear-convocatoria-datos-generales.md
+    - iu-csp-0201-002-crear-convocatoria-entidades-convocantes.md
+    - iu-csp-0201-003-crear-convocatoria-entidades-financiadoras.md
+    - iu-csp-0201-004-crear-convocatoria-enlaces.md
+    - iu-csp-0201-005-crear-convocatoria-fases.md
+    - iu-csp-0201-006-crear-convocatoria-periodos-justificacion.md
+    - iu-csp-0201-007-crear-convocatoria-seguimiento-cientifico.md
+    - iu-csp-0201-008-crear-convocatoria-hitos.md
+    - iu-csp-0201-009-crear-convocatoria-documentos.md
+    - iu-csp-0201-010-crear-convocatoria-requisitos-ip.md
+    - iu-csp-0201-011-crear-convocatoria-requisitos-equipo.md
+    - iu-csp-0201-012-crear-convocatoria-elegibilidad.md
+    - iu-csp-0201-013-crear-convocatoria-partidas-presupuestarias.md
+    - iu-csp-0201-014-crear-convocatoria-configuracion-de-solicitudes.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0200-gestion-de-convocatorias/iu-csp-0203-busqueda-y-listado-de-convocatorias
+  : - iu-csp-0203-001-busqueda-y-listado-de-convocatorias-unidades-de-gestion.md
+    - iu-csp-0203-002-busqueda-directa-y-listado-de-convocatorias-investigador.md
+    - iu-csp-0203-003-busqueda-ampliada-y-listado-de-convocatorias-investigador.md
+    - iu-csp-0203-004-exportacion-listado-de-convocatorias-unidades-de-gestion.md
+    - iu-csp-0203-005-listado-de-convocatorias-usuario-externo.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0200-gestion-de-convocatorias/iu-csp-0204-modificar-convocatoria
+  : - iu-csp-0204-001-modificar-convocatoria-datos-generales.md
+    - iu-csp-0204-002-modificar-convocatoria-entidades-convocantes.md
+    - iu-csp-0204-003-modificar-convocatoria-entidades-financiadoras.md
+    - iu-csp-0204-004-modificar-convocatoria-enlaces.md
+    - iu-csp-0204-005-modificar-convocatoria-fases.md
+    - iu-csp-0204-006-modificar-convocatoria-periodos-de-justificacion.md
+    - iu-csp-0204-007-modificar-convocatoria-seguimiento-cientifico.md
+    - iu-csp-0204-008-modificar-convocatoria-hitos.md
+    - iu-csp-0204-009-modificar-convocatoria-documentos.md
+    - iu-csp-0204-010-modificar-convocatoria-requisitos-ip.md
+    - iu-csp-0204-011-modificar-convocatoria-requisitos-equipo.md
+    - iu-csp-0204-012-modificar-convocatoria-elegibilidad.md
+    - iu-csp-0204-013-modificar-convocatoria-partidas-presupuestarias.md
+    - iu-csp-0204-014-modificar-convocatoria-configuracion-de-solicitudes.md
+    - iu-csp-0204-016-modificar-convocatoria-datos-generales-acceso-solicitudes.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0200-gestion-de-convocatorias/iu-csp-0205-ver-convocatoria
+  : - iu-csp-0205-001-ver-convocatoria-datos-generales.md
+    - iu-csp-0205-002-ver-convocatoria-entidades-convocantes.md
+    - iu-csp-0205-003-ver-convocatoria-entidades-financiadoras.md
+    - iu-csp-0205-004-ver-convocatoria-enlaces.md
+    - iu-csp-0205-005-ver-convocatoria-fases.md
+    - iu-csp-0205-006-ver-convocatoria-periodos-justificacion.md
+    - iu-csp-0205-007-ver-convocatoria-seguimiento-cientifico.md
+    - iu-csp-0205-008-ver-convocatoria-hitos.md
+    - iu-csp-0205-009-ver-convocatoria-documentos.md
+    - iu-csp-0205-010-ver-convocatoria-requisitos-ip.md
+    - iu-csp-0205-011-ver-convocatoria-requisitos-equipo.md
+    - iu-csp-0205-012-ver-convocatoria-elegibilidad.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0300-gestion-de-solicitudes
+  : - iu-csp-0301-crear-solicitud
+    - iu-csp-0302-001-anadir-modificar-modalidad.md
+    - iu-csp-0302-015-anadir-documento.md
+    - iu-csp-0302-016-modificar-documento.md
+    - iu-csp-0302-017-anadir-modificar-hito-a-solicitud.md
+    - iu-csp-0303-busqueda-y-listado-de-solicitudes
+    - iu-csp-0304-modificar-solicitud
+    - iu-csp-0305-modificar-solicitud-tipo-proyecto
+    - iu-csp-0306-modificar-solicitud-tipo-rrhh
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0300-gestion-de-solicitudes/iu-csp-0301-crear-solicitud
+  : - iu-csp-0301-001-crear-solicitud-datos-generales-investigador.md
+    - iu-csp-0301-002-crear-solicitud-datos-generales-unidades-de-gestion.md
+    - iu-csp-0301-003-crear-solicitud-usuario-externo-rrhh.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0300-gestion-de-solicitudes/iu-csp-0303-busqueda-y-listado-de-solicitudes
+  : - iu-csp-0303-001-busqueda-y-listado-de-solicitudes-investigador.md
+    - iu-csp-0303-002-busqueda-simple-y-listado-de-solicitudes-unidades-de-gestion.md
+    - iu-csp-0303-003-busqueda-ampliada-y-listado-de-solicitudes-unidades-de-gestion.md
+    - iu-csp-0303-004-busqueda-y-listado-de-solicitudes-ug-crear-proyecto.md
+    - iu-csp-0303-005-exportacion-listado-de-solicitudes-unidades-de-gestion.md
+    - iu-csp-0303-006-busqueda-y-listado-de-solicitudes-ug-crear-grupo.md
+    - iu-csp-0303-007-buscar-solicitud-perfil-investigador-externo.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0300-gestion-de-solicitudes/iu-csp-0304-modificar-solicitud
+  : - iu-csp-0304-001-modificar-solicitud-datos-generales-investigador.md
+    - iu-csp-0304-002-modificar-solicitud-datos-generales-unidad-de-gestion.md
+    - iu-csp-0304-010-modificar-solicitud-datos-generales-usuario-externo-rrhh.md
+    - iu-csp-0304-004-modificar-solicitud-ver-historico-de-estados.md
+    - iu-csp-0304-005-modificar-solicitud-modificar-hitos-unidad-de-gestion.md
+    - iu-csp-0304-006-modificar-solicitud-cambiar-estado-unidad-de-gestion.md
+    - iu-csp-0304-007-modificar-solicitud-cambiar-estado-investigador.md
+    - iu-csp-0304-008-cambiar-estado.md
+    - iu-csp-0304-009-modificar-solicitud-documentos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0300-gestion-de-solicitudes/iu-csp-0305-modificar-solicitud-tipo-proyecto
+  : - iu-csp-0305-001-modificar-solicitud-ficha-general-unidad-gestion.md
+    - iu-csp-0305-100-modificar-solicitud-ficha-general-investigador.md
+    - iu-csp-0305-008-modificar-solicitud-areas-conocimiento.md
+    - iu-csp-0305-009-modificar-solicitud-clasificaciones.md
+    - iu-csp-0305-002-modificar-solicitud-equipo-unidad-gestion.md
+    - iu-csp-0305-020-modificar-solicitud-equipo-perfil-investigador.md
+    - iu-csp-0305-010-modificar-solicitud-responsable-economico.md
+    - iu-csp-0305-003-modificar-solicitud-socios
+    - iu-csp-0305-004-modificar-solicitud-entidades-financiadoras.md
+    - iu-csp-0305-005-modificar-solicitud-desglose-presupuesto-global.md
+    - iu-csp-0305-006-modificar-solicitud-desglose-presupuesto-por-entidades
+    - iu-csp-0305-007-modificar-solicitud-autoevaluacion-etica.md
+    - iu-csp-0302-002-seleccionar-area-tematica-solicitud.md
+    - iu-csp-0302-003-anadir-modificar-area-tematica-solicitud.md
+    - iu-csp-0302-004-anadir-modificar-miembro-de-equipo.md
+    - iu-csp-0302-006-anadir-modificar-miembro-a-equipo-del-socio.md
+    - iu-csp-0302-007-anadir-modificar-periodo-pago-a-socio.md
+    - iu-csp-0302-008-anadir-modificar-periodo-justificacion-a-socio.md
+    - iu-csp-0302-009-anadir-modificar-entidad-financiadora-ajena-a-la-convocatoria.md
+    - iu-csp-0302-010-anadir-modificar-partida-de-gasto-a-presupuesto-global.md
+    - iu-csp-0302-011-anadir-modificar-partida-de-gasto-a-entidad-financiadora-de-la-convocatoria.md
+    - iu-csp-0302-012-anadir-modificar-partida-de-gasto-a-entidad-financiadora-ajena-a-la-convocatoria.md
+    - iu-csp-0302-013-presupuesto-completo-de-la-solicitud-global.md
+    - iu-csp-0302-014-presupuesto-completo-de-la-solicitud-por-entidades.md
+    - iu-csp-0302-015-anadir-modificar-responsable-economico.md
+    - iu-csp-0302-020-exportacion-presupuesto.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0300-gestion-de-solicitudes/iu-csp-0305-modificar-solicitud-tipo-proyecto/iu-csp-0305-003-modificar-solicitud-socios
+  : - iu-csp-0305-003-001-modificar-solicitud-anadir-modificar-socio-datos-generales.md
+    - iu-csp-0305-003-002-modificar-solicitud-socio-equipo-socio.md
+    - iu-csp-0305-003-003-modificar-solicitud-socio-periodos-de-pago.md
+    - iu-csp-0305-003-004-modificar-solicitud-socio-periodos-de-justificacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0300-gestion-de-solicitudes/iu-csp-0305-modificar-solicitud-tipo-proyecto/iu-csp-0305-006-modificar-solicitud-desglose-presupuesto-por-entidades
+  : - iu-csp-0305-006-001-crear-solicitud-desglose-presupuesto-entidad-financiadora-datos-generales.md
+    - iu-csp-0305-006-002-crear-solicitud-desglose-presupuesto-entidad-financiadora-partidas-de-gasto.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0300-gestion-de-solicitudes/iu-csp-0306-modificar-solicitud-tipo-rrhh
+  : - iu-csp-0306-001-modificar-solicitud-solicitante-investigador.md
+    - iu-csp-0306-002-modificar-solicitud-solicitante-unidad-gestion.md
+    - iu-csp-0306-003-modificar-solicitud-tutora-unidad-de-gestion.md
+    - iu-csp-0306-009-modificar-solicitud-tutora-perfil-investigador-o-usuario-externo.md
+    - iu-csp-0306-004-modificar-solicitud-requisitos-convocatoria
+    - iu-csp-0306-007-modificar-solicitud-memoria.md
+    - iu-csp-0306-008-validacion-como-tutor-a.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0300-gestion-de-solicitudes/iu-csp-0306-modificar-solicitud-tipo-rrhh/iu-csp-0306-004-modificar-solicitud-requisitos-convocatoria
+  : - iu-csp-0306-005-anadir-acreditacion-nivel-academico.md
+    - iu-csp-0306-006-anadir-acreditacion-categoria-profesional.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos
+  : - iu-csp-0401-crear-proyecto
+    - iu-csp-0403-busqueda-y-listado-de-proyectos
+    - iu-csp-0406-modificar-proyecto
+    - iu-csp-0402-001-anadir-modificar-relacion.md
+    - iu-csp-0402-002-anadir-entidad-convocante.md
+    - iu-csp-0402-003-anadir-modificar-modalidad-sobre-entidad-convocante.md
+    - iu-csp-0402-004-anadir-modificar-entidad-financiadora-en-proyecto.md
+    - iu-csp-0402-005-anadir-modificar-miembro-a-equipo.md
+    - iu-csp-0402-006-anadir-modificar-miembro-de-equipo-de-socio.md
+    - iu-csp-0402-007-anadir-modificar-periodo-pago-a-socio.md
+    - iu-csp-0402-008-anadir-documento-a-periodo-de-justificacion-de-socio.md
+    - iu-csp-0402-009-anadir-modificar-fase-a-proyecto.md
+    - iu-csp-0402-010-anadir-modificar-hito-a-proyecto.md
+    - iu-csp-0402-011-anadir-documento-a-periodo-de-seguimiento-cientifico.md
+    - iu-csp-0402-012-anadir-documento-a-prorroga.md
+    - iu-csp-0402-013-anadir-documento.md
+    - iu-csp-0402-014-anadir-modificar-paquete-de-trabajo.md
+    - iu-csp-0402-017-anadir-modificar-concepto-de-gasto-permitido.md
+    - iu-csp-0402-018-anadir-modificar-concepto-de-gasto-no-permitido.md
+    - iu-csp-0402-019-anadir-modificar-correspondencia-de-concepto-de-gasto-permitido-y-codigo-economico-del-sge.md
+    - iu-csp-0402-020-anadir-modificar-correspondencia-de-concepto-de-gasto-no-permitido-y-codigo-economico-del-sge.md
+    - iu-csp-0402-021-anadir-partida-de-gasto-a-anualidad.md
+    - iu-csp-0402-022-anadir-partida-de-ingreso-a-anualidad.md
+    - iu-csp-0402-023-anadir-concepto-de-gasto-a-agrupacion-de-gasto.md
+    - iu-csp-0402-024-anadir-modificar-item-de-facturacion.md
+    - iu-csp-0402-025-anadir-periodo-de-justificacion.md
+    - iu-csp-0402-027-seleccionar-area-tematica.md
+    - iu-csp-0402-028-anadir-modificar-area-tematica.md
+    - iu-csp-0402-029-anadir-modificar-partida-presupuestaria.md
+    - iu-csp-0402-030-anadir-modificar-responsable-economico.md
+    - iu-csp-0402-031-calendario-facturacion-historico-ip.md
+    - iu-csp-0402-032-calendario-facturacion-validar-ip.md
+    - iu-csp-0402-033-anadir-modificar-periodo-amortizacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos/iu-csp-0401-crear-proyecto
+  : - iu-csp-0401-001-crear-proyecto-datos-generales-ficha-general.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos/iu-csp-0403-busqueda-y-listado-de-proyectos
+  : - iu-csp-0403-001-busqueda-simple-y-listado-de-proyectos-investigador.md
+    - iu-csp-0403-002-busqueda-ampliada-y-listado-de-proyectos-investigador.md
+    - iu-csp-0403-003-busqueda-y-listado-de-proyectos-unidades-de-gestion.md
+    - iu-csp-0403-004-busqueda-ampliada-y-listado-de-proyectos-unidades-de-gestion.md
+    - iu-csp-0403-005-exportacion-listado-de-proyectos-unidades-de-gestion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos/iu-csp-0406-modificar-proyecto
+  : - iu-csp-0406-001-modificar-proyecto-datos-generales-ficha.md
+    - iu-csp-0406-002-modificar-proyecto-datos-generales-contexto-proyecto.md
+    - iu-csp-0406-031-modificar-proyecto-areas-conocimiento.md
+    - iu-csp-0406-032-modificar-proyecto-clasificaciones.md
+    - iu-csp-0406-003-modificar-proyecto-datos-generales-historico-estados.md
+    - iu-csp-0406-004-modificar-proyecto-datos-generales-relaciones.md
+    - iu-csp-0406-005-modificar-proyecto-entidad-gestora.md
+    - iu-csp-0406-006-modificar-proyecto-entidades-convocantes.md
+    - iu-csp-0406-008-modificar-proyecto-entidades-financiadoras.md
+    - iu-csp-0406-010-modificar-proyecto-equipo.md
+    - iu-csp-0406-040-modificar-proyecto-responsable-economico.md
+    - iu-csp-0406-011-modificar-proyecto-socios
+    - iu-csp-0406-012-modificar-proyecto-fases.md
+    - iu-csp-0406-013-modificar-proyecto-hitos.md
+    - iu-csp-0406-014-modificar-proyecto-seguimiento-cientifico
+    - iu-csp-0406-015-modificar-proyecto-prorrogas
+    - iu-csp-0406-016-modificar-proyecto-documentos.md
+    - iu-csp-0406-017-modificar-proyecto-paquetes-de-trabajo.md
+    - iu-csp-0406-020-modificar-proyecto-configuracion-economica
+    - iu-csp-0406-035-modificar-proyecto-cambio-de-estado
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos/iu-csp-0406-modificar-proyecto/iu-csp-0406-011-modificar-proyecto-socios
+  : - iu-csp-0406-011-001-modificar-proyecto-anadir-modificar-socio-datos-generales.md
+    - iu-csp-0406-011-002-modificar-proyecto-socio-equipo.md
+    - iu-csp-0406-011-003-modificar-proyecto-socio-periodos-de-pago.md
+    - iu-csp-0406-011-004-modificar-proyecto-socio-periodos-de-justificacion
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos/iu-csp-0406-modificar-proyecto/iu-csp-0406-011-modificar-proyecto-socios/iu-csp-0406-011-004-modificar-proyecto-socio-periodos-de-justificacion
+  : - iu-csp-0406-011-004-001-modificar-proyecto-socio-periodo-de-justificacion-datos-generales.md
+    - iu-csp-0406-011-004-002-modificar-proyecto-socio-periodo-de-justificacion-documentos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos/iu-csp-0406-modificar-proyecto/iu-csp-0406-014-modificar-proyecto-seguimiento-cientifico
+  : - iu-csp-0406-014-001-modificar-proyecto-seguimiento-cientifico-datos-generales.md
+    - iu-csp-0406-014-002-modificar-proyecto-seguimiento-cientifico-documentos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos/iu-csp-0406-modificar-proyecto/iu-csp-0406-015-modificar-proyecto-prorrogas
+  : - iu-csp-0406-015-001-modificar-proyecto-prorroga-datos-generales.md
+    - iu-csp-0406-015-002-modificar-proyecto-prorroga-documentos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos/iu-csp-0406-modificar-proyecto/iu-csp-0406-020-modificar-proyecto-configuracion-economica
+  : - iu-csp-0406-021-modificar-proyecto-configuracion-economica-identificacion
+    - iu-csp-0406-022-modificar-proyecto-configuracion-economica-elegibilidad.md
+    - iu-csp-0406-023-modificar-proyecto-configuracion-economica-partidas-presupuestarias.md
+    - iu-csp-0406-025-modificar-proyecto-configuracion-economica-presupuesto
+    - iu-csp-0406-027-modificar-proyecto-configuracion-economica-consulta-presupuesto.md
+    - iu-csp-0406-028-modificar-proyecto-configuracion-economica-calendario-facturacion.md
+    - iu-csp-0406-029-modificar-proyecto-configuracion-economica-calendario-justificacion.md
+    - iu-csp-0406-031-modificar-proyecto-configuracion-economica-amortizacion-fondos.md
+    - iu-csp-0406-032-exportacion-consulta-presupuesto.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos/iu-csp-0406-modificar-proyecto/iu-csp-0406-020-modificar-proyecto-configuracion-economica/iu-csp-0406-021-modificar-proyecto-configuracion-economica-identificacion
+  : - iu-csp-0406-021-001-busqueda-de-proyectos-economicos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos/iu-csp-0406-modificar-proyecto/iu-csp-0406-020-modificar-proyecto-configuracion-economica/iu-csp-0406-025-modificar-proyecto-configuracion-economica-presupuesto
+  : - iu-csp-0406-025-001-modificar-proyecto-configuracion-economica-presupuesto-anualidad-datos-generales.md
+    - iu-csp-0406-025-002-modificar-proyecto-configuracion-economica-presupuesto-anualidad-gastos.md
+    - iu-csp-0406-025-003-modificar-proyecto-configuracion-economica-presupuesto-anualidad-ingresos.md
+    - iu-csp-0406-025-004-modificar-proyecto-configuracion-economica-presupuesto-anualidad-resumen.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0400-gestion-de-proyectos/iu-csp-0406-modificar-proyecto/iu-csp-0406-035-modificar-proyecto-cambio-de-estado
+  : - iu-csp-0406-035-001-modificar-proyecto-cambio-de-estado.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0450-participacion-proyectos-externos
+  : - iu-csp-0451-autorizaciones-de-participacion-proyectos-externos
+    - iu-csp-0452-notificaciones-cvn-de-proyectos-externos
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0450-participacion-proyectos-externos/iu-csp-0451-autorizaciones-de-participacion-proyectos-externos
+  : - iu-csp-0451-001-busqueda-y-listado-de-autorizaciones-participacion-proyecto-externo-perfil-investigador.md
+    - iu-csp-0451-002-busqueda-y-listado-de-autorizaciones-participacion-proyecto-externo-unidad-de-gestion.md
+    - iu-csp-0451-005-crear-autorizacion-participacion-proyecto-externo-perfil-investigador.md
+    - iu-csp-0451-006-modificar-autorizacion-participacion-proyecto-externo-perfil-investigador.md
+    - iu-csp-0451-008-modificar-autorizacion-participacion-proyecto-externo-unidad-gestion.md
+    - iu-csp-0451-009-cambiar-estado-autorizacion-participacion-proyecto-externo-unidad-gestion.md
+    - iu-csp-0451-010-historico-estados-autorizacion-participacion-proyecto-externo.md
+    - iu-csp-0451-015-certificados-autorizacion-participacion-proyecto-externo.md
+    - iu-csp-0451-016-anadir-modificar-certificado-autorizacion-participacion-proyecto-externo.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0450-participacion-proyectos-externos/iu-csp-0452-notificaciones-cvn-de-proyectos-externos
+  : - iu-csp-0452-001-busqueda-y-listado-de-notificaciones-cvn-de-proyecto-externo.md
+    - iu-csp-0452-002-detalle-de-notificacion-cvn-de-proyecto-externo.md
+    - iu-csp-0452-003-asociar-autorizacion-a-notificacion-cvn-de-proyecto-externo.md
+    - iu-csp-0452-004-asociar-proyecto-a-notificacion-cvn-de-proyecto-externo.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica
+  : - iu-csp-0501-001-busqueda-simple-y-listado-de-proyectos-del-sge.md
+    - iu-csp-0501-002-busqueda-ampliada-y-listado-de-proyectos-del-sge.md
+    - iu-csp-0501-005-exportacion-listados-ejecucion-economica.md
+    - iu-csp-0501-006-exportacion-de-requerimientos.md
+    - iu-csp-0510-001-listado-de-proyectos-grupos-sgi.md
+    - iu-csp-0520-ejecucion-presupuestaria
+    - iu-cps-0530-detalle-operaciones
+    - iu-csp-0540-facturas-y-justificantes
+    - iu-csp-0550-validacion-de-gastos
+    - iu-csp-0560-periodos-de-justificacion
+    - iu-csp-0570-001-facturas-emitidas
+    - iu-csp-0580-seguimiento-justificacion
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-cps-0530-detalle-operaciones
+  : - iu-csp-0530-001-detalle-operaciones-gastos.md
+    - iu-csp-0530-002-detalle-operaciones-ingresos.md
+    - iu-csp-0530-003-detalle-operaciones-modificaciones.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-csp-0520-ejecucion-presupuestaria
+  : - iu-csp-0520-001-ejecucion-presupuestaria-estado-actual.md
+    - iu-csp-0520-002-ejecucion-presupuestaria-gastos.md
+    - iu-csp-0520-003-ejecucion-presupuestaria-ingresos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-csp-0540-facturas-y-justificantes
+  : - iu-csp-0540-001-facturas-y-justificantes-facturas-y-gastos
+    - iu-csp-0540-002-facturas-y-justificantes-viajes-y-dietas
+    - iu-csp-0540-003-facturas-y-justificantes-personal-contratado
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-csp-0540-facturas-y-justificantes/iu-csp-0540-001-facturas-y-justificantes-facturas-y-gastos
+  : - iu-csp-0540-001-001-facturas-y-justificantes-facturas-y-gastos-detalle.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-csp-0540-facturas-y-justificantes/iu-csp-0540-002-facturas-y-justificantes-viajes-y-dietas
+  : - iu-csp-0540-002-001-facturas-y-justificantes-viajes-y-dietas-detalle.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-csp-0540-facturas-y-justificantes/iu-csp-0540-003-facturas-y-justificantes-personal-contratado
+  : - iu-csp-0540-003-001-facturas-y-justificantes-personal-contratado-detalle.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-csp-0550-validacion-de-gastos
+  : - iu-csp-0550-001-validacion-de-gastos.md
+    - iu-csp-0550-002-validacion-de-gastos-modificar-estado-version-basica.md
+    - iu-csp-0550-003-validacion-de-gastos-historico-de-estados.md
+    - iu-csp-0550-004-validacion-de-gastos-detalle-gasto.md
+    - iu-csp-0550-005-validacion-de-gastos-modificar-estado-version-ampliada.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-csp-0560-periodos-de-justificacion
+  : - iu-csp-0560-001-periodos-justificacion.md
+    - iu-csp-0560-002-periodo-justificacion-datos-generales.md
+    - iu-csp-0560-003-periodo-justificacion-historico-de-estados.md
+    - iu-csp-0560-004-periodo-justificacion-documentos.md
+    - iu-csp-0560-005-periodo-justificacion-facturas-y-justificantes.md
+    - iu-csp-0560-006-periodo-justificacion-viajes-y-dietas.md
+    - iu-csp-0560-007-periodo-justificacion-personal-contratado.md
+    - iu-csp-0560-008-periodo-justificacion-horas-timesheet.md
+    - iu-csp-0560-009-anadir-documento-a-periodo-de-justificacion.md
+    - iu-csp-0560-010-anadir-gasto-a-periodo-de-justificacion.md
+    - iu-csp-0560-011-anadir-viajedieta-a-periodo-de-justificacion.md
+    - iu-csp-0560-012-rechazar-gasto-en-periodo-de-justificacionn.md
+    - iu-csp-0560-013-anadir-timesheet-a-periodo-de-justificacion.md
+    - iu-csp-0560-014-anadir-gasto-de-personal-contratado-a-periodo-de-justificacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-csp-0570-001-facturas-emitidas
+  : - iu-csp-0570-001-001-facturas-emitidas-detalle.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-csp-0580-seguimiento-justificacion
+  : - iu-csp-0580-001-resumen.md
+    - iu-csp-0580-002-ver-anadir-modificar-estado-actual-seguimiento-justificacion-por-proyecto-sgi.md
+    - iu-csp-0580-003-gastos-justificados.md
+    - iu-csp-0580-004-ver-modificar-gasto-justificado.md
+    - iu-csp-0580-005-ver-anadir-modificar-datos-de-cofinanciacion.md
+    - iu-csp-0580-006-listado-de-requerimientos.md
+    - iu-csp-0580-007-anadir-modificar-identificador-justificacion.md
+    - iu-csp-0580-008-crear-requerimiento
+    - iu-csp-0580-009-modificar-requerimiento
+    - iu-csp-0580-010-anadir-modificar-presentacion-seguimiento-cientifico.md
+    - iu-csp-0580-011-ver-anadir-modificar-estado-actual-seguimiento-justificacion-por-proyecto-sgi-y-anualidad.md
+    - iu-csp-0580-012-exportacion-de-gastos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-csp-0580-seguimiento-justificacion/iu-csp-0580-008-crear-requerimiento
+  : - iu-csp-0580-008-001-requerimiento-datos-generales.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0500-ejecucion-economica/iu-csp-0580-seguimiento-justificacion/iu-csp-0580-009-modificar-requerimiento
+  : - iu-csp-0580-009-001-modificar-requerimiento-datos-generales.md
+    - iu-csp-0580-009-002-modificar-requerimiento-gastos.md
+    - iu-csp-0580-009-003-modificar-requerimiento-respuesta-alegacion.md
+    - iu-csp-0580-009-004-modificar-requerimiento-documentos.md
+    - iu-csp-0580-009-005-anadir-modificar-incidencia-documentacion.md
+    - iu-csp-0580-009-006-anadir-modificar-respuesta-a-incidencia-documentacion.md
+    - iu-csp-0580-009-007-anadir-gasto-a-requerimiento.md
+    - iu-csp-0580-009-008-anadir-gasto-a-requerimiento-ver-detalle.md
+    - iu-csp-0580-009-009-ver-modificar-gasto-de-requerimiento.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0600-timesheet
+  : - iu-csp-0600-001-busqueda-y-listado-de-timesheet-unidades-de-gestion.md
+    - iu-csp-0600-002-busqueda-y-listado-de-timesheet-miembro-de-equipo-directa.md
+    - iu-csp-0600-003-busqueda-y-listado-de-timesheet-miembro-de-equipo-avanzada.md
+    - iu-csp-0600-004-busqueda-y-listado-de-timesheet-rol-principal-busqueda-directa-propios.md
+    - iu-csp-0600-005-busqueda-y-listado-de-timesheet-rol-principal-busqueda-directa-equipo.md
+    - iu-csp-0600-006-busqueda-y-listado-de-timesheet-rol-principal-avanzada-propios.md
+    - iu-csp-0600-007-busqueda-y-listado-de-timesheet-rol-principal-avanzada-equipo.md
+    - iu-csp-0600-008-timesheet-detalle-comprension-general.md
+    - iu-csp-0600-011-detalle-miembro-de-equipo-edicion-inicial-comentario.md
+    - iu-csp-0600-012-detalle-miembro-de-equipo-subsanacion.md
+    - iu-csp-0600-013-detalle-miembro-de-equipo-subsanacion-comentario-ip.md
+    - iu-csp-0600-014-detalle-miembro-de-equipo-validado-ip.md
+    - iu-csp-0600-015-detalle-miembro-de-equipo-validado-unidad.md
+    - iu-csp-0600-016-detalle-principal-validacion.md
+    - iu-csp-0600-017-detalle-unidad-gestion-validado-im.md
+    - iu-csp-0600-018-detalle-unidad-gestion-validado-ip.md
+    - iu-csp-0600-019-detalle-unidad-gestion-validado-unidad.md
+    - iu-csp-0600-020-detalle-unidad-gestion-cerrado.md
+    - iu-csp-0600-021-historico-de-estados.md
+    - iu-csp-0600-022-hojas-de-firma.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0900-notificacion-presupuestos-sge
+  : - iu-csp-0900-001-notificacion-presupuestos-sge.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion
+  : - iu-csp-0951-busqueda-y-listado-de-grupos-de-investigacion
+    - iu-csp-0952-crear-grupo-de-investigacion
+    - iu-csp-0953-modificar-consultar-grupo-de-investigacion
+    - iu-csp-0954-configuracion
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0951-busqueda-y-listado-de-grupos-de-investigacion
+  : - iu-csp-0951-001-busqueda-simple-y-listado-de-grupos-de-investigacion-unidades-de-gestion.md
+    - iu-csp-0951-002-busqueda-ampliada-y-listado-de-grupos-de-investigacion-unidades-de-gestion.md
+    - iu-csp-0951-003-busqueda-y-listado-de-grupos-de-investigacion-investigador.md
+    - iu-csp-0951-004-exportacion-listado-de-grupos-unidades-de-gestion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0952-crear-grupo-de-investigacion
+  : - iu-csp-0952-001-crear-grupo-investigacion-datos-generales.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0953-modificar-consultar-grupo-de-investigacion
+  : - iu-csp-0953-001-modificar-consultar-grupo-investigacion-datos-generales.md
+    - iu-csp-0953-002-modificar-consultar-grupo-investigacion-equipo-investigacion
+    - iu-csp-0953-004-modificar-consultar-grupo-investigacion-responsable-economico
+    - iu-csp-0953-006-modificar-consultar-grupo-investigacion-linea-investigacion
+    - iu-csp-0953-013-modificar-consultar-grupo-investigacion-equipos-instrumentales
+    - iu-csp-0953-015-modificar-consultar-grupo-investigacion-enlaces
+    - iu-csp-0953-017-modificar-consultar-grupo-investigacion-personas-autorizadas
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0953-modificar-consultar-grupo-de-investigacion/iu-csp-0953-002-modificar-consultar-grupo-investigacion-equipo-investigacion
+  : - iu-csp-0953-003-anadir-modificar-miembro-a-equipo.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0953-modificar-consultar-grupo-de-investigacion/iu-csp-0953-004-modificar-consultar-grupo-investigacion-responsable-economico
+  : - iu-csp-0953-005-anadir-modificar-responsable-economico.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0953-modificar-consultar-grupo-de-investigacion/iu-csp-0953-006-modificar-consultar-grupo-investigacion-linea-investigacion
+  : - iu-csp-0953-007-modificar-consultar-linea-de-investigacion-datos-generales.md
+    - iu-csp-0953-008-modificar-consultar-linea-investigacion-miembros-adscritos
+    - iu-csp-0953-010-modificar-consultar-linea-investigacion-clasificaciones.md
+    - iu-csp-0953-011-modificar-consultar-linea-investigacion-equipos-instrumentales
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0953-modificar-consultar-grupo-de-investigacion/iu-csp-0953-006-modificar-consultar-grupo-investigacion-linea-investigacion/iu-csp-0953-008-modificar-consultar-linea-investigacion-miembros-adscritos
+  : - iu-csp-0953-009-anadir-modificar-miembro-adscrito.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0953-modificar-consultar-grupo-de-investigacion/iu-csp-0953-006-modificar-consultar-grupo-investigacion-linea-investigacion/iu-csp-0953-011-modificar-consultar-linea-investigacion-equipos-instrumentales
+  : - iu-csp-0953-012-anadir-equipo-instrumental.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0953-modificar-consultar-grupo-de-investigacion/iu-csp-0953-013-modificar-consultar-grupo-investigacion-equipos-instrumentales
+  : - iu-csp-0953-014-anadir-modificar-equipo-instrumental.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0953-modificar-consultar-grupo-de-investigacion/iu-csp-0953-015-modificar-consultar-grupo-investigacion-enlaces
+  : - iu-csp-0953-016-anadir-enlace.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0953-modificar-consultar-grupo-de-investigacion/iu-csp-0953-017-modificar-consultar-grupo-investigacion-personas-autorizadas
+  : - iu-csp-0953-018-anadir-modificar-persona-autorizada.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-interfaz-de-usuario/iu-csp-0950-grupos-de-investigacion/iu-csp-0954-configuracion
+  : - iu-csp-0954-001-buscar-y-listar-lineas-de-investigacion.md
+    - iu-csp-0954-002-crear-modificar-linea-de-investigacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-participacion-proyectos-externos
+  : - csp-participacion-proyectos-externos-navegacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-solicitudes
+  : - csp-solicitudes-de-rrhh-navegacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/csp-modulo-de-convocatorias-ayudas-solicitudes-proyectos-y-contratos-y-grupos-de-investigacion/csp-timesheet
+  : - csp-integracion-timesheet.md
+    - csp-integracion-estadisticas.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eer-modulo-de-empresas-de-explotacion-de-resultados-ebts-eicnts-spin-offs
+  : - eer-navegacion.md
+    - eer-actores.md
+    - eer-interfaz-de-usuario
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eer-modulo-de-empresas-de-explotacion-de-resultados-ebts-eicnts-spin-offs/eer-interfaz-de-usuario
+  : - iu-eer-0010-gestion-de-empresa-de-explotacion-de-resultados
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eer-modulo-de-empresas-de-explotacion-de-resultados-ebts-eicnts-spin-offs/eer-interfaz-de-usuario/iu-eer-0010-gestion-de-empresa-de-explotacion-de-resultados
+  : - iu-eer-0010-0010-crear-empresa-de-explotacion-de-resultados
+    - iu-eer-0010-0020-busqueda-y-listado-de-empresas-de-explotacion-de-resultados.md
+    - iu-eer-0010-0030-ver-detalle-modificar-empresa-de-explotacion-de-resultados
+    - iu-eer-0011-gestion-de-empresa-de-explotacion-de-resultados-popups-auxiliares
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eer-modulo-de-empresas-de-explotacion-de-resultados-ebts-eicnts-spin-offs/eer-interfaz-de-usuario/iu-eer-0010-gestion-de-empresa-de-explotacion-de-resultados/iu-eer-0010-0010-crear-empresa-de-explotacion-de-resultados
+  : - iu-eer-0010-0010-001-crear-empresa-de-explotacion-de-resultados-datos-generales.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eer-modulo-de-empresas-de-explotacion-de-resultados-ebts-eicnts-spin-offs/eer-interfaz-de-usuario/iu-eer-0010-gestion-de-empresa-de-explotacion-de-resultados/iu-eer-0010-0030-ver-detalle-modificar-empresa-de-explotacion-de-resultados
+  : - iu-eer-0010-0030-001-ver-detalle-modificar-empresa-de-explotacion-de-resultados-datos-generales.md
+    - iu-eer-0010-0030-002-ver-detalle-modificar-empresa-de-explotacion-de-resultados-documentos.md
+    - iu-eer-0020-0030-003-ver-detalle-modificar-empresa-de-explotacion-de-resultados-equipo-emprendedor.md
+    - iu-eer-0020-0030-004-ver-detalle-modificar-empresa-de-explotacion-de-resultados-composicion-de-la-sociedad.md
+    - iu-eer-0020-0030-005-ver-detalle-modificar-empresa-de-explotacion-de-resultados-administracion-sociedad.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eer-modulo-de-empresas-de-explotacion-de-resultados-ebts-eicnts-spin-offs/eer-interfaz-de-usuario/iu-eer-0010-gestion-de-empresa-de-explotacion-de-resultados/iu-eer-0011-gestion-de-empresa-de-explotacion-de-resultados-popups-auxiliares
+  : - iu-eer-0011-0010-anadir-modificar-miembro-de-composicion-de-la-sociedad.md
+    - iu-eer-0011-0011-anadir-modificar-miembro-de-administracion-de-la-sociedad.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica
+  : - eti-actores.md
+    - eti-interfaz-de-usuario
+    - eti-casos-de-uso
+    - eti-glosario-de-terminos.md
+    - eti-comunicados.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-casos-de-uso
+  : - cu-eti-0010-gestion-convocatorias-reunion
+    - cu-eti-0020-gestion-de-evaluaciones
+    - cu-eti-0030-gestion-de-actas
+    - cu-eti-0040-gestion-de-evaluadores
+    - cu-eti-0050-evaluaciones-y-seguimientos-evaluador
+    - cu-eti-0060-peticiones-de-evaluacion-investigador
+    - cu-eti-0070-procesos-batch.md
+    - cu-eti-0080-peticiones-de-evaluacion-gestor
+    - cu-eti-0090-gestion-de-seguimientos
+    - cu-eti-0100-memorias.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-casos-de-uso/cu-eti-0010-gestion-convocatorias-reunion
+  : - cu-eti-0010-001-buscar-convocatorias-reunion.md
+    - cu-eti-0010-002-alta-convocatoria-reunion-guardar.md
+    - cu-eti-0010-003-modificar-convocatoria-reunion-datos-generales-guardar.md
+    - cu-eti-0010-004-asignacion-de-memorias-anadir.md
+    - cu-eti-0010-005-asignacion-de-memorias-eliminar.md
+    - cu-eti-0010-006-modificar-convocatoria-reunion-asignacion-de-memorias-guardar.md
+    - cu-eti-0010-007-asignacion-de-memorias-modificar.md
+    - cu-eti-0010-008-envio-notificacion-convocatoria.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-casos-de-uso/cu-eti-0020-gestion-de-evaluaciones
+  : - cu-eti-0020-001-buscar-evaluaciones-memoria.md
+    - cu-eti-0020-002-evaluar-memoria-guardar-sin-comentarios.md
+    - cu-eti-0020-003-evaluar-memoria-guardar-con-comentarios.md
+    - cu-eti-0020-004-evaluar-memoria-comentarios-anadir.md
+    - cu-eti-0020-005-evaluar-memoria-comentarios-modificar.md
+    - cu-eti-0020-006-evaluar-memoria-documentacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-casos-de-uso/cu-eti-0030-gestion-de-actas
+  : - cu-eti-0030-001-buscar-actas.md
+    - cu-eti-0030-002-alta-acta-guardar.md
+    - cu-eti-0030-003-modificar-acta-datos-generales-guardar.md
+    - cu-eti-0030-004-modificar-acta-asistentes-guardar.md
+    - cu-eti-0030-005-asistentes-modificar.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-casos-de-uso/cu-eti-0040-gestion-de-evaluadores
+  : - cu-eti-0040-001-buscar-evaluadores.md
+    - cu-eti-0040-002-altamodificar-evaluador.md
+    - cu-eti-0040-003-alta-usuario-conflicto-de-intereses.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-casos-de-uso/cu-eti-0050-evaluaciones-y-seguimientos-evaluador
+  : - cu-eti-0050-001-buscar-evaluaciones-memoria.md
+    - cu-eti-0050-002-evaluar-memoria-guardar.md
+    - cu-eti-0050-003-buscar-seguimientos-memoria.md
+    - cu-eti-0050-004-evaluar-memoria-seguimiento-guardar.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-casos-de-uso/cu-eti-0060-peticiones-de-evaluacion-investigador
+  : - cu-eti-0060-001-buscar-mis-peticiones-de-evaluacion-creador.md
+    - cu-eti-0060-002-buscar-mis-peticiones-de-evaluacion-responsable.md
+    - cu-eti-0060-003-alta-peticion-de-evaluacion-guardar.md
+    - cu-eti-0060-004-modificar-peticion-de-evaluacion-guardar.md
+    - cu-eti-0060-005-enviar-a-secretaria.md
+    - cu-eti-0060-006-equipo-investigador-alta.md
+    - cu-eti-0060-007-asignacion-de-tareas-altamodificacion.md
+    - cu-eti-0060-008-memorias-alta-datos-generales.md
+    - cu-eti-0060-009-memorias-edicion-datos-generales.md
+    - cu-eti-0060-010-memorias-edicion-formulario.md
+    - cu-eti-0060-011-memorias-edicion-documentacion.md
+    - cu-eti-0060-012-memorias-documentacion-aportar-documento.md
+    - cu-eti-0060-013-memorias-edicion-formulario-seguimiento-anual.md
+    - cu-eti-0060-014-memorias-edicion-formulario-seguimiento-final.md
+    - cu-eti-0060-015-memorias-edicion-formulario-retrospectiva.md
+    - cu-eti-0060-016-enviar-a-secretaria-retrospectiva.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-casos-de-uso/cu-eti-0080-peticiones-de-evaluacion-gestor
+  : - cu-eti-0080-001-buscar-peticiones-de-evaluacion.md
+    - cu-eti-0080-002-volver-a-estado-anterior.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-casos-de-uso/cu-eti-0090-gestion-de-seguimientos
+  : - cu-eti-0090-001-buscar-seguimientos-memoria.md
+    - cu-eti-0090-002-evaluar-memoria-seguimiento-guardar-sin-comentarios.md
+    - cu-eti-0090-003-evaluar-memoria-seguimiento-guardar-con-comentarios.md
+    - cu-eti-0090-004-evaluar-memoria-seguimiento-comentarios-anadir.md
+    - cu-eti-0090-006-evaluar-memoria-seguimiento-documentacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-interfaz-de-usuario
+  : - iu-eti-0010-gestion-de-convocatorias-reunion
+    - iu-eti-0020-gestion-de-evaluaciones
+    - iu-eti-0030-gestion-de-actas
+    - iu-eti-0040-gestion-de-evaluadores
+    - iu-eti-0050-evaluaciones-y-seguimientos-evaluador
+    - iu-eti-0060-peticiones-de-evaluacion-investigador
+    - iu-eti-0070-formulario-checklist.md
+    - iu-eti-0080-configuracion.md
+    - iu-eti-0090-peticiones-de-evaluacion-gestor
+    - iu-eti-0100-gestion-de-seguimientos
+    - iu-eti-0110-memorias-investigador
+    - iu-eti-0120-memorias-gestor
+    - formulario-m10.md
+    - formulario-m30.md
+    - formulario-m20.md
+    - iu-eti-0130-conflicto-de-interes.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-interfaz-de-usuario/iu-eti-0010-gestion-de-convocatorias-reunion
+  : - iu-eti-0010-001-busqueda-y-listado-de-convocatorias-reunion.md
+    - iu-eti-0010-002-alta-convocatoria-reunion.md
+    - iu-eti-0010-003-modificar-convocatoria-reunion.md
+    - iu-eti-0010-005-asignacion-memorias-anadir.md
+    - iu-eti-0010-006-asignacion-memorias-modificar.md
+    - iu-eti-0010-007-exportacion-listado-de-convocatorias-de-reunion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-interfaz-de-usuario/iu-eti-0020-gestion-de-evaluaciones
+  : - iu-eti-0020-001-busqueda-y-listado-de-evaluaciones.md
+    - iu-eti-0020-002-evaluar-memoria.md
+    - iu-eti-0020-003-evaluar-memoria-comentarios-anadir.md
+    - iu-eti-0020-004-evaluar-memoria-comentarios-modificar.md
+    - iu-eti-0020-005-exportacion-listado-de-evaluaciones.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-interfaz-de-usuario/iu-eti-0030-gestion-de-actas
+  : - iu-eti-0030-001-busqueda-y-listado-de-actas.md
+    - iu-eti-0030-002-alta-acta.md
+    - iu-eti-0030-003-modificar-acta.md
+    - iu-eti-0030-004-editar-asistencia.md
+    - iu-eti-0030-005-modificar-acta-comentarios-anadirmodificar.md
+    - iu-eti-0030-006-exportacion-listado-de-actas.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-interfaz-de-usuario/iu-eti-0040-gestion-de-evaluadores
+  : - iu-eti-0040-001-busqueda-y-listado-de-evaluadores.md
+    - iu-eti-0040-002-alta-evaluador.md
+    - iu-eti-0040-003-modificar-evaluador.md
+    - iu-eti-0040-004-conflicto-de-intereses-anadir.md
+    - iu-eti-0040-005-exportacion-listado-de-evaluadores.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-interfaz-de-usuario/iu-eti-0050-evaluaciones-y-seguimientos-evaluador
+  : - iu-eti-0050-001-busqueda-y-listado-de-evaluaciones.md
+    - iu-eti-0050-002-evaluar-memoria.md
+    - iu-eti-0050-003-evaluar-memoria-comentarios-anadir.md
+    - iu-eti-0050-004-evaluar-memoria-comentarios-modificar.md
+    - iu-eti-0050-006-busqueda-y-listado-de-seguimientos.md
+    - iu-eti-0050-007-evaluar-memoria-seguimiento.md
+    - iu-eti-0050-008-evaluar-memoria-seguimiento-comentarios-anadir.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-interfaz-de-usuario/iu-eti-0060-peticiones-de-evaluacion-investigador
+  : - iu-eti-0060-001-busqueda-y-listado-de-mis-peticiones-de-evaluacion-creador.md
+    - iu-eti-0060-002-busqueda-y-listado-de-mis-peticiones-de-evaluacion-responsable.md
+    - iu-eti-0060-003-creacion-peticion-de-evaluacion-datos-generales.md
+    - iu-eti-0060-004-creacion-peticion-de-evaluacion-equipo-investigador.md
+    - iu-eti-0060-005-modificacion-peticion-de-evaluacion.md
+    - iu-eti-0060-006-equipo-investigador-alta.md
+    - iu-eti-0060-007-asignacion-de-tareas-alta-modificacion.md
+    - iu-eti-0060-008-memorias-alta-datos-generales.md
+    - iu-eti-0060-009-memorias-edicion-datos-generales.md
+    - iu-eti-0060-010-memorias-edicion-formulario.md
+    - iu-eti-0060-011-memorias-edicion-documentacion.md
+    - iu-eti-0060-012-memorias-edicion-documentacion-aportar-documento.md
+    - iu-eti-0060-013-memorias-edicion-informes.md
+    - iu-eti-0060-014-memorias-edicion-evaluaciones.md
+    - iu-eti-0060-015-memorias-edicion-seguimiento-anual.md
+    - iu-eti-0060-016-memorias-edicion-seguimiento-anual-aportar-documento.md
+    - iu-eti-0060-017-memorias-edicion-seguimiento-final.md
+    - iu-eti-0060-018-memorias-edicion-seguimiento-final-aportar-documento.md
+    - iu-eti-0060-019-memorias-edicion-retrospectiva.md
+    - iu-eti-0060-020-memorias-edicion-retrospectiva-aportar-documento.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-interfaz-de-usuario/iu-eti-0090-peticiones-de-evaluacion-gestor
+  : - iu-eti-0090-001-busqueda-y-listado-de-peticiones-de-evaluacion.md
+    - iu-eti-0090-002-consulta-peticion-de-evaluacion.md
+    - iu-eti-0090-003-consulta-memoria-adjuntar-documentacion.md
+    - iu-eti-0090-004-consultar-memoria-edicion-documentacion-aportar-documento.md
+    - iu-eti-0090-005-exportacion-listado-de-solicitudes-de-evaluacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-interfaz-de-usuario/iu-eti-0100-gestion-de-seguimientos
+  : - iu-eti-0100-001-busqueda-y-listado-de-evaluaciones-de-seguimiento.md
+    - iu-eti-0100-002-evaluar-memoria-seguimiento.md
+    - iu-eti-0100-003-evaluar-memoria-seguimiento-comentarios-anadir.md
+    - iu-eti-0100-004-exportacion-listado-de-seguimientos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-interfaz-de-usuario/iu-eti-0110-memorias-investigador
+  : - iu-eti-0110-001-busqueda-y-listado-de-memorias.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/eti-modulo-de-etica/eti-interfaz-de-usuario/iu-eti-0120-memorias-gestor
+  : - iu-eti-0120-001-busqueda-y-listado-de-memorias.md
+    - iu-eti-0120-002-consulta-memoria.md
+    - iu-eti-0120-003-exportacion-listado-de-memorias.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales
+  : - gen-actores.md
+    - gen-glosario-de-terminos.md
+    - uxiu-guia-de-normalizacion.md
+    - int-requisitos-de-integracion
+    - sha-buscadores-y-listados-comunes
+    - com-modulo-de-comunicados
+    - plcl-palabras-clave
+    - gen-glosario-de-terminos-interface.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/com-modulo-de-comunicados
+  : - com-comunicados-navegacion.md
+    - com-actores.md
+    - com-interfaz-de-usuario.md
+    - com-casos-de-uso
+    - com-glosario-de-terminos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/com-modulo-de-comunicados/com-casos-de-uso
+  : - cu-com-0010-generar-comunicado-de-envio-inmediato.md
+    - cu-com-0020-generar-comunicado-programado.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion
+  : - req-int-0001-caracteristicas-generales-del-modulo-de-integraciones.md
+    - req-int-0010-sge-integracion-con-sistema-de-gestion-economica
+    - req-int-0013-sgepii-integracion-con-sistema-de-gestion-economica-de-proteccion-industrial-e-intelectual
+    - req-int-0015-sgemp-integracion-con-sistema-de-gestion-de-empresas
+    - req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas
+    - req-int-0030-sgo-integracion-con-sistema-de-gestion-de-la-estructura-organica
+    - req-int-0060-edma-cvn-integracion-con-el-sistema-de-enriquecimiento-de-datos-y-metodos-de-analisis-y-gestion-de-cvn
+    - req-int-0100-sgdoc-integracion-con-sistema-gestion-documental
+    - req-int-0150-sgrep-integracion-con-sistema-de-generacion-de-reportes
+    - req-int-0160-blockchain
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0010-sge-integracion-con-sistema-de-gestion-economica
+  : - req-int-0010-sge-0070-listar-codigos-economicos-de-gastos.md
+    - req-int-0010-sge-0071-listar-codigos-economicos-de-ingresos.md
+    - req-int-0010-sge-0072-detalle-codigo-economico-gasto.md
+    - req-int-0010-sge-0073-detalle-codigo-economico-ingreso.md
+    - req-int-0010-sge-0080-buscar-proyecto-economico.md
+    - req-int-0010-sge-0081-solicitar-alta-proyecto-economico.md
+    - req-int-0010-sge-0082-consultar-datos-proyecto-economico.md
+    - req-int-0010-sge-0083-solicitar-relacion-con-un-proyecto-economico.md
+    - req-int-0010-sge-0090-notificar-presupuesto-de-proyecto-economico.md
+    - req-int-0010-sge-0100-buscar-gastos-pendientes-de-contabilizacion.md
+    - req-int-0010-sge-0101-validar-gasto.md
+    - req-int-0010-sge-0102-rechazar-gasto.md
+    - req-int-0010-sge-0103-detalle-gasto.md
+    - req-int-0010-sge-0104-descargar-binario-documento.md
+    - req-int-0010-sge-0130-buscar-ejecucion-presupuestaria-estado-actual.md
+    - req-int-0010-sge-0131-buscar-ejecucion-presupuestaria-gastos.md
+    - req-int-0010-sge-0132-buscar-ejecucion-presupuestaria-ingresos.md
+    - req-int-0010-sge-0134-buscar-justificantes-y-facturas-facturas-y-gastos.md
+    - req-int-0010-sge-0135-buscar-justificantes-y-facturas-viajes-y-dietas.md
+    - req-int-0010-sge-0136-buscar-justificantes-y-facturas-personal-contratado.md
+    - req-int-0010-sge-0137-buscar-detalle-de-operaciones-gastos.md
+    - req-int-0010-sge-0138-buscar-detalle-de-operaciones-ingresos.md
+    - req-int-0010-sge-0139-buscar-detalle-de-operaciones-modificaciones.md
+    - req-int-0010-sge-0140-detalle-justificante-factura.md
+    - req-int-0010-sge-0141-detalle-viaje-dieta.md
+    - req-int-0010-sge-0142-detalle-personal-contratado.md
+    - req-int-0010-sge-0150-buscar-facturas-emitidas.md
+    - req-int-0010-sge-0151-detalle-factura-emitida.md
+    - req-int-0010-sge-0153-buscar-facturas-previstas-emitidas.md
+    - req-int-0010-sge-0160-crear-periodo-amortizacion.md
+    - req-int-0010-sge-0161-modificar-periodo-amortizacion.md
+    - req-int-0010-sge-0166-buscar-gastos-justificados.md
+    - req-int-0010-sge-0166-detalle-gasto-justificado.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0013-sgepii-integracion-con-sistema-de-gestion-economica-de-proteccion-industrial-e-intelectual
+  : - req-int-0013-sgepii-0010-buscar-detalle-de-operaciones-gastos.md
+    - req-int-0013-sgepii-0011-detalle-gasto.md
+    - req-int-0013-sgepii-0020-buscar-facturas-emitidas-ingresos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0015-sgemp-integracion-con-sistema-de-gestion-de-empresas
+  : - req-int-0015-sgemp-0011-listar-tipos-de-identificadores-fiscales.md
+    - req-int-0015-sgemp-0020-buscar-empresa.md
+    - req-int-0015-sgemp-0030-consultar-datos-generales-de-empresa.md
+    - req-int-0015-sgemp-0032-consultar-datos-de-contacto-de-empresa.md
+    - req-int-0015-sgemp-0033-consultar-datos-de-tipo-de-empresa.md
+    - req-int-0015-sgemp-0035-consultar-detalle-de-empresa.md
+    - req-int-0015-sgemp-0040-solicitar-alta-de-empresa.md
+    - req-int-0015-sgemp-0050-solicitar-modificacion-de-empresa.md
+    - req-int-0015-sgemp-0051-empresas-modificadas.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas
+  : - req-int-0020-sgp-0010-listar-colectivos-sgi.md
+    - req-int-0020-sgp-0014-listar-sexos.md
+    - req-int-0020-sgp-0015-listar-tipos-de-documento-de-identificacion-personal.md
+    - req-int-0020-sgp-0016-listar-categorias-profesionales.md
+    - req-int-0020-sgp-0017-consultar-detalle-de-categoria-profesional.md
+    - req-int-0020-sgp-0018-listar-niveles-academicos.md
+    - req-int-0020-sgp-0019-consultar-detalle-de-nivel-academico.md
+    - req-int-0020-sgp-0020-buscar-persona-en-un-listado-de-colectivos.md
+    - req-int-0020-sgp-0030-consultar-datos-generales-de-persona.md
+    - req-int-0020-sgp-0031-consultar-datos-personales-de-persona.md
+    - req-int-0020-sgp-0032-consultar-datos-de-contacto-de-persona.md
+    - req-int-0020-sgp-0033-consultar-datos-de-vinculacion-de-persona.md
+    - req-int-0020-sgp-0034-consultar-datos-academicos-de-persona.md
+    - req-int-0020-sgp-0035-consultar-detalle-de-persona.md
+    - req-int-0020-sgp-0036-consultar-fotografia-de-persona.md
+    - req-int-0020-sgp-0050-solicitar-alta-de-persona.md
+    - req-int-0020-sgp-0060-solicitar-modificacion-de-persona.md
+    - req-int-0020-sgp-0061-consultar-datos-de-vinculacion-historicos-de-persona.md
+    - req-int-0020-sgp-0062-consultar-sexenios.md
+    - req-int-0020-sgp-0063-consultar-direcciones-de-tesis.md
+    - req-int-0020-sgp-0064-personas-modificadas.md
+    - req-int-0020-sgp-0065-consultar-sexenios-de-persona.md
+    - req-int-0020-sgp-0066-personas-con-formacion-academica-modificada.md
+    - req-int-0020-sgp-0067-personas-con-actividad-docente-modificada.md
+    - req-int-0020-sgp-0068-consulta-formacion-academica-de-una-persona.md
+    - req-int-0020-sgp-0069-consulta-actividad-docente-de-una-persona.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0030-sgo-integracion-con-sistema-de-gestion-de-la-estructura-organica
+  : - req-int-0030-sgo-0010-listar-areas-de-conocimiento.md
+    - req-int-0030-sgo-0011-consultar-area-de-conocimiento.md
+    - req-int-0030-sgo-0020-listar-departamentos.md
+    - req-int-0030-sgo-0030-listar-clasificaciones.md
+    - req-int-0030-sgo-0031-consultar-clasificacion.md
+    - req-int-0030-sgo-0060-listar-paises.md
+    - req-int-0030-sgo-0061-consultar-pais.md
+    - req-int-0030-sgo-0070-listar-comunidades-autonomas.md
+    - req-int-0030-sgo-0071-consultar-comunidad-autonoma.md
+    - req-int-0030-sgo-0080-listar-provincias.md
+    - req-int-0030-sgo-0081-consultar-provincia.md
+    - req-int-0030-sgo-0090-dar-de-alta-palabra-clave.md
+    - req-int-0030-sgo-0091-buscar-palabras-clave.md
+    - req-int-0030-sgo-0100-listar-centros.md
+    - req-int-0030-sgo-0101-consultar-centro.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0060-edma-cvn-integracion-con-el-sistema-de-enriquecimiento-de-datos-y-metodos-de-analisis-y-gestion-de-cvn
+  : - req-int-0060-edma-cvn-0001-autorizaciones-modificadas.md
+    - req-int-0060-edma-cvn-0002-notificaciones-proyectos-cvn.md
+    - req-int-0060-edma-cvn-0003-detalle-autorizacion.md
+    - req-int-0060-edma-cvn-0004-proyectos-modificados.md
+    - req-int-0060-edma-cvn-0005-detalle-proyecto.md
+    - req-int-0060-edma-cvn-0006-listar-epigrafes.md
+    - req-int-0060-edma-cvn-0007-alta-item-produccion-cientifica.md
+    - req-int-0060-edma-cvn-0008-modificacion-item-produccion-cientifica.md
+    - req-int-0060-edma-cvn-0009-borrado-item-produccion-cientifica.md
+    - req-int-0060-edma-cvn-0010-listar-estado-de-items.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0100-sgdoc-integracion-con-sistema-gestion-documental
+  : - req-int-0100-sgdoc-0010-anadir-modificar-documento.md
+    - req-int-0100-sgdoc-0020-ver-descargar-documento.md
+    - req-int-0100-sgdoc-0030-buscar-documento.md
+    - req-int-0100-sgdoc-0040-eliminar-documento.md
+    - req-int-0100-sgdoc-0050-consultar-documento.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0150-sgrep-integracion-con-sistema-de-generacion-de-reportes
+  : - csp-informes-predefinidos
+    - eti-informes-predifinidos
+    - pii-informes-predefinidos
+    - prc-informes-predefinidos
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0150-sgrep-integracion-con-sistema-de-generacion-de-reportes/csp-informes-predefinidos
+  : - rep-csp-0010-listado-general-de-proyectos-formato-xlsx.md
+    - rep-csp-0011-listado-general-de-proyectos-formato-csv.md
+    - rep-csp-0014-exportacion-presupuesto-de-proyecto-formato-xlsx.md
+    - rep-csp-0015-exportacion-presupuesto-de-proyecto-formato-csv.md
+    - rep-csp-0020-listado-general-de-solicitudes-formato-xlsx.md
+    - rep-csp-0021-listado-general-de-solicitudes-formato-csv.md
+    - rep-csp-0025-exportacion-presupuesto-de-solicitud-formato-xlsx.md
+    - rep-csp-0026-exportacion-presupuesto-de-solicitud-formato-csv.md
+    - rep-csp-0030-listado-general-de-convocatorias-formato-xlsx.md
+    - rep-csp-0031-listado-general-de-convocatorias-formato-csv.md
+    - rep-csp-0034-listado-general-de-grupos-de-investigacion-formato-xlsx.md
+    - rep-csp-0035-listado-general-de-grupos-de-investigacion-formato-csv.md
+    - rep-csp-0050-exportacion-ejecucion-presupuestaria-estado-actual-formato-xlsx.md
+    - rep-csp-0051-exportacion-ejecucion-presupuestaria-estado-actual-formato-csv.md
+    - rep-csp-0054-exportacion-ejecucion-presupuestaria-gastos-formato-xlsx.md
+    - rep-csp-0055-exportacion-ejecucion-presupuestaria-gastos-formato-csv.md
+    - rep-csp-0058-exportacion-ejecucion-presupuestaria-ingresos-formato-xlsx.md
+    - rep-csp-0059-exportacion-ejecucion-presupuestaria-ingresos-formato-csv.md
+    - rep-csp-0062-exportacion-detalle-operaciones-gastos-formato-xlsx.md
+    - rep-csp-0063-exportacion-detalle-operaciones-gastos-formato-csv.md
+    - rep-csp-0066-exportacion-detalle-operaciones-ingresos-formato-xlsx.md
+    - rep-csp-0067-exportacion-detalle-operaciones-ingresos-formato-csv.md
+    - rep-csp-0070-exportacion-detalle-operaciones-modificaciones-formato-xlsx.md
+    - rep-csp-0071-exportacion-detalle-operaciones-modificaciones-formato-csv.md
+    - rep-csp-0074-exportacion-facturas-y-justificantes-facturas-y-gastos-formato-xlsx.md
+    - rep-csp-0075-exportacion-facturas-y-justificantes-facturas-y-gastos-formato-csv.md
+    - rep-csp-0078-exportacion-facturas-y-justificantes-viajes-y-dietas-formato-xlsx.md
+    - rep-csp-0079-exportacion-facturas-y-justificantes-viajes-y-dietas-formato-csv.md
+    - rep-csp-0082-exportacion-facturas-y-justificantes-personal-contratado-formato-xlsx.md
+    - rep-csp-0083-exportacion-facturas-y-justificantes-personal-contratado-formato-csv.md
+    - rep-csp-0086-exportacion-facturas-emitidas-formato-xlsx.md
+    - rep-csp-0087-exportacion-facturas-emitidas-formato-csv.md
+    - rep-csp-0090-0-exportacion-de-gastos-de-seguimiento-de-justificacion-formato-xlsx.md
+    - rep-csp-0090-1-exportacion-de-gastos-de-seguimiento-de-justificacion-formato-xlsx.md
+    - rep-csp-0091-0-exportacion-de-gastos-de-seguimiento-de-justificacion-formato-csv.md
+    - rep-csp-0091-1-exportacion-de-gastos-de-seguimiento-de-justificacion-formato-csv.md
+    - rep-csp-0092-exportacion-de-requerimientos-de-justificacion-formato-xlsx.md
+    - rep-csp-0093-exportacion-de-requerimientos-de-justificacion-formato-csv.md
+    - rep-csp-0100-certificado-de-autorizacion-de-participacion-en-proyecto-externo.md
+    - deprecated
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0150-sgrep-integracion-con-sistema-de-generacion-de-reportes/csp-informes-predefinidos/deprecated
+  : - rep-csp-0017-exportacion-presupuesto-de-proyecto-formato-pdf.md
+    - rep-csp-0016-exportacion-presupuesto-de-proyecto-formato-rtf.md
+    - rep-csp-0013-listado-general-de-proyectos-formato-pdf.md
+    - rep-csp-0012-listado-general-de-proyectos-formato-rtf.md
+    - rep-csp-0033-listado-general-de-convocatorias-formato-pdf.md
+    - rep-csp-0032-listado-general-de-convocatorias-formato-rtf.md
+    - rep-csp-0023-listado-general-de-solicitudes-formato-pdf.md
+    - rep-csp-0027-exportacion-presupuesto-de-solicitud-formato-rtf.md
+    - rep-csp-0028-exportacion-presupuesto-de-solicitud-formato-pdf.md
+    - rep-csp-0053-exportacion-ejecucion-presupuestaria-estado-actual-formato-pdf.md
+    - rep-csp-0052-exportacion-ejecucion-presupuestaria-estado-actual-formato-rtf.md
+    - rep-csp-0056-exportacion-ejecucion-presupuestaria-gastos-formato-rtf.md
+    - rep-csp-0057-exportacion-ejecucion-presupuestaria-gastos-formato-pdf.md
+    - rep-csp-0061-exportacion-ejecucion-presupuestaria-ingresos-formato-pdf.md
+    - rep-csp-0060-exportacion-ejecucion-presupuestaria-ingresos-formato-rtf.md
+    - rep-csp-0065-exportacion-detalle-operaciones-gastos-formato-pdf.md
+    - rep-csp-0064-exportacion-detalle-operaciones-gastos-formato-rtf.md
+    - rep-csp-0088-exportacion-facturas-emitidas-formato-rtf.md
+    - rep-csp-0089-exportacion-facturas-emitidas-formato-pdf.md
+    - rep-csp-0080-exportacion-facturas-y-justificantes-viajes-y-dietas-formato-rtf.md
+    - rep-csp-0081-exportacion-facturas-y-justificantes-viajes-y-dietas-formato-pdf.md
+    - rep-csp-0085-exportacion-facturas-y-justificantes-personal-contratado-formato-pdf.md
+    - rep-csp-0084-exportacion-facturas-y-justificantes-personal-contratado-formato-rtf.md
+    - rep-csp-0076-exportacion-facturas-y-justificantes-facturas-y-gastos-formato-rtf.md
+    - rep-csp-0077-exportacion-facturas-y-justificantes-facturas-y-gastos-formato-pdf.md
+    - rep-csp-0072-exportacion-detalle-operaciones-modificaciones-formato-rtf.md
+    - rep-csp-0073-exportacion-detalle-operaciones-modificaciones-formato-pdf.md
+    - rep-csp-0069-exportacion-detalle-operaciones-ingresos-formato-pdf.md
+    - rep-csp-0068-exportacion-detalle-operaciones-ingresos-formato-rtf.md
+    - rep-csp-0037-listado-general-de-grupos-de-investigacion-formato-pdf.md
+    - rep-csp-0036-listado-general-de-grupos-de-investigacion-formato-rtf.md
+    - rep-csp-0022-listado-general-de-solicitudes-formato-rtf.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0150-sgrep-integracion-con-sistema-de-generacion-de-reportes/eti-informes-predifinidos
+  : - rep-eti-0140-listado-general-de-solicitudes-de-evaluacion-formato-csv.md
+    - rep-eti-0141-listado-general-de-solicitudes-de-evaluacion-formato-xlsx.md
+    - rep-eti-0142-listado-general-de-memorias-formato-csv.md
+    - rep-eti-0143-listado-general-de-memorias-formato-xlsx.md
+    - rep-eti-0144-listado-general-de-convocatorias-de-reunion-formato-csv.md
+    - rep-eti-0145-listado-general-de-convocatorias-de-reunion-formato-xlsx.md
+    - rep-eti-0146-listado-general-de-evaluaciones-formato-csv.md
+    - rep-eti-0147-listado-general-de-evaluaciones-formato-xlsx.md
+    - rep-eti-0148-listado-general-de-seguimientos-formato-csv.md
+    - rep-eti-0149-listado-general-de-seguimientos-formato-xlsx.md
+    - rep-eti-0150-listado-general-de-actas-formato-csv.md
+    - rep-eti-0151-listado-general-de-actas-formato-xlsx.md
+    - rep-eti-0152-listado-general-de-evaluadores-formato-csv.md
+    - rep-eti-0153-listado-general-de-evaluadores-formato-xlsx.md
+    - rep-eti-0010-informe-formulario-m10.md
+    - rep-eti-0020-informe-formulario-m20.md
+    - rep-eti-0030-informe-formulario-m30.md
+    - rep-eti-0040-informe-evaluacion-comentarios.md
+    - rep-eti-0050-informe-favorable-memoria.md
+    - rep-eti-0060-informe-ficha-evaluador.md
+    - rep-eti-0070-informe-acta.md
+    - rep-eti-0080-informe-formulario-seguimiento-anual.md
+    - rep-eti-0090-informe-formulario-seguimiento-final.md
+    - rep-eti-0100-informe-formulario-retrospectiva.md
+    - rep-eti-0110-informe-evaluacion-retrospectiva.md
+    - rep-eti-0120-informe-favorable-tipo-ratificacion.md
+    - rep-eti-0130-informe-favorable-tipo-modificacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0150-sgrep-integracion-con-sistema-de-generacion-de-reportes/pii-informes-predefinidos
+  : - rep-pii-0001-listado-general-de-invenciones-formato-csv.md
+    - rep-pii-0002-listado-general-de-invenciones-formato-xlsx.md
+    - rep-pii-0010-listado-general-de-solicitudes-de-proteccion-formato-csv.md
+    - rep-pii-0011-listado-general-de-solicitudes-de-proteccion-formato-xlsx.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0150-sgrep-integracion-con-sistema-de-generacion-de-reportes/prc-informes-predefinidos
+  : - rep-prc-0030-informe-resumen-puntuacion-grupos.md
+    - rep-prc-0040-informe-detalle-grupo.md
+    - rep-prc-0050-informe-detalle-produccion-investigador.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/int-requisitos-de-integracion/req-int-0160-blockchain
+  : - req-int-0160-bk-0001-consultar-transaccion.md
+    - req-int-0160-bk-0002-crear-transaccion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/plcl-palabras-clave
+  : - gen-palabras-clave-navegacion.md
+    - gen-palabras-clave-actores.md
+    - gen-palabras-clave-interfaz-de-usuario
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/plcl-palabras-clave/gen-palabras-clave-interfaz-de-usuario
+  : - iu-gen-0200-gestion-de-palabras-clave.md
+    - iu-gen-0201-busqueda-por-palabras-clave.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/gen-aspectos-generales/sha-buscadores-y-listados-comunes
+  : - iu-gen-0030-busqueda-de-proyectos.md
+    - iu-gen-0050-busqueda-de-convocatorias.md
+    - iu-gen-0060-busqueda-de-personas.md
+    - iu-gen-0061-solicitar-alta-de-persona.md
+    - iu-gen-0080-busqueda-de-empresas.md
+    - iu-gen-0081-solicitar-alta-de-empresa.md
+    - iu-gen-0110-seleccion-de-areas-de-conocimiento.md
+    - iu-gen-0120-seleccion-de-clasificaciones.md
+    - iu-gen-0130-busqueda-de-invenciones.md
+    - iu-gen-0140-busqueda-de-grupos-de-investigacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual
+  : - pii-actores.md
+    - pii-interfaz-de-usuario
+    - pii-casos-de-uso
+    - pii-glosario-de-terminos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-casos-de-uso
+  : - cu-pii-0010-gestion-de-invenciones
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-casos-de-uso/cu-pii-0010-gestion-de-invenciones
+  : - cu-pii-0010-001-ingresos-calculo-de-pagos.md
+    - cu-pii-0010-003-solicitudes-de-proteccion-crear-avisos-personalizados-en-los-procedimientos-de-la-solicitud.md
+    - cu-pii-0010-004-asociar-persona.md
+    - cu-pii-0010-005-asociar-empresa.md
+    - sin-implementar-cu-pii-0010-002-solicitudes-de-proteccion-avisos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario
+  : - iu-pii-0010-gestion-de-invencion
+    - iu-pii-0020-gestion-de-solicitudes-de-proteccion-de-invencion
+    - iu-pii-0030-ejecucion-economica-de-invencion
+    - iu-pii-0040-gestion-de-tipos-de-proteccion
+    - iu-pii-0050-gestion-de-sectores-de-aplicacion
+    - iu-pii-0060-gestion-de-resultados-de-informe-de-patentabilidad
+    - iu-pii-0070-gestion-de-vias-de-proteccion
+    - iu-pii-0080-gestion-de-tipos-de-procedimiento
+    - iu-pii-0090-gestion-de-tramos-de-reparto
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0010-gestion-de-invencion
+  : - iu-pii-0010-0010-crear-invencion
+    - iu-pii-0010-0020-busqueda-y-listado-invenciones.md
+    - iu-pii-0010-0030-ver-detalle-modificar-invencion
+    - iu-pii-0011-gestion-de-invencion-popups-auxiliares
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0010-gestion-de-invencion/iu-pii-0010-0010-crear-invencion
+  : - iu-pii-0010-0010-001-crear-invencion-datos-generales.md
+    - iu-pii-0010-0010-002-crear-invencion-equipo-inventor.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0010-gestion-de-invencion/iu-pii-0010-0030-ver-detalle-modificar-invencion
+  : - iu-pii-0010-0030-001-ver-detalle-modificar-invencion-datos-generales.md
+    - iu-pii-0010-0030-002-ver-detalle-modificar-invencion-documentos.md
+    - iu-pii-0010-0030-003-ver-detalle-modificar-invencion-equipo-inventor.md
+    - iu-pii-0010-0030-004-ver-detalle-modificar-invencion-titularidad.md
+    - iu-pii-0010-0030-005-ver-detalle-modificar-invencion-informes-de-patentabilidad.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0010-gestion-de-invencion/iu-pii-0011-gestion-de-invencion-popups-auxiliares
+  : - iu-pii-0011-001-anadir-sector-de-aplicacion.md
+    - iu-pii-0011-002-anadir-modificar-documento.md
+    - iu-pii-0011-005-anadir-modificar-miembro-de-equipo-inventor.md
+    - iu-pii-0011-006-anadir-modificar-titular.md
+    - iu-pii-0011-007-anadir-periodo-de-titularidad.md
+    - iu-pii-0011-008-modificar-periodo-de-titularidad.md
+    - iu-pii-0011-0010-anadir-modificar-informe-de-patentabilidad.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0020-gestion-de-solicitudes-de-proteccion-de-invencion
+  : - iu-pii-0020-0010-crear-solicitud-de-proteccion
+    - iu-pii-0020-0020-busqueda-y-listado-de-solicitudes-de-proteccion.md
+    - iu-pii-0020-0030-ver-detalle-modificar-solicitud-de-proteccion
+    - iu-pii-0021-gestion-de-solicitudes-de-invencion-popups-auxiliares
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0020-gestion-de-solicitudes-de-proteccion-de-invencion/iu-pii-0020-0010-crear-solicitud-de-proteccion
+  : - iu-pii-0020-0010-001-crear-solicitud-de-proteccion-datos-generales.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0020-gestion-de-solicitudes-de-proteccion-de-invencion/iu-pii-0020-0030-ver-detalle-modificar-solicitud-de-proteccion
+  : - iu-pii-0020-0030-001-ver-detalle-modificar-solicitud-de-proteccion-datos-generales.md
+    - iu-pii-0020-0030-002-ver-detalle-modificar-solicitud-de-proteccion-procedimientos.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0020-gestion-de-solicitudes-de-proteccion-de-invencion/iu-pii-0021-gestion-de-solicitudes-de-invencion-popups-auxiliares
+  : - iu-pii-0021-001-anadir-modificar-procedimiento.md
+    - iu-pii-0021-002-anadir-modificar-pais-validado.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0030-ejecucion-economica-de-invencion
+  : - iu-pii-0030-0010-gastos.md
+    - iu-pii-0030-0020-contratos.md
+    - iu-pii-0030-0030-ingresos.md
+    - iu-pii-0030-0040-gestion-de-repartos
+    - iu-pii-0031-ejecucion-economica-de-invencion-popups-auxiliares
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0030-ejecucion-economica-de-invencion/iu-pii-0030-0040-gestion-de-repartos
+  : - iu-pii-0030-0040-001-crear-reparto
+    - iu-pii-0030-0040-002-busqueda-y-listado-de-repartos.md
+    - iu-pii-0030-0040-003-ver-detalle-modificar-reparto
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0030-ejecucion-economica-de-invencion/iu-pii-0030-0040-gestion-de-repartos/iu-pii-0030-0040-001-crear-reparto
+  : - iu-pii-0030-0040-001-001-crear-reparto-datos-generales.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0030-ejecucion-economica-de-invencion/iu-pii-0030-0040-gestion-de-repartos/iu-pii-0030-0040-003-ver-detalle-modificar-reparto
+  : - iu-pii-0030-0040-003-001-ver-detalle-modificar-reparto-datos-generales.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0030-ejecucion-economica-de-invencion/iu-pii-0031-ejecucion-economica-de-invencion-popups-auxiliares
+  : - iu-pii-0031-001-ver-detalle-modificar-gasto.md
+    - iu-pii-0031-002-anadir-modificar-sector-licenciado.md
+    - iu-pii-0031-003-anadir-modificar-desglose-de-gasto-a-deducir.md
+    - iu-pii-0031-004-anadir-modificar-desglose-de-importe-a-repartir.md
+    - iu-pii-0031-005-anadir-modificar-desglose-de-reparto-a-equipo-inventor.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0040-gestion-de-tipos-de-proteccion
+  : - iu-pii-0040-0010-listado-de-tipos-de-proteccion.md
+    - iu-pii-0040-0020-crear-tipo-de-proteccion
+    - iu-pii-0040-0030-ver-detalle-modificar-tipo-de-proteccion
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0040-gestion-de-tipos-de-proteccion/iu-pii-0040-0020-crear-tipo-de-proteccion
+  : - iu-pii-0040-0020-001-crear-tipo-de-proteccion-datos-generales.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0040-gestion-de-tipos-de-proteccion/iu-pii-0040-0030-ver-detalle-modificar-tipo-de-proteccion
+  : - iu-pii-0040-0030-001-ver-detalle-modificar-tipo-de-proteccion-datos-generales.md
+    - iu-pii-0040-0030-002-ver-detalle-modificar-tipo-de-proteccion-subtipos.md
+    - iu-pii-0040-0030-003-anadir-subtipo.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0050-gestion-de-sectores-de-aplicacion
+  : - iu-pii-0050-0010-listado-de-sectores-de-aplicacion.md
+    - iu-pii-0050-0020-anadir-modificar-sector-de-aplicacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0060-gestion-de-resultados-de-informe-de-patentabilidad
+  : - iu-pii-0060-0010-listado-de-resultados-de-informe-de-patentabilidad.md
+    - iu-pii-0060-0020-anadir-modificar-resultado-de-informe-de-patentabilidad.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0070-gestion-de-vias-de-proteccion
+  : - iu-pii-0070-0010-anadir-modificar-via-de-proteccion.md
+    - iu-pii-0070-0020-listado-de-vias-de-proteccion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0080-gestion-de-tipos-de-procedimiento
+  : - iu-pii-0080-0010-anadir-modificar-tipo-de-procedimiento.md
+    - iu-pii-0080-0020-listado-de-tipos-de-procedimiento.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/pii-modulo-de-propiedad-industrial-e-intelectual/pii-interfaz-de-usuario/iu-pii-0090-gestion-de-tramos-de-reparto
+  : - iu-pii-0090-0010-anadir-modificar-tramo-de-reparto.md
+    - iu-pii-0090-0020-listado-de-tramos-de-reparto.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/prc-modulo-de-produccion-cientifica
+  : - prc-navegacion.md
+    - prc-actores.md
+    - prc-interfaz-de-usuario
+    - prc-casos-de-uso
+    - prc-comunicados.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/prc-modulo-de-produccion-cientifica/prc-casos-de-uso
+  : - cu-prc-0000-001-clonar-convocatoria-de-baremacion.md
+    - cu-prc-0000-002-resetear-proceso-de-baremacion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/prc-modulo-de-produccion-cientifica/prc-interfaz-de-usuario
+  : - iu-prc-0200-validacion-produccion-cientifica-unidad-de-gestion
+    - iu-prc-0201-validacion-produccion-cientifica-investigador
+    - iu-prc-0202-convocatorias
+    - iu-prc-0203-informes
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/prc-modulo-de-produccion-cientifica/prc-interfaz-de-usuario/iu-prc-0200-validacion-produccion-cientifica-unidad-de-gestion
+  : - iu-prc-0200-001-busqueda-y-listado-de-publicaciones-unidades-de-gestion.md
+    - iu-prc-0200-002-ver-publicacion-unidad-de-gestion.md
+    - iu-prc-0200-003-rechazar-item-de-produccion-cientifica-unidad-de-gestion.md
+    - iu-prc-0200-004-busqueda-y-listado-de-congresos-unidades-de-gestion.md
+    - iu-prc-0200-005-ver-congreso-unidad-de-gestion.md
+    - iu-prc-0200-006-busqueda-y-listado-de-obras-artisticas-unidades-de-gestion.md
+    - iu-prc-0200-007-ver-obra-artistica-unidad-de-gestion.md
+    - iu-prc-0200-008-busqueda-y-listado-de-comites-editoriales-unidades-de-gestion.md
+    - iu-prc-0200-009-ver-comite-editorial-unidad-de-gestion.md
+    - iu-prc-0200-010-busqueda-y-listado-de-direccion-de-tesis-unidades-de-gestion.md
+    - iu-prc-0200-011-ver-direccion-de-tesis-unidad-de-gestion.md
+    - iu-prc-0200-012-busqueda-y-listado-de-actividades-de-idi-unidades-de-gestion.md
+    - iu-prc-0200-013-ver-organizacion-de-actividad-de-idi-unidad-de-gestion.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/prc-modulo-de-produccion-cientifica/prc-interfaz-de-usuario/iu-prc-0201-validacion-produccion-cientifica-investigador
+  : - iu-prc-0201-001-busqueda-y-listado-de-publicaciones-investigador.md
+    - iu-prc-0201-002-ver-publicacion-investigador.md
+    - iu-prc-0201-003-rechazar-item-de-produccion-cientifica-investigador.md
+    - iu-prc-0201-004-busqueda-y-listado-de-congresos-investigador.md
+    - iu-prc-0201-005-ver-congreso-investigador.md
+    - iu-prc-0201-006-busqueda-y-listado-de-obras-artisticas-investigador.md
+    - iu-prc-0201-007-ver-obra-artistica-investigador.md
+    - iu-prc-0201-008-busqueda-y-listado-de-comites-editoriales-investigador.md
+    - iu-prc-0201-009-ver-comite-editorial-investigador.md
+    - iu-prc-0201-010-busqueda-y-listado-de-direccion-de-tesis-investigador.md
+    - iu-prc-0201-011-ver-direccion-de-tesis-investigador.md
+    - iu-prc-0201-012-busqueda-y-listado-de-actividades-de-idi-investigador.md
+    - iu-prc-0201-013-ver-organizacion-de-actividad-de-idi-investigador.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/prc-modulo-de-produccion-cientifica/prc-interfaz-de-usuario/iu-prc-0202-convocatorias
+  : - iu-prc-0202-001-busqueda-y-listado-de-convocatorias.md
+    - iu-prc-0202-002-crear-modificar-consultar-convocatoria-de-baremacion-datos-generales.md
+    - iu-prc-0202-003-crear-modificar-consultar-convocatoria-de-baremacion-baremos-y-puntuaciones.md
+    - iu-prc-0202-004-crear-modificar-consultar-convocatoria-de-baremacion-moduladores-y-rangos
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/prc-modulo-de-produccion-cientifica/prc-interfaz-de-usuario/iu-prc-0202-convocatorias/iu-prc-0202-004-crear-modificar-consultar-convocatoria-de-baremacion-moduladores-y-rangos
+  : - iu-prc-0202-005-anadir-modificar-rango-costes-indirectos.md
+    - iu-prc-0202-006-anadir-modificar-rango-cuantia-contratos.md
+    - iu-prc-0202-007-anadir-modificar-rango-licencia.md
+  ? sgi/requisitos-y-analisis-funcional/analisis-funcional-sgi-hercules/prc-modulo-de-produccion-cientifica/prc-interfaz-de-usuario/iu-prc-0203-informes
+  : - iu-prc-0203-001-infomes-unidad-de-gestion.md
+    - iu-prc-0203-003-infomes-investigador.md
+  sgi/requisitos-y-analisis-funcional/estudio-de-requisitos:
+  - eti-seguimiento-del-requisito
+  - integracion-con-cvn-seguimiento-del-requisito
+  ? sgi/requisitos-y-analisis-funcional/estudio-de-requisitos/eti-seguimiento-del-requisito
+  : - estudio-blockchain-en-actas.md
+    - estudio-funcionalidad-evaluadores-conflicto-de-interes.md
+  ? sgi/requisitos-y-analisis-funcional/estudio-de-requisitos/integracion-con-cvn-seguimiento-del-requisito
+  : - estudio-datos-personales-proyectos.md
+    - estudio-grupos-de-investigacion.md
+    - estudio-propiedad-intelectual-e-industrial.md
+    - integracion-cvn-historico-de-dudas-gnoss.md

@@ -1,0 +1,105 @@
+/* Ajustes sobre la variante «modern» de Zensical.
+   Los títulos de las páginas son largos (códigos IU-/CU-/REQ- más descripción)
+   y el árbol es muy profundo: se ensanchan la rejilla y el menú lateral para que
+   no se partan en tres o cuatro líneas. El tema fija el ancho útil del menú en
+   11.5rem rellenando el resto por la derecha; aquí se reduce ese relleno. */
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 70rem;
+  }
+
+  .md-sidebar--primary {
+    width: 17rem;
+  }
+
+  [dir="ltr"] .md-sidebar--primary .md-sidebar__inner {
+    padding-right: 1.2rem;
+  }
+}
+
+/* Pestaña activa: subrayado más grueso y texto en el color principal del sitio.
+   Se mantiene el grosor de letra de las demás pestañas: el tema la pasa a 500 y
+   el texto, al ensancharse, desplazaba las pestañas siguientes al cambiar. */
+.md-tabs__item--active {
+  font-weight: inherit;
+  border-bottom: .1rem solid var(--md-typeset-a-color);
+}
+
+.md-tabs__item--active .md-tabs__link {
+  color: var(--md-typeset-a-color);
+}
+
+/* Cabecera del menú lateral: la variante «modern» oculta en escritorio el
+   enlace a la página índice de la pestaña activa, que tiene contenido propio.
+   Se recupera como cabecera discreta; en móvil el tema ya lo muestra. */
+@media screen and (min-width: 76.25em) {
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__container {
+    display: flex;
+    margin-bottom: .4rem;
+  }
+
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__container > label {
+    display: none;
+  }
+
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__container > a {
+    font-weight: 700;
+    color: var(--md-default-fg-color--light);
+  }
+
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__container > a:is(:hover, :focus-visible, .md-nav__link--active) {
+    color: var(--md-typeset-a-color);
+  }
+}
+
+/* Entradas del menú con página propia y submenú: el tema pinta el enlace y
+   el botón del chevron como dos cajas separadas. Se muestran como una sola
+   fila; el enlace abre la página y el chevron sigue plegando el submenú. */
+.md-nav--primary .md-nav__container {
+  gap: 0;
+}
+
+.md-nav--primary .md-nav__container > .md-nav__link {
+  margin-left: 0;
+  margin-right: 0;
+  background-color: transparent !important;
+}
+
+.md-nav--primary .md-nav__container:hover {
+  background-color: var(--md-default-fg-color--lightest);
+}
+
+.md-nav--primary .md-nav__container:has(> .md-nav__link--active) {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+.md-nav--primary .md-nav__container:has(> .md-nav__link--active) > label {
+  color: var(--md-typeset-a-color);
+}
+
+/* Chevron de las entradas con submenú: tamaño fijo. Dentro del enlace es un
+   elemento flexible y, con títulos largos de dos o tres líneas, se encogía. */
+.md-nav--primary .md-nav__icon {
+  flex-shrink: 0;
+}
+
+/* Los botones de plegado del menú (<label> sin texto) no son seleccionables:
+   un doble clic al plegar y desplegar seleccionaba el texto del submenú. */
+.md-nav--primary label.md-nav__link {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Páginas sin menú ni tabla de contenidos (la portada): contenido centrado
+   con un ancho de lectura cómodo en lugar de ocupar toda la rejilla. */
+.md-main__inner:has(> .md-sidebar--primary[hidden]):has(> .md-sidebar--secondary[hidden]) > .md-content {
+  max-width: 50rem;
+  margin-inline: auto;
+}
+
+/* Papel de la ilustración del buscador (docs/javascripts/buscador.js) en modo oscuro:
+   un punto más claro que el panel translúcido del diálogo. La variable atraviesa el
+   shadow DOM del buscador por herencia. */
+[data-md-color-scheme="slate"] {
+  --hv-papel: hsl(225deg 10% 13%);
+}

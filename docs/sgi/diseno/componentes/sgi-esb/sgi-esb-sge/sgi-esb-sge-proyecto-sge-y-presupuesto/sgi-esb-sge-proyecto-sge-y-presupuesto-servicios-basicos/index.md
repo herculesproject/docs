@@ -1,0 +1,14 @@
+# SGI - ESB - SGE - Proyecto SGE y presupuesto - Servicios básicos
+
+##### Métodos imprescindibles para el funcionamiento de proyectos SGE y presupuestos
+
+---
+
+| Servicio | Método | URL | Parámetros | Respuesta | Descripción |
+| --- | --- | --- | --- | --- | --- |
+| [SGI - ESB - SGE - Proyecto SGE y presupuesto - Buscar proyectos](sgi-esb-sge-proyecto-sge-y-presupuesto-buscar-proyectos.md) | GET | /proyectos | q+s (query + sort)  La query estará formada por:   * id * titulo * fechaInicio * fechaFin | Lista[[Proyecto](../index.md#proyecto)] | Búsqueda de proyectos económicos, se puede buscar por el identificador del proyecto económico, por el título (o parte del título), entre un rango de fechas en las que se incluye la fecha de inicio o entre un rango de fechas entras lasque se incluye la fecha de fin del proyecto. Devuelve un listado de Proyectos económicos que cumplen los criterios de búsqueda.  Los parámetros q y s están explicados en:   * [Consultas filtradas y paginadas](../../../../../../desarrollo-y-configuracion/estandares-de-desarrollo/consultas-filtradas-y-paginadas.md) |
+| [SGI - ESB - SGE - Proyecto SGE y presupuesto - Consultar detalle de código económico de ingreso](sgi-esb-sge-proyecto-sge-y-presupuesto-consultar-detalle-de-codigo-economico-de-ingreso.md) | GET | /codigos-economicos-ingresos/{id} |  | [CodigoEconomicoIngreso](../index.md#codigoeconomicoingreso) | Detalle de un código económico de tipo ingreso. |
+| [SGI - ESB - SGE - Proyecto SGE y presupuesto - Listar códigos económicos de gastos](sgi-esb-sge-proyecto-sge-y-presupuesto-listar-codigos-economicos-de-gastos.md) | GET | /codigos-economicos-gastos |  | Lista[[CodigoEconomicoGasto](../index.md#codigoeconomicogasto)] | Listado de códigos económicos de tipo gasto. |
+| [SGI - ESB - SGE - Proyecto SGE y presupuesto - Listar códigos económicos de ingresos](sgi-esb-sge-proyecto-sge-y-presupuesto-listar-codigos-economicos-de-ingresos.md) | GET | /codigos-economicos-ingresos |  | Lista[[CodigoEconomicoIngreso](../index.md#codigoeconomicoingreso)] | Listado de códigos económicos de tipo ingreso. |
+| [SGI - ESB - SGE - Proyecto SGE y presupuesto - Consultar detalle de código económico de gasto](sgi-esb-sge-proyecto-sge-y-presupuesto-consultar-detalle-de-codigo-economico-de-gasto.md) | GET | /codigos-economicos-gastos/{id} |  | [CodigoEconomicoGasto](../index.md#codigoeconomicogasto) | Detalle de un código económico de tipo gasto. |
+| [SGI - ESB - SGE - Proyecto SGE y presupuesto - Consultar detalle de proyecto](sgi-esb-sge-proyecto-sge-y-presupuesto-consultar-detalle-de-proyecto.md) | GET | /proyectos/{id} |  | [Proyecto](../index.md#proyecto) | Detalle de los datos generales de un proyecto económico. |

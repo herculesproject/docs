@@ -1,0 +1,49 @@
+# REQ-INT-0020-SGP-0062 - Consultar sexenios
+
+|  |  |
+| --- | --- |
+| Cod. REQ | **REQ-INT-0020-SGP-0062 - Consultar sexenios** |
+| Ver. Objetivo |  |
+| Ver. REQ | 1.0.0 |
+| Estado | IN PROGRESS |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Frecuencia |  |
+| Características |  |
+| M. Consumidor |  |
+
+### Definición y objetivos
+
+Obtener los datos de sexenios del personal de investigación de la Universidad a una fecha determinada. El ESB recibirá del SGI la solicitud de información de los sexenios del personal de investigación a una determinada fecha. El ESB derivará la solicitud al sistema universitario correspondiente.
+
+### Descripción integración
+
+Parámetros de entrada:
+
+* Fecha
+
+Salida: se devolverá un listado de registros de sexenios con la siguiente información:
+
+* Número de sexenios de la persona
+* Identificador de la persona
+* Identificador del país de reconocimiento de los sexenios
+
+### Diseño técnico
+
+En el siguiente enlace se muestra el diseño del modelo lógico y el diseño de la API del Sistema de Gestión de Personas y, en concreto, de los Servicios Básicos: [SGI - ESB - SGP - Servicios Básicos](../../../../../diseno/componentes/sgi-esb/sgi-esb-sgp/sgi-esb-sgp-servicios-basicos/index.md).
+
+El servicio concreto del API que cubre este requisito es [SGI - ESB - SGP - Sexenios - Buscar](../../../../../diseno/componentes/sgi-esb/sgi-esb-sgp/sgi-esb-sgp-servicios-basicos/sgi-esb-sgp-sexenios-buscar.md).
+
+### Interfaces de usuario relacionados
+
+*(elemento de Confluence no migrado)*
+
+### Informes relacionados
+
+*(elemento de Confluence no migrado)*
+
+### Casos de uso relacionados
+
+[PRC - Baremación - Diseño algoritmo](../../../../../diseno/componentes/sgi-prc/prc-baremacion-diseno-algoritmo.md)
+
+*(elemento de Confluence no migrado)*

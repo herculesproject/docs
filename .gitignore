@@ -1,0 +1,8 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+# Salida y caché de `zensical build`
+site/
+.cache/

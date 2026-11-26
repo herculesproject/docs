@@ -1,0 +1,16 @@
+# IU-CSP-0560 - Periodos de justificación
+
+* [IU-CSP-0560-001- Periodos justificación](iu-csp-0560-001-periodos-justificacion.md)
+* [IU-CSP-0560-002 - Periodo justificación - Datos generales](iu-csp-0560-002-periodo-justificacion-datos-generales.md)
+* [IU-CSP-0560-003 - Periodo justificación - Histórico de estados](iu-csp-0560-003-periodo-justificacion-historico-de-estados.md)
+* [IU-CSP-0560-004 - Periodo justificación - Documentos](iu-csp-0560-004-periodo-justificacion-documentos.md)
+* [IU-CSP-0560-005 - Periodo justificación - Facturas y justificantes](iu-csp-0560-005-periodo-justificacion-facturas-y-justificantes.md)
+* [IU-CSP-0560-006 - Periodo justificación - Viajes y dietas](iu-csp-0560-006-periodo-justificacion-viajes-y-dietas.md)
+* [IU-CSP-0560-007 - Periodo justificación - Personal contratado](iu-csp-0560-007-periodo-justificacion-personal-contratado.md)
+* [IU-CSP-0560-008 - Periodo justificación - Horas timesheet](iu-csp-0560-008-periodo-justificacion-horas-timesheet.md)
+* [IU-CSP-0560-009 - Añadir documento a periodo de justificación](iu-csp-0560-009-anadir-documento-a-periodo-de-justificacion.md)
+* [IU-CSP-0560-010 - Añadir gasto a periodo de justificación](iu-csp-0560-010-anadir-gasto-a-periodo-de-justificacion.md)
+* [IU-CSP-0560-011 - Añadir viaje/dieta a periodo de justificación](iu-csp-0560-011-anadir-viajedieta-a-periodo-de-justificacion.md)
+* [IU-CSP-0560-012 - Rechazar gasto en periodo de justificaciónn](iu-csp-0560-012-rechazar-gasto-en-periodo-de-justificacionn.md)
+* [IU-CSP-0560-013 - Añadir timesheet a periodo de justificación](iu-csp-0560-013-anadir-timesheet-a-periodo-de-justificacion.md)
+* [IU-CSP-0560-014 - Añadir gasto de personal contratado a periodo de justificación](iu-csp-0560-014-anadir-gasto-de-personal-contratado-a-periodo-de-justificacion.md)

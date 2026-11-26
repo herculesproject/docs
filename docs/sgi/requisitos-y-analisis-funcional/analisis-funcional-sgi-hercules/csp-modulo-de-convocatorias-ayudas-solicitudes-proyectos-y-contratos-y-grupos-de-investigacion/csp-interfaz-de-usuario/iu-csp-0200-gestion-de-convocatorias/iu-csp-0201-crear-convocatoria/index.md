@@ -1,0 +1,16 @@
+# IU-CSP-0201- Crear convocatoria
+
+* [IU-CSP-0201-001 - Crear convocatoria - Datos generales](iu-csp-0201-001-crear-convocatoria-datos-generales.md)
+* [IU-CSP-0201-002 - Crear convocatoria - Entidades convocantes](iu-csp-0201-002-crear-convocatoria-entidades-convocantes.md)
+* [IU-CSP-0201-003 - Crear convocatoria - Entidades financiadoras](iu-csp-0201-003-crear-convocatoria-entidades-financiadoras.md)
+* [IU-CSP-0201-004 - Crear convocatoria - Enlaces](iu-csp-0201-004-crear-convocatoria-enlaces.md)
+* [IU-CSP-0201-005 - Crear convocatoria - Fases](iu-csp-0201-005-crear-convocatoria-fases.md)
+* [IU-CSP-0201-006 - Crear convocatoria - Periodos justificación](iu-csp-0201-006-crear-convocatoria-periodos-justificacion.md)
+* [IU-CSP-0201-007 - Crear convocatoria - Seguimiento científico](iu-csp-0201-007-crear-convocatoria-seguimiento-cientifico.md)
+* [IU-CSP-0201-008 - Crear convocatoria - Hitos](iu-csp-0201-008-crear-convocatoria-hitos.md)
+* [IU-CSP-0201-009 - Crear convocatoria - Documentos](iu-csp-0201-009-crear-convocatoria-documentos.md)
+* [IU-CSP-0201-010 - Crear convocatoria - Requisitos IP](iu-csp-0201-010-crear-convocatoria-requisitos-ip.md)
+* [IU-CSP-0201-011 - Crear convocatoria - Requisitos Equipo](iu-csp-0201-011-crear-convocatoria-requisitos-equipo.md)
+* [IU-CSP-0201-012 - Crear convocatoria - Elegibilidad](iu-csp-0201-012-crear-convocatoria-elegibilidad.md)
+* [IU-CSP-0201-013 - Crear convocatoria - Partidas presupuestarias](iu-csp-0201-013-crear-convocatoria-partidas-presupuestarias.md)
+* [IU-CSP-0201-014 - Crear convocatoria - Configuración de solicitudes](iu-csp-0201-014-crear-convocatoria-configuracion-de-solicitudes.md)

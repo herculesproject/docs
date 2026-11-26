@@ -1,0 +1,18 @@
+# CU-ETI-0060 - Peticiones de evaluación - Investigador
+
+* [CU-ETI-0060-001 - Buscar Mis Peticiones de evaluación - Creador](cu-eti-0060-001-buscar-mis-peticiones-de-evaluacion-creador.md)
+* [CU-ETI-0060-002 - Buscar Mis Peticiones de evaluación - Responsable](cu-eti-0060-002-buscar-mis-peticiones-de-evaluacion-responsable.md)
+* [CU-ETI-0060-003 - Alta Petición de evaluación - Guardar](cu-eti-0060-003-alta-peticion-de-evaluacion-guardar.md)
+* [CU-ETI-0060-004 - Modificar Petición de evaluación - Guardar](cu-eti-0060-004-modificar-peticion-de-evaluacion-guardar.md)
+* [CU-ETI-0060-005 - Enviar a secretaría](cu-eti-0060-005-enviar-a-secretaria.md)
+* [CU-ETI-0060-006 - Equipo investigador - Alta](cu-eti-0060-006-equipo-investigador-alta.md)
+* [CU-ETI-0060-007 - Asignación de tareas - Alta/modificación](cu-eti-0060-007-asignacion-de-tareas-altamodificacion.md)
+* [CU-ETI-0060-008 - Memorias - Alta datos generales](cu-eti-0060-008-memorias-alta-datos-generales.md)
+* [CU-ETI-0060-009 - Memorias - Edición datos generales](cu-eti-0060-009-memorias-edicion-datos-generales.md)
+* [CU-ETI-0060-010 - Memorias - Edición formulario](cu-eti-0060-010-memorias-edicion-formulario.md)
+* [CU-ETI-0060-011 - Memorias - Edición documentación](cu-eti-0060-011-memorias-edicion-documentacion.md)
+* [CU-ETI-0060-012 - Memorias - Documentación - Aportar documento](cu-eti-0060-012-memorias-documentacion-aportar-documento.md)
+* [CU-ETI-0060-013 - Memorias - Edición formulario seguimiento anual](cu-eti-0060-013-memorias-edicion-formulario-seguimiento-anual.md)
+* [CU-ETI-0060-014 - Memorias - Edición formulario seguimiento final](cu-eti-0060-014-memorias-edicion-formulario-seguimiento-final.md)
+* [CU-ETI-0060-015 - Memorias - Edición formulario retrospectiva](cu-eti-0060-015-memorias-edicion-formulario-retrospectiva.md)
+* [CU-ETI-0060-016 - Enviar a secretaría retrospectiva](cu-eti-0060-016-enviar-a-secretaria-retrospectiva.md)

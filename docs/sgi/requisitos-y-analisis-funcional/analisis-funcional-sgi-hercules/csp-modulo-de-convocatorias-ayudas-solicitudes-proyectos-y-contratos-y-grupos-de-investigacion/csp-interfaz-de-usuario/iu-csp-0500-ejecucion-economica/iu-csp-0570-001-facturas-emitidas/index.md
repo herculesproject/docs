@@ -1,0 +1,66 @@
+# IU-CSP-0570-001 - Facturas emitidas
+
+|  |  |
+| --- | --- |
+| Cod. IU | ********IU-CSP-0570-001- Facturas emitidas******** |
+| Ver. objetivo | 0.4.0 |
+| Ver. IU | 1.0.0 |
+| Estado | IN PROGRESS |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Actores | ACT-CSP-003-Gestor, ACT-CSP-004-Administrador |
+| Frecuencia | Media |
+
+## Formulario Ejecución económica - Facturas emitidas
+
+Formulario que permite visualizar las facturas emitidas gestionadas en el SGE.
+
+Este apartado solo estará disponible si el proyecto/contrato vinculado a la "Ejecución económica" dispone de la configuración "Requiere facturación".
+
+Toda la información económica del proyecto se presentará agrupada por anualidad (siempre que en el proyecto se hubiera recogido el desglose por anualidad).
+
+El detalle de campos a recoger de cada factura será común a todas ellas y deberá ser configurado en tiempo de implantación, pues esta información debe ser recuperada desde el SGE por medio de los mecanismos de integración disponibles.
+
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  | | | | |
+| Nombre | | | Tipo | Características / Notas |
+| Tabla de información del proyecto | | | | |
+| Identificador interno SGI | | | Numérico entero | Identificador interno creado por el SGI para identificar al proyecto o grupo.  Se corresponde con el campo "id" de la tabla "proyecto" (asociado al campo "proyecto" de la tabla "proyecto proyecto SGE") o con el campo "id" de la tabla "grupo" en función de que se esté representando un proyecto o un grupo. |
+| Código SGE | | | Texto | Código de identificación del proyecto en el SGE.  Se corresponde con el campo "proyecto ref SGE" de la tabla "proyecto proyecto SGE" en caso que se esté representado un proyecto y con el campo "proyecto ref SGE" de la tabla "grupo" en caso que se esté representado un grupo. |
+| Referencia en entidad convocante | | | Texto | Solo se mostrará en caso que la fila mostrada se corresponda con  un proyecto.  Se corresponde con el campo "código externo" de la tabla "proyecto" (a partir de la referencia establecida por el campo "proyecto" de la tabla "proyecto proyecto SGE". |
+| Título proyecto/Nombre grupo | | | Texto | Título del proyecto o nombre del grupo.  Si en la fila se representa un proyecto se corresponderá con el campo "título" de la tabla "proyecto" (a partir del campo "proyecto" de la tabla "proyecto proyecto SGE").  Si en la fila se representa un grupo se corresponderá con el campo "nombre" de la tabla "grupo". |
+| Responsable | | | Texto | Nombre y apellidos del responsable del proyecto/grupo.  Si en la fila se representa un proyecto, se mostrarán el nombre y apellidos obtenidos a través del requisito de integración [REQ-INT-0020-SGP-0030 - Consultar datos generales de persona](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas/req-int-0020-sgp-0030-consultar-datos-generales-de-persona.md) para la "persona ref" de la tabla "proyecto equipo" que tenga el rol principal (registro de la tabla "rol proyecto" con campo "principal" a "true") para la fecha actual (la fecha actual debe estar comprendida entre los campos "fecha inicio" y "fecha fin" de la tabla "proyecto equipo", considerando el valor null sobre fecha fin como periodo vigente). Podría darse el caso que existan varias personas con un rol "principal", en este caso se deben mostrar todos ellos separados por el carácter "," y en caso de que la cadena supere el espacio reservado para la columna se mostrarán "..." al final y se mostrará el contenido completo sobre componente tooltip.  Si en la fila se representa un grupo, se mostrarán el nombre y apellidos obtenidos a través del requisito de integración [REQ-INT-0020-SGP-0030 - Consultar datos generales de persona](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas/req-int-0020-sgp-0030-consultar-datos-generales-de-persona.md) para la "persona ref" de la tabla "grupo equipo" que tenga el rol principal (registro de la tabla "rol proyecto" con campo "principal" a "true") para la fecha actual (la fecha actual debe estar comprendida entre los campos "fecha inicio" y "fecha fin" de la tabla "grupo equipo", considerando el valor null sobre fecha fin como periodo vigente). Podría darse el caso que existan varias personas con un rol "principal", en este caso se deben mostrar todos ellos separados por el carácter "," y en caso de que la cadena supere el espacio reservado para la columna se mostrarán "..." al final y se mostrará el contenido completo sobre componente tooltip. |
+| Fecha inicio | | | Fecha | Fecha de inicio del proyecto o grupo.  Si en la fila se representa un proyecto se mostrará el valor del campo "fecha inicio" de la tabla "proyecto" a partir de la referencia establecida por el campo "proyecto" de la tabla "proyecto proyecto SGE".  Si en la fila se representa un grupo se mostrará el valor del campo "fecha inicio" de la tabla "grupo". |
+| Fecha fin | | | Fecha | Fecha de fin del proyecto o grupo.  Si en la fila se representa un proyecto se mostrará el valor del campo "fecha fin" de la tabla "proyecto" a partir de la referencia establecida por el campo "proyecto" de la tabla "proyecto proyecto SGE".  Si en la fila se representa un grupo se mostrará el valor del campo "fecha fin" de la tabla "grupo". |
+| Formulario de filtrado | | | | |
+| Fecha factura - entre - y - | | | Fecha  Opcional | Rango de fechas a aplicar sobre el campo "fecha factura" de la factura emitida en el sistema de gestión económica. Será obligatorio que el rango de búsqueda se establezca con los dos límites ("entre" e "y") informados. Si se rellena el campo "fecha de factura entre", se rellenará automáticamente el rango final (campo "fecha de factura y") con la fecha actual.  Es un dato de filtrado para enviar al sistema de gestión económica |
+| Mostrar | | | Icono de acción | Acción "Mostrar" |
+| Listado de facturas emitidas | | | | |
+| +- | | | Elemento gráfico para expandir o plegar | Componente para expandir o plegar las filas de:   * anualidad   Permite plegar o expandir las filas de detalle de anualidad |
+| Anualidad | | | Numérico entero genérico | Año de la anualidad |
+| Número factura | | | Texto corto | Número de la factura emitida en el SGE |
+| Columna X | | | Texto corto | Columnas configuradas en la implantación de acuerdo a lo devuelto por la integración con el sistema de gestión económico  Ejemplos de ellas serían (vista reducida y ampliada):   * Fecha emisión * Entidad * Concepto * Importe base * Porcentaje IVA * Importe total * Estado * Fecha cobro * Importe cobrado * Número previsión (es el campo que establece la relación entre el ítem del calendario de facturación y las facturas emitidas en el SGE) |
+
+| Acciones | Descripción | Enlace CU. | Permisos |
+| --- | --- | --- | --- |
+| Mostrar | Se hace una llamada al SGE para recuperar los datos a mostrar | Carga la tabla de detalle recuperado a partir de la integración con el SGE pasando el identificador SGE y el rango de fechas.  Se obtiene del SGE a través de [REQ-INT-0010-SGE-0150 - Buscar facturas emitidas](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0010-sge-integracion-con-sistema-de-gestion-economica/req-int-0010-sge-0150-buscar-facturas-emitidas.md) | CSP-EJEC-E  CSP-EJEC-E\_UO  CSP-EJEC-V  CSP-EJEC-V\_UO  CSP-EJEC-INV-VR |
+| Ver detalle | Se hace una llamada al SGE para obtener el detalle de la factura emitida | Carga el detalle recuperado a partir de la integración con el SGE pasando el identificador de la factura emitida  Se obtiene del SGE a través de [REQ-INT-0010-SGE-0151 - Detalle factura emitida](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0010-sge-integracion-con-sistema-de-gestion-economica/req-int-0010-sge-0151-detalle-factura-emitida.md)  Se abre la pantalla [IU-CSP-0570-001-001 - Facturas emitidas - Detalle](iu-csp-0570-001-001-facturas-emitidas-detalle.md) | CSP-EJEC-E  CSP-EJEC-E\_UO  CSP-EJEC-V  CSP-EJEC-V\_UO  CSP-EJEC-INV-VR |
+| Exportar | Exporta la información mostrada en la tabla | Se mostrará el formulario [IU-CSP-0501-005 - Exportación listados ejecución económica](../iu-csp-0501-005-exportacion-listados-ejecucion-economica.md) que generará el informe de exportación correspondiente de acuerdo al formato seleccionado:   * XSLX: [REP-CSP-0086 - Exportación Facturas emitidas - Formato xlsx](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0150-sgrep-integracion-con-sistema-de-generacion-de-reportes/csp-informes-predefinidos/rep-csp-0086-exportacion-facturas-emitidas-formato-xlsx.md) * CSV: [REP-CSP-0087 - Exportación Facturas emitidas - Formato csv](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0150-sgrep-integracion-con-sistema-de-generacion-de-reportes/csp-informes-predefinidos/rep-csp-0087-exportacion-facturas-emitidas-formato-csv.md) | CSP-EJEC-E  CSP-EJEC-E\_UO  CSP-EJEC-V  CSP-EJEC-V\_UO  CSP-EJEC-INV-VR |
+
+### Permisos de acceso a la pantalla
+
+#### Por actor
+
+|  |  |  |
+| --- | --- | --- |
+| ACT-CSP-003-Gestor | CSP-EJEC-E, CSP-EJEC-E\_UO |  |
+| **ACT-CSP-004-Administrador** | CSP-EJEC-E, CSP-EJEC-E\_UO |  |
+| **ACT-CSP-005-Visor** | CSP-EJEC-V, CSP-EJEC-V\_UO |  |
+| **ACT-CSP-001-Investigador** | CSP-EJEC-INV-VR | Ver documentación en [CU-CSP-1200-007 - Ver ejecución económica - Investigador (rol principal)](../../../csp-casos-de-uso/cu-csp-1200-gestion-de-proyectos/cu-csp-1200-007-ver-ejecucion-economica-investigador-rol-principal.md) y [CU-CSP-1200-008 - Ver ejecución económica - Investigador (rol responsable económico)](../../../csp-casos-de-uso/cu-csp-1200-gestion-de-proyectos/cu-csp-1200-008-ver-ejecucion-economica-investigador-rol-responsable-economico.md) |
+
+#### Todos los permisos de acceso
+
+|  |  |
+| --- | --- |
+| Permisos | CSP-EJEC-E, CSP-EJEC-E\_UO, CSP-EJEC-V, CSP-EJEC-V\_UO, CSP-EJEC-INV-VR |

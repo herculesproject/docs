@@ -1,0 +1,34 @@
+# IU-CSP-0302-013 - Presupuesto completo de la solicitud (global)
+
+Económico
+
+|  |  |
+| --- | --- |
+| Cod. IU | **IU-CSP-0302-013 - Presupuesto completo de la solicitud (global)** |
+| Ver. objetivo |  |
+| Ver. IU | 1.0.0 |
+| Estado | IN PROGRESS |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Actores | ACT- CSP-001-Investigador, ACT-CSP-003-Gestor, ACT-CSP-004-Administrador |
+| Frecuencia | Media |
+
+## Formulario Presupuesto completo de la solicitud (global)
+
+Formulario que muestra el presupuesto completo de la solicitud, permitiendo seleccionar en la tabla las anualidades para calcular los importes totales de los conceptos de gastos incluidos en la selección. La información mostrada en la tabla de resumen podrá ser exportada a Excel.
+
+|  |  |  |
+| --- | --- | --- |
+|  | | |
+| Nombre | Tipo | Características / Notas |
+| +- | Elemento gráfico para expandir o plegar | Componente para expandir o plegar las filas de:   * anualidad |
+| Anualidad | Numérico decimal genérico | Anualidad a la que pertenece el concepto de gasto |
+| Concepto del gasto | Texto corto | Nombre del concepto de gasto recuperado de la tabla "Conceptos de gasto" |
+| Observaciones | Texto largo | Observación del concepto de gasto en el presupuesto asociada a la solicitud |
+| Importe presupuestado | Económico | Importe presupuestado para el concepto de gasto por la entidad |
+| Importe solicitado | Económico | Importe solicitado para el concepto de gasto por la entidad |
+
+| Acciones | Descripción | Enlace CU. |
+| --- | --- | --- |
+| Exportar | Permite exportar el presupuesto completo de la solicitud | Muestra la pantalla [IU-CSP-0302-020 - Exportación presupuesto](iu-csp-0302-020-exportacion-presupuesto.md) |
+| Cancelar | Retorna al formulario de desglose de presupuesto de la solicitud |  |

@@ -1,0 +1,57 @@
+# IU-ETI-0040-001 Búsqueda y listado de evaluadores
+
+|  |  |
+| --- | --- |
+| Cod. IU | ********IU-ETI-0040-001 Búsqueda y listado de evaluadores******** |
+| Ver. objetivo |  |
+| Ver. CU | 1.0.0 |
+| Estado | LIBERADO\_ |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Actores | ACT-ETI-001-Gestor |
+| Frecuencia | Media |
+
+## Formulario de Búsqueda y listado de evaluadores
+
+Pantalla que muestra un formulario, que permite aplicar filtros sobre el listado de evaluadores.
+
+|  |  |  |
+| --- | --- | --- |
+|  | | |
+| Nombre | Tipo | Características / Notas |
+| Formulario de búsqueda | | |
+| Comité | Desplegable  abreviatura  Opcional | Listado con los tres comités: CEISH, CEEA y CEIAB |
+| Estado | Check  Booleano | Si esta no esta seleccionado el check de Activo se mostrarán todos los evaluadores dados de alta.  Si esta marcado el check se buscarán sólo los activos, aquellos evaluadores que no tengan fecha de baja o su fecha de baja es mayor a la actual. |
+| Evaluador | Botón Buscar  Texto corto  Obligatorio | Se muestra la pantalla genérica del SGI para buscar una la persona [IU-GEN-0060 - Búsqueda de personas](../../../gen-aspectos-generales/sha-buscadores-y-listados-comunes/iu-gen-0060-busqueda-de-personas.md).  En caso de no existir, se podrá solicitar por parte del usuario gestor el alta de la persona a través del formulario común de alta [IU-GEN-0061- Solicitar alta de persona](../../../gen-aspectos-generales/sha-buscadores-y-listados-comunes/iu-gen-0061-solicitar-alta-de-persona.md).  Una vez buscada, se mostrará el nombre y apellidos de la persona. |
+| Listado de resultados | | |
+| Nombre y apellidos | Texto corto | Nombre y apellidos del evaluador, recuperado por medio de [REQ-INT-0020-SGP-0030 - Consultar datos generales de persona](../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas/req-int-0020-sgp-0030-consultar-datos-generales-de-persona.md). |
+| Nº documento | Texto corto | Número de documento del evaluador, recuperado por medio de [REQ-INT-0020-SGP-0030 - Consultar datos generales de persona](../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas/req-int-0020-sgp-0030-consultar-datos-generales-de-persona.md). |
+| Comité | abreviatura | Comité al que pertenece |
+| Cargo | Texto corto | Puede tomar tres valores: presidente, vocal o secretario |
+| F. alta | fecha | Fecha a partir de la cual forma parte del comité de ética |
+| F. baja | fecha | Fecha en la que se dio de baja como perteneciente al comité de ética |
+| Estado | Texto corto | Activo: si  no tiene fecha baja o fecha baja es mayor a la actual  Inactivo: si fecha baja es menor a la fecha actual |
+
+| Acciones | Descripción | Enlace CU. | Permisos |
+| --- | --- | --- | --- |
+| Buscar persona | A través del botón Buscar se dará acceso al buscador común [IU-GEN-0060 - Búsqueda de personas](../../../gen-aspectos-generales/sha-buscadores-y-listados-comunes/iu-gen-0060-busqueda-de-personas.md). El listado de investigadores disponible se obtendrá del requisito de integración [REQ-INT-0020-SGP-0020 - Buscar persona en un listado de colectivos](../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas/req-int-0020-sgp-0020-buscar-persona-en-un-listado-de-colectivos.md).  Se le deberá pasar a este buscador el tipo de colectivo que haya sido identificado en periodo de implantación como personal de investigación que puede realizar las evaluaciones de las memorias de investigación o bien personal de técnico que puede realizar las tareas de evaluación de memorias ("Evaluador ética").  En caso de no existir la persona, se podrá solicitar por parte del usuario gestor el alta de la misma a través del formulario de alta [IU-GEN-0061- Solicitar alta de persona](../../../gen-aspectos-generales/sha-buscadores-y-listados-comunes/iu-gen-0061-solicitar-alta-de-persona.md) que hará uso del requisito de integración [REQ-INT-0020-SGP-0050 - Solicitar alta de persona](../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas/req-int-0020-sgp-0050-solicitar-alta-de-persona.md).  En el caso de que el buscador devolviese la persona, pero se quisiera realizar alguna modificación en sus datos, se podrá solicitar dicha modificación, utilizando para ello el formulario de solicitud de modificación IU-GEN-0062 - Ver detalle - Solicitar modificación de persona, que cumple con el requisito de integración [REQ-INT-0020-SGP-0060 - Solicitar modificación de persona](../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas/req-int-0020-sgp-0060-solicitar-modificacion-de-persona.md) y a la que se accede desde el propio formulario de búsqueda [IU-GEN-0100-0060 - Búsqueda de persona](../../../gen-aspectos-generales/sha-buscadores-y-listados-comunes/iu-gen-0060-busqueda-de-personas.md). Solamente podrá realizar esta solicitud de modificación el usuario gestor. |  | No se necesita permiso para buscar personas. |
+| Buscar | Aplica los filtros introducidos sobre la lista de Evaluadores mostrando los que cumplen las condiciones. | [CU-ETI-0040-001 - Buscar Evaluadores](../../eti-casos-de-uso/cu-eti-0040-gestion-de-evaluadores/cu-eti-0040-001-buscar-evaluadores.md) | ETI-EVR-V  ETI-EVR-C  ETI-EVR-E  ETI-EVR-B |
+| Limpiar | Elimina los datos introducidos en el formulario de búsqueda de Evaluadores |  |  |
+| Añadir nuevo evaluador | Muestra la pantalla de nuevo Evaluador | [CU-ETI-0040-002 - Alta/Modificar Evaluador](../../eti-casos-de-uso/cu-eti-0040-gestion-de-evaluadores/cu-eti-0040-002-altamodificar-evaluador.md) | ETI-EVR-C |
+| Modificar | Muestra la pantalla de modificación del evaluador seleccionado del listado | [CU-ETI-0040-002 - Alta/Modificar Evaluador](../../eti-casos-de-uso/cu-eti-0040-gestion-de-evaluadores/cu-eti-0040-002-altamodificar-evaluador.md) | ETI-EVR-E |
+| Eliminar | Se desactivará el evaluador. Funcionalidad transversal a toda la aplicación del SGI.  No saldrá dicho evaluador en las búsquedas ni podrá evaluar memorias, a no ser que un administrador vuelva a activar dicho evaluador. |  | ETI-EVR-B |
+| Exportar | Genera el informe asociado al listado de evaluadores. | Muestra la pantalla [IU-ETI-0040-005 - Exportación listado de evaluadores](iu-eti-0040-005-exportacion-listado-de-evaluadores.md) | ETI-EVR-V  ETI-EVR-E |
+
+### Acciones
+
+#### Por actor
+
+|  |  |
+| --- | --- |
+| ACT-ETI-001-Gestor | ETI-EVR-C, ETI-EVR-E, ETI-EVR-B |
+
+#### Todos los permisos de acceso
+
+|  |  |
+| --- | --- |
+| Permisos | ETI-EVR-V, ETI-EVR-C, ETI-EVR-E, ETI-EVR-B |

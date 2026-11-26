@@ -1,0 +1,27 @@
+# IU-CSP-202-018 - Añadir categoría profesional permitida a requisitos IP
+
+|  |  |
+| --- | --- |
+| Cod. IU | **IU-CSP-202-018 - Añadir categoría profesional permitida a requisitos IP** |
+| Ver. objetivo |  |
+| Ver. IU | 1.0.0 |
+| Estado | LIBERADO\_ |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Actores | ACT-CSP-004-Administrador, ACT-CSP-003-Gestor |
+| Frecuencia | Media |
+
+## Formulario Añadir categoría profesional permitida a requisitos IP
+
+Formulario que permite añadir una categoría profesional al listado de categorías permitidas en una convocatoria para desempeñar el rol IP.
+
+|  |  |  |
+| --- | --- | --- |
+|  | | |
+| Nombre | Tipo | Características / Notas |
+| Categoría profesional | Texto  Obligatorio | Listado de valores procedente de la integración con el sistema de gestión de personas/RRHH [REQ-INT-0020-SGP-0016 - Listar categorías profesionales](../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0020-sgp-integracion-con-sistema-de-gestion-de-personas/req-int-0020-sgp-0016-listar-categorias-profesionales.md). |
+
+| Acciones | Descripción | Enlace CU. |
+| --- | --- | --- |
+| Añadir | Se añade el nivel académico seleccionado al listado de niveles académicos permitios en la convocatoria | Se inserta un nuevo registro en la tabla "requisito IP categoría" almacenando la referencia correspondiente para la categoría seleccionada del listado. |
+| Cancelar | Retorna al formulario de requisitos IP de la convocatoria |  |

@@ -1,0 +1,42 @@
+# IU-CSP-0203-005 - Listado de convocatorias - Usuario externo
+
+|  |  |
+| --- | --- |
+| Cod. IU | ********IU-CSP-0203-005 Listado de convocatorias - Usuario externo******** |
+| Ver. objetivo |  |
+| Ver. IU | 1.0.0 |
+| Estado |  |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Actores |  |
+| Frecuencia | Media |
+
+## Formulario Búsqueda avanzada y listado de convocatorias - Usuario externo
+
+Se accede desde la opción de menú de acceso publico "Convocatorias".
+
+Pantalla con el listado de convocatorias que cumplan los siguientes requisitos:
+
+* Campo "activo" tenga valor "true
+* Campo "estado" tenga valor "Registrada"
+* Campo "tipo de formulario SGI" tenga valor "RRHH"
+* Campo "¿Habilitar presentación de solicitudes en SGI?"  tenga valor "Sí" (apartado "Configuración de solicitudes")
+
+|  |  |  |
+| --- | --- | --- |
+|  | | |
+| Nombre | Tipo | Características / Notas |
+| Listado de convocatorias | | |
+| Título | Texto (1000 caracteres) | Título de la convocatoria.  Campo "título" de la tabla "convocatoria". Es un alfanumérico de 1000 caracteres. |
+| Identificación | Texto | Código de identificación de la convocatoria. Campo "código" de la tabla "convocatoria". |
+| Fecha inicio solicitud | Fecha + Hora | Campo fecha inicio de presentación de solicitudes del apartado "configuración solicitud" de la convocatoria.  Expresado en formato fecha + hora.  Se obtiene del campo "fecha inicio" de la tabla "convocatoria fase" para la fase referenciada en la tabla "configuración solicitud" de la convocatoria. |
+| Fecha fin solicitud | Fecha + Hora | Campo fecha fin de presentación de solicitudes del apartado "configuración solicitud" de la convocatoria.  Expresado en formato fecha + hora.  Se obtiene del campo "fecha fin" de la tabla "convocatoria fase" para la fase referenciada en la tabla "configuración solicitud" de la convocatoria. |
+| Entidad convocante | Texto corto | Nombre de la Entidad convocante. Si la convocatoria tiene más de una entidad convocante se mostrará solo una.  Las entidades convocantes de la convocatoria se recuperarán de la tabla "convocatoria entidad convocante". Si la convocatoria tiene más de una entidad convocante se recuperará la primera. Para la entidad recuperada, se obtendrá su nombre a través del requisito de integración [REQ-INT-0015-SGEMP-0030 - Consultar datos generales de empresa](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0015-sgemp-integracion-con-sistema-de-gestion-de-empresas/req-int-0015-sgemp-0030-consultar-datos-generales-de-empresa.md). |
+| Plan investigación | Texto corto | Nombre del plan de investigación que tenga asociada la entidad convocante mostrada.  Se deberá recuperar, en la tabla "programa", el nodo raíz (aquel cuyo campo "padre" tome valor "null") para el programa especificado en la tabla "convocatoria entidad convocante" (campo "programa") asociado a la entidad mostrada en el campo anterior. Se mostrará el nombre (campo "nombre") de este nodo raíz. |
+| Entidad financiadora | Texto corto | Nombre de la Entidad financiadora. Si la Convocatoria tiene más de una entidad financiadora se solo una de ellas.   [Las entidades financiadoras de la convocatoria se recuperarán de la tabla "convocatoria entidad financiadora". Si la convocatoria tiene más de una entidad financiadora se recuperará la primera. Para la entidad recuperada, se obtendrá su nombre a través del requisito de integración](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0015-sgemp-integracion-con-sistema-de-gestion-de-empresas/req-int-0015-sgemp-0030-consultar-datos-generales-de-empresa.md)  [REQ-INT-0015-SGEMP-0030 - Consultar datos generales de empresa](../../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0015-sgemp-integracion-con-sistema-de-gestion-de-empresas/req-int-0015-sgemp-0030-consultar-datos-generales-de-empresa.md) |
+| Fuente financiación | Texto corto | Nombre de la fuente de financiación que tenga asociada la entidad financiadora mostrada  Se mostrará el campo "nombre" de la tabla "fuente financiación" a partir del campo "fuente financiación" de la tabla "convocatoria entidad financiadora" |
+
+| Acciones | Descripción | Enlace CU. | Permisos |
+| --- | --- | --- | --- |
+| Ver | Ver el detalle de la convocatoria seleccionada del listado de convocatorias | Muestra las pantallas:  [IU-CSP-0205-001 - Ver convocatoria - Datos generales](../iu-csp-0205-ver-convocatoria/iu-csp-0205-001-ver-convocatoria-datos-generales.md)  [IU-CSP-0205-002 - Ver convocatoria - Entidades convocantes](../iu-csp-0205-ver-convocatoria/iu-csp-0205-002-ver-convocatoria-entidades-convocantes.md)  [IU-CSP-0205-003 - Ver convocatoria - Entidades financiadoras](../iu-csp-0205-ver-convocatoria/iu-csp-0205-003-ver-convocatoria-entidades-financiadoras.md)  [IU-CSP-0205-004 - Ver convocatoria - Enlaces](../iu-csp-0205-ver-convocatoria/iu-csp-0205-004-ver-convocatoria-enlaces.md)  [IU-CSP-0205-005 - Ver convocatoria - Fases](../iu-csp-0205-ver-convocatoria/iu-csp-0205-005-ver-convocatoria-fases.md)  [IU-CSP-0205-006 - Ver convocatoria - Periodos justificación](../iu-csp-0205-ver-convocatoria/iu-csp-0205-006-ver-convocatoria-periodos-justificacion.md)  [IU-CSP-0205-007 - Ver convocatoria - Seguimiento científico](../iu-csp-0205-ver-convocatoria/iu-csp-0205-007-ver-convocatoria-seguimiento-cientifico.md)  [IU-CSP-0205-009 - Ver convocatoria - Documentos](../iu-csp-0205-ver-convocatoria/iu-csp-0205-009-ver-convocatoria-documentos.md)  [IU-CSP-0205-010 - Ver convocatoria - Requisitos IP](../iu-csp-0205-ver-convocatoria/iu-csp-0205-010-ver-convocatoria-requisitos-ip.md)  [IU-CSP-0205-011 - Ver convocatoria - Requisitos Equipo](../iu-csp-0205-ver-convocatoria/iu-csp-0205-011-ver-convocatoria-requisitos-equipo.md)  [IU-CSP-0205-012 - Ver convocatoria - Elegibilidad](../iu-csp-0205-ver-convocatoria/iu-csp-0205-012-ver-convocatoria-elegibilidad.md)  Ver convocatoria - Partidas presupuestarias | Sin permiso |
+| Tramitar | Crea una solicitud asociada a la convocatoria seleccionada del listado de convocatorias | La acción tramitar solo estará disponible si se ha habilitado la tramitación de solicitudes a través del SGI desde el apartado Configuración solicitud, campo "tramitación sgi" y la la fecha actual está comprendida entre las fechas de inicio y fin de la Fase seleccionada en la pantalla de "Configuración de Solicitudes" en el campo "Seleccione plazo de presentación de solicitudes"  Muestra la pantalla de creación de Solicitud [IU-CSP-0301-003 - Crear solicitud - Usuario externo (RRHH)](../../iu-csp-0300-gestion-de-solicitudes/iu-csp-0301-crear-solicitud/iu-csp-0301-003-crear-solicitud-usuario-externo-rrhh.md) | Sin permiso |

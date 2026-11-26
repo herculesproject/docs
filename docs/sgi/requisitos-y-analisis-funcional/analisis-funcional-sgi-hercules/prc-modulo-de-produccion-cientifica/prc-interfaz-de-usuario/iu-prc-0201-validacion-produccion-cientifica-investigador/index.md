@@ -1,0 +1,15 @@
+# IU-PRC-0201-Validación producción científica - Investigador
+
+* [IU-PRC-0201-001 Búsqueda y listado de publicaciones - Investigador](iu-prc-0201-001-busqueda-y-listado-de-publicaciones-investigador.md)
+* [IU-PRC-0201-002 - Ver publicación - Investigador](iu-prc-0201-002-ver-publicacion-investigador.md)
+* [IU-PRC-0201-003 - Rechazar item de producción científica - Investigador](iu-prc-0201-003-rechazar-item-de-produccion-cientifica-investigador.md)
+* [IU-PRC-0201-004 Búsqueda y listado de congresos - Investigador](iu-prc-0201-004-busqueda-y-listado-de-congresos-investigador.md)
+* [IU-PRC-0201-005 - Ver congreso - Investigador](iu-prc-0201-005-ver-congreso-investigador.md)
+* [IU-PRC-0201-006 Búsqueda y listado de obras artísticas - Investigador](iu-prc-0201-006-busqueda-y-listado-de-obras-artisticas-investigador.md)
+* [IU-PRC-0201-007 - Ver obra artística - Investigador](iu-prc-0201-007-ver-obra-artistica-investigador.md)
+* [IU-PRC-0201-008 Búsqueda y listado de comités editoriales - Investigador](iu-prc-0201-008-busqueda-y-listado-de-comites-editoriales-investigador.md)
+* [IU-PRC-0201-009 - Ver comité editorial - Investigador](iu-prc-0201-009-ver-comite-editorial-investigador.md)
+* [IU-PRC-0201-010 Búsqueda y listado de dirección de tesis - Investigador](iu-prc-0201-010-busqueda-y-listado-de-direccion-de-tesis-investigador.md)
+* [IU-PRC-0201-011 - Ver dirección de tesis - Investigador](iu-prc-0201-011-ver-direccion-de-tesis-investigador.md)
+* [IU-PRC-0201-012 Búsqueda y listado de actividades de I+D+i - Investigador](iu-prc-0201-012-busqueda-y-listado-de-actividades-de-idi-investigador.md)
+* [IU-PRC-0201-013 - Ver organización de actividad de I+D+i - Investigador](iu-prc-0201-013-ver-organizacion-de-actividad-de-idi-investigador.md)

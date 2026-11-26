@@ -1,0 +1,30 @@
+# IU-CSP-0202-014 - Añadir documento requerido
+
+|  |  |
+| --- | --- |
+| Cod. IU | ********IU-CSP-0202-014 Añadir documento requerido******** |
+| Ver. objetivo |  |
+| Ver. IU | 1.0.0 |
+| Estado | LIBERADO\_ |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Actores | ACT-CSP-003-Gestor, ACT-CSP-004-Administrador |
+| Frecuencia | Media |
+
+## Formulario Añadir documento requerido
+
+Pantalla que muestra un formulario, que permite añadir un documento requerido a una convocatoria.
+
+Las correspondencias se añaden desde la pestaña de "Configuración de solicitudes" de la convocatoria [IU-CSP-0201-014 - Crear convocatoria - Configuración de solicitudes](iu-csp-0201-crear-convocatoria/iu-csp-0201-014-crear-convocatoria-configuracion-de-solicitudes.md).
+
+|  |  |  |
+| --- | --- | --- |
+|  | | |
+| Nombre | Tipo | Características / Notas |
+| Tipo de documento | Selector  Texto corto  Obligatorio | Se mostrarán todos los tipos de documento activos asociados a la fase seleccionada en el campo "Seleccione plazo de presentaciones de solicitudes"  En el caso de que dicho campo este vacío o bien no se hayan definido tipos de documento para esa fase, se mostrará el combo vacío y no se podrán por lo tanto adjuntar documentos requeridos a la solicitud. |
+| Observaciones | Texto largo  Opcional | Campo para recoger las observaciones o indicaciones que se mostrarán en la documentación requerida de la solicitud |
+
+| Acciones | Descripción | Enlace CU. |
+| --- | --- | --- |
+| Guardar | Inserta el nuevo elemento en la relación de la convocatoria | Inserta el documento requerido en la configuración de solicitud de la convocatoria. El registro hará referencia a:   * ID del tipo de documento * ID convocatoria |
+| Cancelar | No realiza ninguna operación, retornando a la pantalla de creación o edición de configuración de solicitudes de la convocatoria |  |

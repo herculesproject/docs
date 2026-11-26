@@ -1,0 +1,33 @@
+# IU-CSP-0402-004 - Añadir-modificar entidad financiadora en proyecto
+
+|  |  |
+| --- | --- |
+| Cod. IU | ********IU-CSP-0402-004 - Añadir-modificar entidad financiadora en proyecto******** |
+| Ver. objetivo | 0.4.0 |
+| Ver. IU | 1.0.0 |
+| Estado | IN PROGRESS |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Actores | ACT-CSP-003-Gestor, ACT-CSP-004-Administrador |
+| Frecuencia | Media |
+
+## Formulario Añadir/modificar entidad financiadora en proyecto
+
+Formulario que permite añadir una entidad financiadora durante la modificación del proyecto o modificar los datos de financiación asociados a la misma.
+
+|  |  |  |
+| --- | --- | --- |
+|  | | |
+| Nombre | Tipo | Características / Notas |
+| Formulario de detalle de entidad financiadora | | |
+| Entidad financiadora | Buscador  Texto  Obligatorio | Empresa/entidad/organismo que financia la convocatoria.  La selección de la entidad financiadora se realizará a través del buscador común de empresas, [IU-GEN-0080 - Búsqueda de empresas](../../../gen-aspectos-generales/sha-buscadores-y-listados-comunes/iu-gen-0080-busqueda-de-empresas.md), que precisará del requisito de integración [REQ-INT-0015-SGEMP-0020 - Buscar empresa](../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0015-sgemp-integracion-con-sistema-de-gestion-de-empresas/req-int-0015-sgemp-0020-buscar-empresa.md).  En el caso de que el buscador no devolviese la  empresa que se desea añadir como entidad financiadora del proyecto se podrá solicitar el registro de la nueva empresa a través del requisito [REQ-INT-0015-SGEMP-0040 - Solicitar alta de empresa](../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0015-sgemp-integracion-con-sistema-de-gestion-de-empresas/req-int-0015-sgemp-0040-solicitar-alta-de-empresa.md).  Cuando se accede a este formulario para modificar la información asociada a la entidad financiadora en el proyecto, este campo se mostrará en modo solo lectura y se mostrará el nombre de la entidad recuperado a través de [REQ-INT-0015-SGEMP-0030 - Consultar datos generales de empresa](../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0015-sgemp-integracion-con-sistema-de-gestion-de-empresas/req-int-0015-sgemp-0030-consultar-datos-generales-de-empresa.md). |
+| Fuente de financiación | Selector  Texto corto  Opcional | Listado de fuentes de investigación activas gestionadas en [IU-CSP-0070 - Gestión de fuentes de financiación](../iu-csp-0070-gestion-de-fuentes-de-financiacion/index.md)  El listado se cargará con el campo "nombre" de los registros de la tabla "fuente financiación" para los que el campo "activo" tome el valor  "true" |
+| Tipo financiación | Selector  Texto corto  Opcional | Listado de Tipos de financiación activos gestionados en [IU-CSP-0080 - Gestión de tipos de financiación](../iu-csp-0080-gestion-de-tipos-de-financiacion/index.md)  El listado se cargará con el campo "nombre" de los registros de la tabla "tipo financiación" para los que el campo "activo" tome el valor  "true" |
+| Porcentaje de financiación | Numérico Porcentaje  Opcional | Porcentaje de financiación de la entidad financiadora  Campo "porcentaje financiación" de la tabla "proyecto entidad financiadora"  Validar que esté comprendido entre 0 y 100. |
+| Importe financiación | Económico  Opcional | Importe de financiación de la entidad  Campo "importe financiación" de la tabla "proyecto entidad financiadora" |
+
+| Acciones | Descripción | Enlace CU. | Permisos |
+| --- | --- | --- | --- |
+| Buscar | Muestra la pantalla de búsqueda para seleccionar la entidad financiadora | El buscador de empresas será común a todo el SGI, [IU-GEN-0080 - Búsqueda de empresas](../../../gen-aspectos-generales/sha-buscadores-y-listados-comunes/iu-gen-0080-busqueda-de-empresas.md),  quedando resuelto por medio del requisito de integración [REQ-INT-0015-SGEMP-0020 - Buscar empresa](../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0015-sgemp-integracion-con-sistema-de-gestion-de-empresas/req-int-0015-sgemp-0020-buscar-empresa.md).  En el caso de que el buscador no devolviese la  empresa que se desea añadir como entidad financiadora del proyecto será necesario realizar el registro de la nueva empresa a través del requisito [REQ-INT-0015-SGEMP-0040 - Solicitar alta de empresa](../../../gen-aspectos-generales/int-requisitos-de-integracion/req-int-0015-sgemp-integracion-con-sistema-de-gestion-de-empresas/req-int-0015-sgemp-0040-solicitar-alta-de-empresa.md). | No se necesita permiso para mostrar la pantalla de búsqueda de empresas |
+| Añadir /Aceptar | El botón se muestra como:   * Añadir, cuando se accede al formulario para añadir una nueva entidad financiadora al proyecto * Aceptar, cuando se accede al formulario desde la opción de modificación del listado de entidades financiadroes del proyecto | Se creará un nuevo registro en el listado de entidades financiadoras de la convocatoria o en el listado de entidades ajenas a la convocatoria, dependiendo de que enlace se ha pulsado en la pantalla de "Entidades financiadoras".  Si se esta añadiendo una entidad financiadora de la convocatoria el campo "ajena" se tendrá que informar con valor a "False" y se esta añadiendo una entidad convocante ajena a la convocatoria se tendrá que informar con valor a "True"  Se insertará el nuevo registro en la tabla "proyecto entidad financiadora" | CSP-PRO-E  CSP-PRO-E\_UO |
+| Cancelar | Retorna al formulario del proyecto, sin salvar los posibles cambios |  |  |

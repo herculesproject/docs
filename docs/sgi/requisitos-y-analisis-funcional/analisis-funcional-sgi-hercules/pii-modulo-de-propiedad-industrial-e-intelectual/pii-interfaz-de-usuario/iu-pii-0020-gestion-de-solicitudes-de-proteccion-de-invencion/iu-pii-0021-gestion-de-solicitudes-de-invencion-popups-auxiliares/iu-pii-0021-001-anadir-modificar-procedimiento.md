@@ -1,0 +1,32 @@
+# IU-PII-0021-001 - Añadir-modificar procedimiento
+
+|  |  |
+| --- | --- |
+| Cod. IU | IU-PII-0021-001 - Añadir-modificar procedimiento |
+| Ver. objetivo |  |
+| Ver. IU | 1.0.0 |
+| Estado | LIBERADO\_ |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Actores | ACT-PII-001-Gestor |
+| Frecuencia | Media |
+
+## Formulario Añadir-modificar procedimiento
+
+Pantalla que muestra el formulario para añadir un nuevo procedimiento o modificar los datos de un procedimiento asociado a una solicitud de invención en una ventana emergente.
+
+|  |  |  |
+| --- | --- | --- |
+|  | | |
+| Nombre | Tipo | Características / Notas |
+| Fecha | Fecha (sin hora)  Obligatorio | Fecha de registro del procedimiento asociado a la solicitud. |
+| Tipo de procedimiento | Selector  Texto corto  Obligatorio | Listado de tipos de procedimiento.  Listado configurable en [IU-PII-0040 - Gestión de Tipos de procedimiento](../../iu-pii-0080-gestion-de-tipos-de-procedimiento/index.md). |
+| Acciones a tomar | Texto  Opcional | Acciones a tomar en el procedimiento asociado a la solicitud.  Será obligatorio únicamente si se marca el check "Generar aviso". |
+| Fecha límite | Fecha (sin hora)  Opcional | Fecha límite del procedimiento asociado a la solicitud.  Será obligatorio únicamente si se marca el check "Generar aviso".  Esta fecha será utilizada para programar el envío de un aviso en el módulo de comunicados [COM - Módulo de Comunicados](../../../../gen-aspectos-generales/com-modulo-de-comunicados/index.md). |
+| Generar aviso | Checkbox  Booleano  Opcional | Indicador de generación de aviso asociado al procedimiento que corresponderá al campo "aviso" de la tabla "procedimiento".  Al marcar este check, los campos "Acciones a tomar" y "Fecha límite" serán obligatorios.  Si en el campo "Fecha" se ha indicado una fecha ya pasada, el campo "Generar aviso" tomará el valor false, y no podrá modificarse, esto es, no podrá ni marcarse ni desmarcarse (no editable).  Si la fecha del procedimiento, esto es, el campo "Fecha", es posterior a la actual y, en el caso de la modificación, el aviso aún no ha sido enviado, el campo será editable, esto es, podrá marcarse o desmarcarse (según fuera su estado original). |
+| Observaciones | Texto Largo  Opcional | Observaciones acerca del procedimiento asociado a la solicitud. |
+
+| Acciones | Descripción | Enlace CU. |
+| --- | --- | --- |
+| Añadir/Aceptar | El botón se muestra como:   * Añadir, cuando se accede al formulario para añadir un nuevo procedimiento  a la solicitud. * Aceptar, cuando se accede al formulario para modificar los datos de un procedimiento existente. * No se muestra, cuando se accede al formulario para ver los datos de un procedimiento existente en modo de solo consulta.   Al completar la acción, se retornará a la pantalla de listado de procedimientos con el nuevo procedimiento añadido o con los datos del procedimiento modificados. | En el alta se creará el procedimiento, tomando como valores los recogidos en el formulario.  En la modificación, se modificarán los datos de dicho registro existente previamente, tomando como valores los recogidos en el formulario.  En ambos casos se debe comprobar que, si se ha marcado el check "Generar aviso" los campos los campos "Acciones a tomar" y "Fecha límite" estén informados, ya que serán utilizados para la generación del comunicado.  En el alta, en caso de haberse marcado el flag "Generar aviso":   * Los campos específicos del aviso serán utilizados para generar un aviso y una tarea programada para su envío en los módulos de comunicados [COM - Módulo de Comunicados](../../../../gen-aspectos-generales/com-modulo-de-comunicados/index.md) y tareas programadas [SGI - TP](../../../../../../diseno/componentes/sgi-tp/index.md) respectivamente según se detalla en el apartado **Fecha límite de procedimiento** de la página PII - Comunicados y en [CU-COM-0020 - Generar comunicado programado](../../../../gen-aspectos-generales/com-modulo-de-comunicados/com-casos-de-uso/cu-com-0020-generar-comunicado-programado.md). * Se creará un nuevo registro en la tabla "procedimiento aviso" para almacenar las referencias al comunicado y tarea programada generados en el punto anterior.   En la modificación, se dan 3 posibles escenarios:   * Si se marca el flag "Generar aviso", sin que previamente hubiese estado marcado:  * + Los campos específicos del aviso serán utilizados para generar un aviso y una tarea programada para su envío en los módulos de comunicados [COM - Módulo de Comunicados](../../../../gen-aspectos-generales/com-modulo-de-comunicados/index.md) y tareas programadas [SGI - TP](../../../../../../diseno/componentes/sgi-tp/index.md) respectivamente según se detalla en el apartado **Fecha límite de procedimiento** de la página PII - Comunicados y en [CU-COM-0020 - Generar comunicado programado](../../../../gen-aspectos-generales/com-modulo-de-comunicados/com-casos-de-uso/cu-com-0020-generar-comunicado-programado.md).   + Se creará un nuevo registro en la tabla "procedimiento aviso" para almacenar las referencias al comunicado y tarea programada generados en el punto anterior.  * Si el campo "Generar aviso" estaba ya marcado y se desmarca:  * + Se debe eliminar tanto el comunicado asociado al procedimiento en el módulo de comunicados [COM - Módulo de Comunicados](../../../../gen-aspectos-generales/com-modulo-de-comunicados/index.md) como la tarea programada en el módulo de tareas programadas [SGI - TP](../../../../../../diseno/componentes/sgi-tp/index.md).   + Se eliminará además el registro correspondiente que referencie a ese comunicado y tarea programada en la tabla "procedimiento aviso".  * Si el campo "Generar aviso" estaba ya marcado y se modifican los datos del aviso:  * + Los campos específicos del aviso serán utilizados para actualizar, según el caso, el comunicado asociado al hito en el módulo de comunicados [COM - Módulo de Comunicados](../../../../gen-aspectos-generales/com-modulo-de-comunicados/index.md) como la tarea programada en el módulo de tareas programadas [SGI - TP](../../../../../../diseno/componentes/sgi-tp/index.md) referenciados ambos en la tabla "procedimiento aviso" del procedimiento. |
+| Cancelar | Vuelve a la pantalla que contiene el listado de procedimientos sin añadir el procedimiento. |  |

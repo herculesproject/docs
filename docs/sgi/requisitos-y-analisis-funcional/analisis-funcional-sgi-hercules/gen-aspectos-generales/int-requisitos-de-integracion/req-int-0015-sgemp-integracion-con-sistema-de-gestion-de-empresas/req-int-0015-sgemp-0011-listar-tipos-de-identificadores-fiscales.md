@@ -1,0 +1,46 @@
+# REQ-INT-0015-SGEMP-0011 - Listar tipos de identificadores fiscales
+
+|  |  |
+| --- | --- |
+| Cod. REQ | **REQ-INT-0015-SGEMP-0011 - Listar tipos de identificadores fiscales** |
+| Ver. Objetivo |  |
+| Ver. REQ | 1.0.0 |
+| Estado | IN PROGRESS |
+| Fec. Aprobación |  |
+| Épica, historia |  |
+| Frecuencia |  |
+| Características |  |
+| M. Consumidor | ESB (Empresa) |
+
+### Definición y objetivos
+
+Recuperación del listado de tipos de identificadores fiscales recogidos por el sistema de gestión universitario correspondiente. El listado será utilizado en IU-GEN-0100-0082 - Solicitar alta de empresa. El objetivo de este requisito de integración es alinear la recogida de datos desde el SGI para solicitar el alta de una empresa con el sistema de gestión universitario correspondiente donde se materializará el registro.
+
+### Descripción técnica integración
+
+Parámetros de entrada: sin parámetros de entrada.
+
+Parámetros de salida: listado de tipos de identificadores fiscales:
+
+* Identificador del tipo de identificador fiscal
+* Nombre de tipo de identificador fiscal
+
+El listado devuelto será presentado al usuario, por norma general, en un componente selector (combo).
+
+### Diseño técnico
+
+En el siguiente enlace se muestra el diseño del modelo lógico y el diseño de la API del Sistema de Gestión de Empresas y, en concreto, de los Servicios Básicos: [SGI - ESB - SGEMP - Servicios Básicos](../../../../../diseno/componentes/sgi-esb/sgi-esb-sgemp/sgi-esb-sgemp-servicios-basicos/index.md).
+
+El servicio concreto del API que cubre este requisito es [SGI - ESB - SGEMP - Empresas - Listar tipos de identificador](../../../../../diseno/componentes/sgi-esb/sgi-esb-sgemp/sgi-esb-sgemp-servicios-basicos/sgi-esb-sgemp-empresas-listar-tipos-de-identificador.md).
+
+Interfaces de usuario relacionados
+
+*(elemento de Confluence no migrado)*
+
+### Informes relacionados
+
+*(elemento de Confluence no migrado)*
+
+### Casos de uso relacionados
+
+*(elemento de Confluence no migrado)*
